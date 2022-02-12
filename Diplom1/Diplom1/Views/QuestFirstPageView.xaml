@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.QuestFirstPageView" NavigationPage.HasBackButton="True" BackgroundColor="White">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" BackgroundColor="#86817E">
+                <Label TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Квест" FontSize="30"/>
+            </Frame>
+            <Button VerticalOptions="Center" Clicked="Button_ClickedLevel1" TextColor="White" Text="Уровень 1" BorderColor="LightGray" BorderWidth="1" BackgroundColor="Gray" Grid.Row="1"/>
+            <Button VerticalOptions="Center" Clicked="Button_ClickedLevel2" TextColor="White" Text="Уровень 2" BorderColor="LightGray" BorderWidth="1" BackgroundColor="Gray" Grid.Row="2"/>
+            <Button VerticalOptions="Center" Clicked="Button_ClickedLevel3" TextColor="White" Text="Уровень 3" BorderColor="LightGray" BorderWidth="1" BackgroundColor="Gray" Grid.Row="3"/>
+            <Button VerticalOptions="Center" TextColor="White" Text="История" BorderColor="LightGray" BorderWidth="1" BackgroundColor="Gray" Grid.Row="4"/>
+        </Grid>
+        <AbsoluteLayout   Grid.RowSpan="3" VerticalOptions="Center" HorizontalOptions="Center" x:Name="Indicator">
+
+
+            <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+
+                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
+                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
+                    </Frame>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
+                    <Label TextColor="Black" Text="Подождите пожалуйста ..." FontAttributes="Bold" VerticalOptions="Center"/>
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>

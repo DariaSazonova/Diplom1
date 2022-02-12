@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.HomePageDetail"
+             Title="Главная" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+                 IconImageSource="chat.png"
+                 Order="Primary"
+                 Priority="0" 
+                />
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+        </Grid.RowDefinitions>
+
+        <yummy:PancakeView 
+                            Grid.Row="0"
+                            Margin="5,15,5,0"
+            BackgroundColor="#7b8d7f"
+                            CornerRadius="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="info" Margin="10"/>
+                <Button 
+                        Margin="0,0,10,0"
+                        BackgroundColor="Transparent"
+                        Text="Информация о специальности"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        Clicked="Button_ClickedInfo"/>
+            </StackLayout>
+        </yummy:PancakeView>
+        <!--<Button  Margin="5,15,5,0" Clicked="Button_ClickedInfo"  Grid.Row="0"  Text="Информация о специальности"/>-->
+
+        <yummy:PancakeView 
+                            Grid.Row="1"
+                            Margin="5,0"
+            BackgroundColor="#7b8d7f"
+                            CornerRadius="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="checklist" Margin="10"/>
+                <Button 
+                    Margin="0,0,40,0"
+                    BackgroundColor="Transparent"
+                    Text="Квест игра"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="Black"
+                    Clicked="Button_ClickedQuest"/>
+            </StackLayout>
+        </yummy:PancakeView>
+        <!--<Button Margin="5,0" Grid.Row="1"  Text="Квест игра" Clicked="Button_ClickedQuest"/>-->
+
+        <yummy:PancakeView 
+                            Grid.Row="2"
+                            Margin="5,0"
+            BackgroundColor="#7b8d7f"
+                            CornerRadius="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="folder" Margin="10"/>
+                <Button 
+                    Margin="0,0,40,0"
+                    BackgroundColor="Transparent"
+                    Text="Медиа файлы"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="Black"/>
+            </StackLayout>
+        </yummy:PancakeView>
+        <!--<Button Margin="5,0" Grid.Row="2"  Text="Медиа файлы"/>-->
+
+        <yummy:PancakeView 
+                            Grid.Row="3"
+                            Margin="5,0"
+            BackgroundColor="#7b8d7f"
+                            CornerRadius="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="roadmap" Margin="10"/>
+                <Button 
+                    Margin="0,0,40,0"
+                    BackgroundColor="Transparent"
+                    Text="План обучения"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="Black"/>
+            </StackLayout>
+        </yummy:PancakeView>
+        <!--<Button Margin="5,0" Grid.Row="3"  Text="План обучения"/>-->
+
+        <yummy:PancakeView 
+                            Grid.Row="4"
+                            Margin="5,0"
+            BackgroundColor="#7b8d7f"
+                            CornerRadius="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="college" Margin="10"/>
+                <Button 
+                    Margin="0,0,40,0"
+                    BackgroundColor="Transparent"
+                    Text="Информация о колледже"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="Black"/>
+            </StackLayout>
+        </yummy:PancakeView>
+        <!--<Button Margin="5,0" Grid.Row="4"  Text="Информация о колледже"/>-->
+    </Grid>
+</ContentPage>

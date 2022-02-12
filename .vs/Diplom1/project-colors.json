@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5773aeab-d764-4254-9c55-9f612b2e5ce7": {
+      "ProjectGuid": "5773aeab-d764-4254-9c55-9f612b2e5ce7",
+      "DisplayName": "Diplom1",
+      "ColorIndex": 0
+    },
+    "82456b53-bcd3-472b-bbb5-c797675d3c3e": {
+      "ProjectGuid": "82456b53-bcd3-472b-bbb5-c797675d3c3e",
+      "DisplayName": "Diplom1.Android",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

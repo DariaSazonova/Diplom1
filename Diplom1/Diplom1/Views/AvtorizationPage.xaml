@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Diplom1"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.AvtorizationPage" BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False" NavigationPage.HasBackButton="False"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <Grid Margin="0" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Image Source="applicantsStartIcon"   Aspect="AspectFill"/>
+        </Grid>
+        <Grid Grid.Row="1" VerticalOptions="StartAndExpand" x:Name="Logo">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="09.02.07 Информационные системы и программирование" Margin="0,100,0,100" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black"/>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <yummy:PancakeView BackgroundColor="Gray" HeightRequest="500"  CornerRadius="25,25,0,0" x:Name="StackPageLogin">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <yummy:PancakeView
+                        x:Name="username"
+                        Margin="25,25,25,10"
+                        Padding="10,0,0,0"
+                        BackgroundColor="LightGray"
+                        CornerRadius="15"
+                        MinimumHeightRequest="45"
+                        HeightRequest="45">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+
+                            <views:BorderlessEntry Grid.Column="0"
+                            Text="{Binding Email}" TextColor="Black" Placeholder="Почта" TextChanged="BorderlessEntry_TextChangedEmail" PlaceholderColor="#353535" ClearButtonVisibility="WhileEditing"  Keyboard="Email"/>
+                        </Grid>
+                    </yummy:PancakeView>
+
+
+                    <yummy:PancakeView
+                        x:Name="password"
+                        Margin="25,0"
+                        Padding="10,0,0,0"
+                        BackgroundColor="LightGray"
+                        CornerRadius="15"
+                        MinimumHeightRequest="45"
+                        HeightRequest="45">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+
+                            <views:BorderlessEntry Grid.Column="0"
+                            Text="{Binding Password}" TextChanged="BorderlessEntry_TextChangedPassword" TextColor="Black" Placeholder="Пароль" PlaceholderColor="#353535" IsPassword="True" ClearButtonVisibility="WhileEditing"/>
+                        </Grid>
+                    </yummy:PancakeView>
+
+                    <StackLayout  x:Name="ButtonSign">
+                        <Button HeightRequest="40" Text="Войти" Command="{Binding SignIn}" IsEnabled="{Binding IsButtonEnabled}" BackgroundColor="LightGray" TextColor="White" CornerRadius="10" FontAttributes="Bold" TextTransform="None" Margin="25,20,25,5" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="ButtonReg">
+                        <Button HeightRequest="40" Text="Регистрация" Command="{Binding SignIn}" IsEnabled="{Binding IsButtonEnabled}" BackgroundColor="LightGray" TextColor="White" CornerRadius="10" FontAttributes="Bold" TextTransform="None" Margin="25,0,25,10" />
+                    </StackLayout>
+
+
+                </StackLayout>
+
+            </yummy:PancakeView>
+        </Grid >
+        <AbsoluteLayout   Grid.RowSpan="3" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding IndicatorIsVisible}">
+           
+
+            <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+
+                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
+                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
+                    </Frame>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
+                    <Label TextColor="Black" Text="Подождите пожалуйста ..." FontAttributes="Bold" VerticalOptions="Center"/>
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </Grid>
+
+</ContentPage>
