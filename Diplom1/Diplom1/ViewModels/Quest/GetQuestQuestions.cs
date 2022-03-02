@@ -17,7 +17,6 @@ namespace Diplom1.ViewModels.Quest
         {
             if (GetClientConnection.CheckConnection())
             {
-                //viewModel.IndicatorIsVisible = true;
                 using HttpClient client = new();
                 HttpResponseMessage result = await client.GetAsync(RequestStrings.getQuestions(level));
                 if (result.IsSuccessStatusCode)
@@ -28,14 +27,12 @@ namespace Diplom1.ViewModels.Quest
                 }
                 else
                 {
-                    //viewModel.IndicatorIsVisible = false;
                     await Application.Current.MainPage.DisplayAlert("Ошибка", $"Ошибка {result.StatusCode} ", "ОК");
                     return null;
                 }
             }
             else
             {
-                //viewModel.IndicatorIsVisible = false;
                 await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
                 return null;
             }

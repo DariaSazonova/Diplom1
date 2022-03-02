@@ -12,25 +12,26 @@
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="85"/>
-            <RowDefinition Height="85"/>
-            <RowDefinition Height="85"/>
-            <RowDefinition Height="85"/>
-            <RowDefinition Height="85"/>
+            <RowDefinition Height="135"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
 
         <yummy:PancakeView 
                             Grid.Row="0"
-                            Margin="5,15,5,0"
-            BackgroundColor="#7b8d7f"
+                            Margin="10,15,10,0"
+            BackgroundColor="#ebebe0"
                             CornerRadius="15">
             <StackLayout Orientation="Horizontal">
                 <Image Source="info" Margin="10"/>
                 <Button 
-                        Margin="0,0,10,0"
+                        Margin="0,0,40,0"
                         BackgroundColor="Transparent"
-                        Text="Информация о специальности"
+                        Text="Информация &#10; о специальности"
+                        
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand"
                         TextColor="Black"
@@ -41,15 +42,15 @@
 
         <yummy:PancakeView 
                             Grid.Row="1"
-                            Margin="5,0"
-            BackgroundColor="#7b8d7f"
+                            Margin="10,0"
+            BackgroundColor="#ebebe0"
                             CornerRadius="15">
             <StackLayout Orientation="Horizontal">
                 <Image Source="checklist" Margin="10"/>
                 <Button 
                     Margin="0,0,40,0"
                     BackgroundColor="Transparent"
-                    Text="Квест игра"
+                    Text="Квест тест"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
                     TextColor="Black"
@@ -60,8 +61,8 @@
 
         <yummy:PancakeView 
                             Grid.Row="2"
-                            Margin="5,0"
-            BackgroundColor="#7b8d7f"
+                            Margin="10,0"
+            BackgroundColor="#ebebe0"
                             CornerRadius="15">
             <StackLayout Orientation="Horizontal">
                 <Image Source="folder" Margin="10"/>
@@ -78,8 +79,8 @@
 
         <yummy:PancakeView 
                             Grid.Row="3"
-                            Margin="5,0"
-            BackgroundColor="#7b8d7f"
+                            Margin="10,0"
+            BackgroundColor="#ebebe0"
                             CornerRadius="15">
             <StackLayout Orientation="Horizontal">
                 <Image Source="roadmap" Margin="10"/>
@@ -96,8 +97,8 @@
 
         <yummy:PancakeView 
                             Grid.Row="4"
-                            Margin="5,0"
-            BackgroundColor="#7b8d7f"
+                            Margin="10,0"
+            BackgroundColor="#ebebe0"
                             CornerRadius="15">
             <StackLayout Orientation="Horizontal">
                 <Image Source="college" Margin="10"/>
@@ -107,7 +108,8 @@
                     Text="Информация о колледже"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    TextColor="Black"/>
+                    TextColor="Black"
+                    Clicked="Button_ClickedCollegeInfo"/>
             </StackLayout>
         </yummy:PancakeView>
         <!--<Button Margin="5,0" Grid.Row="4"  Text="Информация о колледже"/>-->

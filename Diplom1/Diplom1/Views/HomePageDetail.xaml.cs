@@ -26,6 +26,11 @@ namespace Diplom1.Views
         {
             await Navigation.PushAsync(new QuestFirstPageView());
         }
+
+        private async void Button_ClickedCollegeInfo(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InfoCollegeView());
+        }
     }
     
 }

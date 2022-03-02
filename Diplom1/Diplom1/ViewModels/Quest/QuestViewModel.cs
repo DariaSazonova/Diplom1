@@ -17,6 +17,7 @@ namespace Diplom1.ViewModels.Quest
         private GetQuestQuestions getQuestions = new();
         public QuestViewModel(int level)
         {
+
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
             var js = JObject.Parse(jsString);
             
@@ -30,6 +31,7 @@ namespace Diplom1.ViewModels.Quest
                     listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString())
                 }
             };
+            
         }
 
         public float progress

@@ -8,6 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#7b8d7f</Color>
+
+            <!--<Color x:Key="Primary">#ebebe0</Color>-->
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="#cacecd"/>
                 <Setter Property="BarTextColor" Value="Black"   />

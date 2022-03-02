@@ -13,13 +13,11 @@ namespace Diplom1
         public App()
         {
             InitializeComponent();
-
-            
-            //MainPage = new AvtorizationPage();
         }
 
         protected override void OnStart()
         {
+            //MainPage = new OpenGLPage();
             NavigationAsync();
         }
         private  void NavigationAsync()
@@ -27,6 +25,7 @@ namespace Diplom1
             bool current = PreferencesApp.findLogin() && PreferencesApp.findPassword() && PreferencesApp.findUserID();
             if (current)
             {
+               
                 MainPage = new HomePage();
             }
             else MainPage = new AvtorizationPage();

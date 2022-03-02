@@ -21,10 +21,9 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-
                 </StackLayout>
             </Grid>
-            <StackLayout
+            <StackLayout 
                 x:Name="ParStackLayout" 
                  Margin="25,80,25,0" 
                  BindableLayout.ItemsSource="{Binding model}" 
@@ -40,6 +39,7 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
             <StackLayout 
+                Opacity="0" TranslationY="100"
                 x:Name="QuestionList" 
                 Margin="25,0" 
                 BindableLayout.ItemsSource="{Binding listQuestions}" 
@@ -48,12 +48,11 @@
                     <DataTemplate>
                         <Grid>
                             <Grid.RowDefinitions>
-
                                 <RowDefinition Height="250"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <Label  x:Name="LabelQuestion"
+                            <Label x:Name="LabelQuestion"
                             TextColor="Black"
                             FontSize="Medium" 
                             Text="{Binding question}" 
@@ -62,7 +61,7 @@
                             VerticalTextAlignment="Center"/>
 
                             <ListView  
-                                 
+                                
                                 VerticalScrollBarVisibility="Never" 
                                 HasUnevenRows="True" 
                                 SeparatorColor="White"  
@@ -111,7 +110,7 @@
                     </yummy:PancakeView>
 
                     <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
-                        <Label TextColor="Black" Text="идёт проверка" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label TextColor="Black" Text="Идёт проверка" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     </yummy:PancakeView>
                 </StackLayout>
             </AbsoluteLayout>

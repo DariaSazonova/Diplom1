@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.QuestResult" BackgroundColor="White" NavigationPage.HasNavigationBar="False" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="100" />
+            <RowDefinition />
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ImageButton
+            Source="x.png"
+            Clicked="BackButton_Clicked"
+            Grid.Row="0"
+            Grid.Column="1"
+            BackgroundColor="Transparent"
+            Margin="150,20,0,0"/>
+        <Frame 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2"
+            BackgroundColor="#f2d9d9"
+            CornerRadius="25"
+            Margin="10"
+            >
+            <Label 
+                TextColor="Black" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"  
+                FontSize="25" 
+                Text="Результаты вашего теста"/>
+        </Frame>
+       
+        <Label 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            TextColor="Black"
+            FontAttributes="Bold"
+            FontSize="20"
+            Margin="20, 40"
+            HorizontalTextAlignment="Center"
+            Text="{Binding ResultTest}"/>
+        <Label 
+            Grid.Row="3" 
+            FontAttributes="Italic"
+            Margin="30"
+            Grid.Column="0" 
+            TextColor="Black"
+            Text="{Binding aboutTest}"/>
+        <Frame 
+            Grid.Row="3" 
+            Grid.Column="1" 
+            Padding="0"
+            Margin="0,0,0,0"
+            BackgroundColor="Transparent"
+            >
+            <Image 
+                VerticalOptions="End"
+                Source="{Binding ImageSource}"
+                IsAnimationPlaying="True" 
+                Aspect="AspectFit" 
+                Margin="0,0,0,-9"
+                />
+        </Frame>
+        <!--BackgroundColor="#9AB2CC"-->
+
+        <AbsoluteLayout Grid.RowSpan="3" IsVisible="{Binding IndicatorIsVisible}">
+            <BoxView  Opacity="0.7" BackgroundColor="Black" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+
+                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
+                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
+                    </Frame>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
+                    <Label TextColor="Black" Text="Загрузка ..." FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
+
+    </Grid>
+</ContentPage>

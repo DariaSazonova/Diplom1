@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diplom1.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,10 @@ namespace Diplom1.Views
         public HomePage()
         {
             InitializeComponent();
+            if (PreferencesApp.role == "Абитуриент")
+                Detail = new NavigationPage(new HomePageDetail());
+            else if (PreferencesApp.role == "Администратор")
+                Detail = new NavigationPage(new HomePageDetailAdmin());
 
         }
     }

@@ -16,5 +16,25 @@ namespace Diplom1.Views
         {
             InitializeComponent();
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await FadeAnimateY(UniversityName);
+            await FadeAnimateY(StudentInmage);
+            await FadeAnimateY(SpecialityName);
+            await FadeAnimateY(YearsLabel);
+            await FadeAnimateY(KvalInfo);
+            await FadeAnimateY(ProfInfo);
+            await FadeAnimateY(CostInfo);
+        }
+        private static async Task FadeAnimateY(View view)
+        {
+            await Task.WhenAll
+               (
+                    view.FadeTo(1, 350),
+                    view.TranslateTo(0, 0, 350)
+               );
+        }
     }
 }

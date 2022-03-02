@@ -19,14 +19,35 @@ namespace Diplom1.Views
     {
         public QuestViewModel viewModel;
         private int count;
+        private int Level;
         public QuestView(int level)
         {
             InitializeComponent();
             QuestViewModel vm = new(level);
+            Level = level;
             viewModel = vm; 
             BindingContext = viewModel;
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
 
+
+
+
+            await FadeAnimateY(QuestionList);
+
+
+
+        }
+        private static async Task FadeAnimateY(View view)
+        {
+            await Task.WhenAll
+               (
+                    view.FadeTo(1, 350),
+                    view.TranslateTo(0, 0, 350)
+               );
+        }
         private async void ListButtons_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var tapped = e.Item;
@@ -51,7 +72,7 @@ namespace Diplom1.Views
 
                 if (count == viewModel.model[0].listQuestions.Count())
                 {
-
+                    viewModel.IndicatorIsVisible = true;
                     double countTrueAnswers = viewModel.model[0].listQuestions.Where(l => l.IsAnswered == true).Count();
                     double countAll = viewModel.model[0].listQuestions.Count();
                     var Result = Math.Round(countTrueAnswers / countAll, 3).ToString().Replace(",",".");
@@ -62,17 +83,23 @@ namespace Diplom1.Views
                         var response = await client.PostAsync(RequestStrings.postQuestResult+$"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}", null);
                         if (response.IsSuccessStatusCode)
                         {
-                            await Application.Current.MainPage.DisplayAlert("Результа", $"{countTrueAnswers} из  {countAll}", "ок");
-                            await Navigation.PopAsync();
+                            //await Application.Current.MainPage.DisplayAlert("Результа", $"{countTrueAnswers} из  {countAll}", "ок");
+
+                            //await Navigation.PopAsync();
+                            await Navigation.PushAsync(new QuestResult(Convert.ToInt32(countTrueAnswers), Convert.ToInt32(countAll), Level));
+                            viewModel.IndicatorIsVisible = false;
                         }
                         else
                         {
                             await Application.Current.MainPage.DisplayAlert("Ошибка", $"Не удалось отправить данные", "ок");
                             await Navigation.PopAsync();
+                            viewModel.IndicatorIsVisible = false;
                         }
                     }
                 }
             }
         }
+
+        
     }
 }

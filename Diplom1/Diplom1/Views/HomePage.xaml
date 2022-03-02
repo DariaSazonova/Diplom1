@@ -7,11 +7,5 @@
     <pages:HomePageFlyout x:Name="FlyoutPage" />
      
     </FlyoutPage.Flyout>
-  <FlyoutPage.Detail>
-    <NavigationPage>
-      <x:Arguments>
-        <pages:HomePageDetail />
-      </x:Arguments>
-    </NavigationPage>
-  </FlyoutPage.Detail>
+  
 </FlyoutPage>
