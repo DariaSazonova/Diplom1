@@ -1,4 +1,7 @@
+CocosSharp.dll
 FormsViewGroup.dll
+Lidgren.Network.dll
+MonoGame.Framework.dll
 Plugin.Connectivity.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll
@@ -52,12 +55,14 @@ Xamarin.AndroidX.VectorDrawable.dll
 Xamarin.AndroidX.VersionedParcelable.dll
 Xamarin.AndroidX.ViewPager.dll
 Xamarin.AndroidX.ViewPager2.dll
+Xamarin.CommunityToolkit.dll
 Xamarin.Essentials.dll
 Xamarin.Forms.PancakeView.dll
 Xamarin.Forms.Platform.Android.dll
 Xamarin.Forms.Platform.dll
 Xamarin.Google.Android.Material.dll
 Xamarin.Google.Guava.ListenableFuture.dll
+OpenTK-1.0.dll
 androidx.versionedparcelable.versionedparcelable.aar
 androidx.arch.core.core-runtime.aar
 androidx.lifecycle.lifecycle-runtime.aar

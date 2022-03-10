@@ -16,20 +16,26 @@ namespace Diplom1.Views
         {
             InitializeComponent();
         }
-
-        private void StudentsRating_Refreshing(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-
+            base.OnAppearing();
+            Indicator.IsVisible = false;
+        }
+        private void Button_ClickedLevel1(object sender, EventArgs e)
+        {
+            Indicator.IsVisible = true;
+            Navigation.PushAsync(new AbbRating(1));
+            Indicator.IsVisible = true;
         }
 
-        private void StudentsRating_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void Button_ClickedLevel2(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new AbbRating(2));
         }
 
-        private void StudentsRating_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void Button_ClickedLevel3(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new AbbRating(3));
         }
     }
 }

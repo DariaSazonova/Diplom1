@@ -86,6 +86,8 @@ namespace Diplom1.ViewModels.Quest
                 }
             }
         }
+
+        
         protected void OnPropertyChanged(string propName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));

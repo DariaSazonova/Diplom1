@@ -11,7 +11,7 @@
 
             <!--<Color x:Key="Primary">#ebebe0</Color>-->
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#cacecd"/>
+                <Setter Property="BarBackgroundColor" Value="White"/>
                 <Setter Property="BarTextColor" Value="Black"   />
             </Style>
             <Style TargetType="Button">

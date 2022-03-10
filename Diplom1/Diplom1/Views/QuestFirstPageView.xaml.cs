@@ -35,6 +35,7 @@ namespace Diplom1.Views
         private async void Button_ClickedLevel2(object sender, EventArgs e)
         {
             Indicator.IsVisible = true;
+            await Task.Delay(1000);
             await Navigation.PushAsync(new QuestView(2));
         }
 

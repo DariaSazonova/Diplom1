@@ -36,6 +36,10 @@ namespace Diplom1.Client
         {
             return $"{client}/QuestRating/{idApplicant}";
         }
+        public static string getAbbRating(int level)
+        {
+            return $"{client}/AddRating?level={level}";
+        }
 
     }
 }

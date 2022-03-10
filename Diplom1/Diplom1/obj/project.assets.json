@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
+      "CocosSharp/1.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp81/CocosSharp.dll": {},
+          "lib/portable-net45+win+wpa81+wp81/MonoGame.Framework.dll": {},
+          "lib/portable-net45+win+wpa81+wp81/box2d.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp81/CocosSharp.dll": {},
+          "lib/portable-net45+win+wpa81+wp81/MonoGame.Framework.dll": {},
+          "lib/portable-net45+win+wpa81+wp81/box2d.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -1239,6 +1252,18 @@
           "lib/netstandard1.0/Plugin.Connectivity.dll": {}
         }
       },
+      "Xamarin.CommunityToolkit/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2291"
+        },
+        "compile": {
+          "lib/netstandard2.1/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Xamarin.CommunityToolkit.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.7.1": {
         "type": "package",
         "dependencies": {
@@ -1284,6 +1309,54 @@
     }
   },
   "libraries": {
+    "CocosSharp/1.7.1": {
+      "sha512": "ld9x++vo1xqAVb7jy6QZ5VBJ+D5FZhFwjMiMH7OLc+ss0U71hCWRaT/lVKRj2KELI9HoZpf9H0e8mYOYAYZayA==",
+      "type": "package",
+      "path": "cocossharp/1.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cocossharp.1.7.1.nupkg.sha512",
+        "cocossharp.nuspec",
+        "lib/MonoAndroid10/CocosSharp.XML",
+        "lib/MonoAndroid10/CocosSharp.dll",
+        "lib/MonoAndroid10/Lidgren.Network.dll",
+        "lib/MonoAndroid10/Lidgren.Network.xml",
+        "lib/MonoAndroid10/MonoGame.Framework.dll",
+        "lib/MonoAndroid10/MonoGame.Framework.xml",
+        "lib/Xamarin.iOS10/CocosSharp.XML",
+        "lib/Xamarin.iOS10/CocosSharp.dll",
+        "lib/Xamarin.iOS10/Lidgren.Network.dll",
+        "lib/Xamarin.iOS10/Lidgren.Network.xml",
+        "lib/Xamarin.iOS10/MonoGame.Framework.Net.dll",
+        "lib/Xamarin.iOS10/MonoGame.Framework.Net.xml",
+        "lib/Xamarin.iOS10/MonoGame.Framework.dll",
+        "lib/Xamarin.iOS10/MonoGame.Framework.xml",
+        "lib/Xamarin.iOS10/box2d.dll",
+        "lib/portable-net45+win+wpa81+wp81/CocosSharp.dll",
+        "lib/portable-net45+win+wpa81+wp81/MonoGame.Framework.dll",
+        "lib/portable-net45+win+wpa81+wp81/box2d.dll",
+        "lib/wpa81/CocosSharp.XML",
+        "lib/wpa81/CocosSharp.dll",
+        "lib/wpa81/MonoGame.Framework.Net.dll",
+        "lib/wpa81/MonoGame.Framework.Net.xml",
+        "lib/wpa81/MonoGame.Framework.dll",
+        "lib/wpa81/MonoGame.Framework.xml",
+        "lib/wpa81/SharpDX.DXGI.dll",
+        "lib/wpa81/SharpDX.DXGI.xml",
+        "lib/wpa81/SharpDX.Direct2D1.dll",
+        "lib/wpa81/SharpDX.Direct2D1.xml",
+        "lib/wpa81/SharpDX.Direct3D11.dll",
+        "lib/wpa81/SharpDX.Direct3D11.xml",
+        "lib/wpa81/SharpDX.MediaFoundation.dll",
+        "lib/wpa81/SharpDX.MediaFoundation.xml",
+        "lib/wpa81/SharpDX.XAudio2.dll",
+        "lib/wpa81/SharpDX.XAudio2.xml",
+        "lib/wpa81/SharpDX.dll",
+        "lib/wpa81/SharpDX.xml",
+        "lib/wpa81/box2d.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -4754,6 +4827,47 @@
         "xam.plugin.connectivity.nuspec"
       ]
     },
+    "Xamarin.CommunityToolkit/2.0.0": {
+      "sha512": "hY5MqkmipQ7Q6FikK3E4YnBj9llqvQv10sT8LhYcf2oMwnalWvCHuoPujjmCP/YmxPNbQm4JwWYp7CBuvzHMVw==",
+      "type": "package",
+      "path": "xamarin.communitytoolkit/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "analyzers/dotnet/xct/cs/Xamarin.CommunityToolkit.SourceGenerator.dll",
+        "icon.png",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
+        "lib/net471/Xamarin.CommunityToolkit.dll",
+        "lib/net471/Xamarin.CommunityToolkit.xml",
+        "lib/net472/Xamarin.CommunityToolkit.dll",
+        "lib/net472/Xamarin.CommunityToolkit.xml",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.dll",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
+        "lib/tizen40/Xamarin.CommunityToolkit.dll",
+        "lib/tizen40/Xamarin.CommunityToolkit.xml",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.dll",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.pri",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.xml",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
+        "xamarin.communitytoolkit.2.0.0.nupkg.sha512",
+        "xamarin.communitytoolkit.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.7.1": {
       "sha512": "u7pUgvHJKTYo5ATiwRZvYviq2O0AQXIqxdna+sMxqidfWpbD7FBgFOLNAZzWKSll/AQBPeDrqLAWZNLq+ztpmQ==",
       "type": "package",
@@ -5051,8 +5165,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
+      "CocosSharp >= 1.7.1",
       "Newtonsoft.Json >= 13.0.1",
       "Xam.Plugin.Connectivity >= 3.2.0",
+      "Xamarin.CommunityToolkit >= 2.0.0",
       "Xamarin.Essentials >= 1.7.1",
       "Xamarin.Forms >= 5.0.0.2337",
       "Xamarin.Forms.PancakeView >= 2.3.0.759"
@@ -5102,6 +5218,10 @@
       "netstandard2.1": {
         "targetAlias": "netstandard2.1",
         "dependencies": {
+          "CocosSharp": {
+            "target": "Package",
+            "version": "[1.7.1, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
@@ -5109,6 +5229,10 @@
           "Xam.Plugin.Connectivity": {
             "target": "Package",
             "version": "[3.2.0, )"
+          },
+          "Xamarin.CommunityToolkit": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",
@@ -5141,5 +5265,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"CocosSharp 1.7.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETStandard,Version=v2.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "CocosSharp",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.1"
+      ]
+    }
+  ]
 }

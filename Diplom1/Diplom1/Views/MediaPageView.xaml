@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.MediaPageView" BackgroundColor="White">
+    <Grid>
+        <ScrollView>
+            <Grid>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                </Grid.RowDefinitions>
+                <Label TextColor="Black"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" 
+                       FontSize="16" 
+                       Text="Приемная кампания"
+                       Grid.Row="0"
+                       FontAttributes="Bold"
+                       Margin="10,0"/>
+                <WebView
+                    x:Name="VideoPriem"
+                    Source="https://www.youtube.com/embed/oWnCb-tf5-g"
+                    Navigated="VideoPriem_Navigated" 
+                    Navigating="VideoPriem_Navigating"
+                    Grid.Row="1"
+                    />
+                <Label 
+                    TextColor="Black" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    FontSize="16" 
+                    Text="Колледж УКИТ" 
+                    Margin="10,0"
+                    Grid.Row="2"
+                    FontAttributes="Bold"/>
+                <WebView 
+                    Grid.Row="3"   
+                    Navigated="VideoPriem_Navigated" 
+                    Navigating="VideoPriem_Navigating"
+                    Source="https://www.youtube.com/embed/yj2Lud0abEg"/>
+                <Label 
+                    Text="Как спланировать свою будущую жизнь после 9 класса в условиях пандемии и финансовой нестабильности?"
+                    TextColor="Black" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    Margin="10,0"
+                    FontSize="16"
+                    Grid.Row="4"
+                    FontAttributes="Bold"/>
+                <WebView 
+                    Grid.Row="5"   
+                    Navigated="VideoPriem_Navigated" 
+                    Navigating="VideoPriem_Navigating"
+                    Source="https://www.youtube.com/embed/Xi0I6f5aJR0"/>
+                <Label 
+                    Text="Программист - профессия будущего"
+                    TextColor="Black" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    Margin="10,0"
+                    FontSize="16"
+                    Grid.Row="6"
+                    FontAttributes="Bold"/>
+                <WebView 
+                    Grid.Row="7"   
+                    Navigated="VideoPriem_Navigated" 
+                    Navigating="VideoPriem_Navigating"
+                    Source="https://www.youtube.com/embed/DxP0IJELQcE"/>
+                <Label 
+                    Text="Как обезопасить себя в сети Интернет?"
+                    TextColor="Black" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    Margin="10,0"
+                    FontSize="16"
+                    Grid.Row="8"
+                    FontAttributes="Bold"/>
+                <WebView 
+                    Grid.Row="9"   
+                    Navigated="VideoPriem_Navigated" 
+                    Navigating="VideoPriem_Navigating"
+                    Source="https://www.youtube.com/embed/gJmrRTnk1mQ"/>
+            </Grid>
+        </ScrollView>
+        <AbsoluteLayout  x:Name="Indicator">
+            <BoxView  Opacity="0.7" BackgroundColor="Black" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+
+                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
+                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
+                    </Frame>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
+                    <Label TextColor="Black" Text="Загрузка ..." FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>

@@ -3,8 +3,11 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Diplom1.Android.dll" comes first in this list. */
 		"Diplom1.Android.dll",
+		"CocosSharp.dll",
 		"Diplom1.dll",
 		"FormsViewGroup.dll",
+		"Lidgren.Network.dll",
+		"MonoGame.Framework.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.Connectivity.Abstractions.dll",
 		"Plugin.Connectivity.dll",
@@ -60,6 +63,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.VersionedParcelable.dll",
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.AndroidX.ViewPager2.dll",
+		"Xamarin.CommunityToolkit.dll",
 		"Xamarin.Essentials.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.PancakeView.dll",
@@ -68,6 +72,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.Google.Android.Material.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"OpenTK-1.0.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

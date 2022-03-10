@@ -9,14 +9,32 @@
     ".NETStandard,Version=v2.1/": {
       "Diplom1/1.0.0": {
         "dependencies": {
+          "CocosSharp": "1.7.1",
           "Newtonsoft.Json": "13.0.1",
           "Xam.Plugin.Connectivity": "3.2.0",
+          "Xamarin.CommunityToolkit": "2.0.0",
           "Xamarin.Essentials": "1.7.1",
           "Xamarin.Forms": "5.0.0.2337",
           "Xamarin.Forms.PancakeView": "2.3.0.759"
         },
         "runtime": {
           "Diplom1.dll": {}
+        }
+      },
+      "CocosSharp/1.7.1": {
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp81/CocosSharp.dll": {
+            "assemblyVersion": "1.7.1.0",
+            "fileVersion": "1.7.1.0"
+          },
+          "lib/portable-net45+win+wpa81+wp81/MonoGame.Framework.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/portable-net45+win+wpa81+wp81/box2d.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -864,6 +882,17 @@
           }
         }
       },
+      "Xamarin.CommunityToolkit/2.0.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2337"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Xamarin.CommunityToolkit.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Xamarin.Essentials/1.7.1": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -910,6 +939,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CocosSharp/1.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ld9x++vo1xqAVb7jy6QZ5VBJ+D5FZhFwjMiMH7OLc+ss0U71hCWRaT/lVKRj2KELI9HoZpf9H0e8mYOYAYZayA==",
+      "path": "cocossharp/1.7.1",
+      "hashPath": "cocossharp.1.7.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -1449,6 +1485,13 @@
       "sha512": "sha512-ZV45TaBTCJg7XQNEl3fPyyJcuMMhdDEQ6BCLc/5pMuTv38M226ER0WTu5sbmba8jlliDuzeRqkRFHwrGdWAgyg==",
       "path": "xam.plugin.connectivity/3.2.0",
       "hashPath": "xam.plugin.connectivity.3.2.0.nupkg.sha512"
+    },
+    "Xamarin.CommunityToolkit/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hY5MqkmipQ7Q6FikK3E4YnBj9llqvQv10sT8LhYcf2oMwnalWvCHuoPujjmCP/YmxPNbQm4JwWYp7CBuvzHMVw==",
+      "path": "xamarin.communitytoolkit/2.0.0",
+      "hashPath": "xamarin.communitytoolkit.2.0.0.nupkg.sha512"
     },
     "Xamarin.Essentials/1.7.1": {
       "type": "package",

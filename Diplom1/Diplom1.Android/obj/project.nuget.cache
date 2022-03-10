@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pAuVI96BCrzpdiQ+h5KdCBCbIYAkpZ6rn9NxfZfcpnynI1CJZhEHapek6SGgeSKfQGA5kAP/EMV9PTmiEDYk9g==",
+  "dgSpecHash": "xqMihKeXsleT7d2WrB2nBkyofFsBnA9Fa9gQKsFmaLW0l6QqpZ7KXKK05EPJzZFbG3KsFoPV808mz7Bgoh9xjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\123\\source\\repos\\Diplom1\\Diplom1\\Diplom1.Android\\Diplom1.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\123\\.nuget\\packages\\cocossharp\\1.7.1\\cocossharp.1.7.1.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
@@ -61,6 +62,7 @@
     "C:\\Users\\123\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.8\\xamarin.androidx.versionedparcelable.1.1.1.8.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.8\\xamarin.androidx.viewpager.1.0.0.8.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
+    "C:\\Users\\123\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.0\\xamarin.communitytoolkit.2.0.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",

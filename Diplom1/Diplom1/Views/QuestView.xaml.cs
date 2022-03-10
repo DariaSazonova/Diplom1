@@ -31,14 +31,7 @@ namespace Diplom1.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
-
-
-
             await FadeAnimateY(QuestionList);
-
-
-
         }
         private static async Task FadeAnimateY(View view)
         {

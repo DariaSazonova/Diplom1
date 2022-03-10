@@ -50,7 +50,7 @@
                 <Button 
                     Margin="0,0,40,0"
                     BackgroundColor="Transparent"
-                    Text="Квест тест"
+                    Text="Тесты"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
                     TextColor="Black"
@@ -70,6 +70,7 @@
                     Margin="0,0,40,0"
                     BackgroundColor="Transparent"
                     Text="Медиа файлы"
+                    Clicked="Button_ClickedMedia"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
                     TextColor="Black"/>
