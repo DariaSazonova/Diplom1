@@ -7,7 +7,7 @@ namespace Diplom1.Models
 {
     public class ListAbbRatingModel
     {
-        public IEnumerable<AbbRatingModel> list { get; set; } = null;
+        public List<AbbRatingModel> list { get; set; } = new();
         public bool IndicatorIsVisible { get; set; } = false;
     }
     public class AbbRatingModel
@@ -17,5 +17,6 @@ namespace Diplom1.Models
         public string Fio { get; set; }
         public string Phone { get; set; }
         public string level { get; set; }
+        public DateTime date { get; set; }
     }
 }

@@ -21,21 +21,21 @@ namespace Diplom1.Views
             base.OnAppearing();
             Indicator.IsVisible = false;
         }
-        private void Button_ClickedLevel1(object sender, EventArgs e)
+        private async void Button_ClickedLevel1(object sender, EventArgs e)
         {
             Indicator.IsVisible = true;
-            Navigation.PushAsync(new AbbRating(1));
+            await Navigation.PushAsync(new AbbRating(1));
             Indicator.IsVisible = true;
         }
 
-        private void Button_ClickedLevel2(object sender, EventArgs e)
+        private async void Button_ClickedLevel2(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AbbRating(2));
+            await Navigation.PushAsync(new AbbRating(2));
         }
 
-        private void Button_ClickedLevel3(object sender, EventArgs e)
+        private async void Button_ClickedLevel3(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AbbRating(3));
+            await Navigation.PushAsync(new AbbRating(3));
         }
     }
 }

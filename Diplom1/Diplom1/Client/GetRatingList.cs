@@ -11,13 +11,13 @@ namespace Diplom1.Client
 {
     public class GetRating
     {
-        public async Task<string> GetRatingList(int level)
+        public async Task<string> GetRatingList(int level, int applicantid)
         {
             if (GetClientConnection.CheckConnection())
             {
                 
                 using HttpClient client = new();
-                HttpResponseMessage result = await client.GetAsync(RequestStrings.getAbbRating(level));
+                HttpResponseMessage result = await client.GetAsync(RequestStrings.getAbbRating(level, applicantid));
                 if (result.IsSuccessStatusCode)
                 {
                     var res = await result.Content.ReadAsStringAsync();

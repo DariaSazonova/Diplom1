@@ -17,15 +17,30 @@ namespace Diplom1.ViewModels.AbbRating
         public AbbRatingModel model { get; set; }
         public GetRating GetRating = new();
 
-        public AbbRatingViewModel(int level)
+        public AbbRatingViewModel(int level, int applicantid=0)
         {
             modellist.IndicatorIsVisible = true;
-            var js = Task.Run(async () => await GetRating.GetRatingList(level)).Result;
-            modellist.list = JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js); 
+            if (level != 0)
+            {
+                var js = Task.Run(async () => await GetRating.GetRatingList(level, applicantid)).Result;
+                modellist.list.AddRange(JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js));
+            }
+            else
+            {
+                for(int i = 1; i < 4; i++)
+                {
+                    var js = Task.Run(async () => await GetRating.GetRatingList(i, applicantid)).Result;
+                    if (js != null)
+                    {
+                        var l = JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js);
+                        modellist.list.AddRange(l);
+                    }
+                }
+            }
             modellist.IndicatorIsVisible = false;
         }
         
-        public IEnumerable<AbbRatingModel> ListR
+        public List<AbbRatingModel> ListR
         {
             get { return modellist.list; }
             set
@@ -100,6 +115,21 @@ namespace Diplom1.ViewModels.AbbRating
                 {
                     model.level = value;
                     OnPropertyChanged("level");
+                }
+            }
+        }
+        public DateTime date
+        {
+            get
+            {
+                return model.date;
+            }
+            set
+            {
+                if (model.date != value)
+                {
+                    model.date = value;
+                    OnPropertyChanged("date");
                 }
             }
         }

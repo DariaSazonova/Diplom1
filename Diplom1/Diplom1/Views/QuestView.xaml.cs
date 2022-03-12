@@ -73,7 +73,7 @@ namespace Diplom1.Views
                     
                     using(HttpClient client = new())
                     {
-                        var response = await client.PostAsync(RequestStrings.postQuestResult+$"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}", null);
+                        var response = await client.PostAsync(RequestStrings.postQuestResult+$"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}&date={DateTime.Now}", null);
                         if (response.IsSuccessStatusCode)
                         {
                             //await Application.Current.MainPage.DisplayAlert("Результа", $"{countTrueAnswers} из  {countAll}", "ок");
@@ -85,7 +85,7 @@ namespace Diplom1.Views
                         else
                         {
                             await Application.Current.MainPage.DisplayAlert("Ошибка", $"Не удалось отправить данные", "ок");
-                            await Navigation.PopAsync();
+                            Application.Current.MainPage = new Diplom1.Views.HomePage();
                             viewModel.IndicatorIsVisible = false;
                         }
                     }

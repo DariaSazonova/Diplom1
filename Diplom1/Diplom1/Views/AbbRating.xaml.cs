@@ -14,10 +14,10 @@ namespace Diplom1.Views
     public partial class AbbRating : ContentPage
     {
         public AbbRatingViewModel viewModel;
-        public AbbRating(int level)
+        public AbbRating(int level, int appid=0)
         {
             InitializeComponent();
-            viewModel = new(level);
+            viewModel = new(level, appid);
             BindingContext = viewModel;
         }
         private void StudentsRating_Refreshing(object sender, EventArgs e)
