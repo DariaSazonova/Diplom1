@@ -703,3 +703,12 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_C
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\registration.png
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\download.png
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Buffers.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Memory.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Text.Encodings.Web.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Text.Json.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Threading.Tasks.Extensions.dll

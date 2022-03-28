@@ -27,11 +27,8 @@ namespace Diplom1.ViewModels.Quest
             get { return Indicator; }
             set
             {
-                if (Indicator != value)
-                {
-                    Indicator = value;
-                    OnPropertyChanged("IndicatorVisibility");
-                }
+                Indicator = value;
+                OnPropertyChanged("IndicatorVisibility");
             }
         }
         protected void OnPropertyChanged(string propName)

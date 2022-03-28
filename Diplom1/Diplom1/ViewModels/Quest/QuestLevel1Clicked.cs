@@ -25,7 +25,7 @@ namespace Diplom1.ViewModels.Quest
         {
             vm.IndicatorVisibility = true;
             Application.Current.MainPage = new Diplom1.Views.HomePage("level1");
-            vm.IndicatorVisibility = false;
+            //vm.IndicatorVisibility = false;
         }
     }
 }

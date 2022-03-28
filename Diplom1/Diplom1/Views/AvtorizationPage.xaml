@@ -5,7 +5,7 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Diplom1.Views.AvtorizationPage" BackgroundColor="White"
              NavigationPage.HasNavigationBar="False" NavigationPage.HasBackButton="False"
-             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+             >
     <Grid Margin="0" Padding="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,11 +23,12 @@
 
         <Grid Grid.Row="2">
 
-            <yummy:PancakeView BackgroundColor="Gray" HeightRequest="500"  CornerRadius="25,25,0,0" x:Name="StackPageLogin">
+            <yummy:PancakeView BackgroundColor="Gray" HeightRequest="500"  CornerRadius="25,25,0,0" x:Name="StackPageLogin" Opacity="0" TranslationX="-60">
                 <StackLayout VerticalOptions="CenterAndExpand">
                     <yummy:PancakeView
                         x:Name="username"
                         Margin="25,25,25,10"
+                        Opacity="0" TranslationX="-60"
                         Padding="10,0,0,0"
                         BackgroundColor="LightGray"
                         CornerRadius="15"
@@ -50,6 +51,7 @@
                         Margin="25,0"
                         Padding="10,0,0,0"
                         BackgroundColor="LightGray"
+                        Opacity="0" TranslationX="-60"
                         CornerRadius="15"
                         MinimumHeightRequest="45"
                         HeightRequest="45">
@@ -64,12 +66,12 @@
                         </Grid>
                     </yummy:PancakeView>
 
-                    <StackLayout  x:Name="ButtonSign">
+                    <StackLayout  x:Name="ButtonSign" Opacity="0" TranslationX="-60">
                         <Button HeightRequest="40" Text="Войти" Command="{Binding SignIn}" IsEnabled="{Binding IsButtonEnabled}" BackgroundColor="LightGray" TextColor="White" CornerRadius="10" FontAttributes="Bold" TextTransform="None" Margin="25,20,25,5" />
                     </StackLayout>
 
-                    <StackLayout x:Name="ButtonReg">
-                        <Button HeightRequest="40" Text="Регистрация" Command="{Binding SignIn}" IsEnabled="{Binding IsButtonEnabled}" BackgroundColor="LightGray" TextColor="White" CornerRadius="10" FontAttributes="Bold" TextTransform="None" Margin="25,0,25,10" />
+                    <StackLayout x:Name="ButtonReg" Opacity="0" TranslationX="-60">
+                        <Button HeightRequest="40" Text="Регистрация" Clicked="Button_ClickedRegistatration"  TextColor="White" CornerRadius="10" FontAttributes="Bold" TextTransform="None" Margin="25,0,25,10" />
                     </StackLayout>
 
 

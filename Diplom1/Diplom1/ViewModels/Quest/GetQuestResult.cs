@@ -31,29 +31,23 @@ namespace Diplom1.ViewModels.Quest
                         if (listRes[0].Result > listRes[1].Result)
                         {
                             toReturn = "Поздравляем вы улучшили свой результат!";
-                            vm.ImageSource = "ClapBear.gif";
                         }
                         else if (listRes[0].Result == 1)
                         {
                             toReturn = "Отличный результат!";
-                            vm.ImageSource = "ClapBear.gif";
                         }
                         else if(listRes[0].Result == 0)
                         {
                             toReturn = "К сожалению в прошлый раз Ваш результат был лучше.\n Но Вы всегда можете попробовать еще раз!";
-                            vm.ImageSource = "sadBear.gif";
                             
                         }
                         else if (listRes[0].Result == listRes[1].Result)
                         {
                             toReturn = "Стабильность признак мастерства!";
-                            vm.ImageSource = "ClapBear.gif";
                         }
                         else
                         {
                             toReturn = "К сожалению в прошлый раз Ваш результат был лучше.\n Но Вы всегда можете попробовать еще раз!";
-                            vm.ImageSource = "sadBear.gif";
-                            
                         }
                     }
                     else

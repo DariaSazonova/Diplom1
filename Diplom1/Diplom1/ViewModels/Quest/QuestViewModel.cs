@@ -13,28 +13,24 @@ namespace Diplom1.ViewModels.Quest
     public class QuestViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public List<QuestTestModel> model { get; private set; }
+        public List<QuestTestModel> model { get; private set; } = new();
         private GetQuestQuestions getQuestions = new();
         public QuestViewModel(int level)
         {
-
+            model.Add(new QuestTestModel());
+            IndicatorIsVisible = true;
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
             var js = JObject.Parse(jsString);
-            
 
 
-            model = new()
-            {
-                new QuestTestModel 
-                {
-                    idQuest = Convert.ToInt32(js["idQuest"]),
-                    listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString())
-                }
-            };
-            
+
+            model[0].idQuest = Convert.ToInt32(js["idQuest"]);
+            model[0].listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+            IndicatorIsVisible = false;
+
         }
 
-        public float progress
+        public float? progress
         {
             set
             {
@@ -70,16 +66,14 @@ namespace Diplom1.ViewModels.Quest
         }
 
 
-        public bool IndicatorIsVisible
+        public bool? IndicatorIsVisible
         {
             get { return model[0].Indicator; }
             set
             {
-                if (model[0].Indicator != value)
-                {
                     model[0].Indicator = value;
                     OnPropertyChanged("IndicatorIsVisible");
-                }
+                
             }
         }
 

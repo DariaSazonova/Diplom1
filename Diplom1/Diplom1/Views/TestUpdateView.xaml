@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.TestUpdateView"
+             xmlns:views="clr-namespace:Diplom1" BackgroundColor="White" Title="Редактировать изменения">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+                 IconImageSource="download.png"
+                 Order="Primary"
+            Clicked="ToolbarItem_ClickedSave"
+                 Priority="0" 
+                />
+    </ContentPage.ToolbarItems>
+    <Grid>
+    <Grid>
+            <ListView Margin="10"  HasUnevenRows="True" SeparatorColor="White"  ItemsSource="{Binding listQuestions}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label TextColor="Black" Text="ВОПРОС"/>
+                                <Frame Padding="7" BackgroundColor="AntiqueWhite" CornerRadius="20">
+                                    <views:BorderlessEntry IsTextPredictionEnabled="False" TextColor="Black" Text="{Binding question}" />
+                                </Frame>
+                                <Label TextColor="Black" Text="Варианты ответов"/>
+                                <ListView  ItemsSource="{Binding answers}"
+                                    SeparatorColor="White" >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell >
+                                                <views:BorderlessEntry TextColor="Black"  Text="{Binding }"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <AbsoluteLayout  IsVisible="{Binding IndicatorIsVisible}">
+            <BoxView  Opacity="0.7" BackgroundColor="Black" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+
+                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
+                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
+                    </Frame>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
+                    <Label TextColor="Black" Text="Идёт проверка" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
+
+    </Grid>
+</ContentPage>

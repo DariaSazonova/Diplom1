@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Diplom1"
+              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="Diplom1.Views.RegistarationView" BackgroundColor="White" Title="Регистрация">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ImageButton 
+                    VerticalOptions="End" 
+                    HorizontalOptions="End" 
+                    BackgroundColor="Transparent" 
+                    Grid.Row="0" 
+                    Grid.ColumnSpan="2"
+                    Source="x.png" 
+                    Clicked="ImageButton_ClickedBack"
+                    />
+        <Label Grid.Column="0" Text="Заполните поля:" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1"/>
+        <Image Source="registration.png" Grid.Row="1" Grid.Column="1"/>
+        <yummy:PancakeView x:Name="PancakeView" Opacity="0" TranslationY="60" Margin="0,10,0,0" CornerRadius="30,30,0,0" BackgroundColor="Gray" Grid.Row="2" Grid.ColumnSpan="2">
+            <StackLayout Margin="5, 20">
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        BackgroundColor="LightGray"
+                        Text="{Binding Email}" 
+                        TextColor="Black" 
+                        Placeholder="Почта" 
+                        TextChanged="BorderlessEntry_TextChangedEmail" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Email"/>
+                    </Grid>
+                    </yummy:PancakeView>
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        Text="{Binding Password}"
+                            x:Name="Password"
+                        TextColor="Black" 
+                        Placeholder="Пароль" 
+                        TextChanged="BorderlessEntry_TextChangedPassword" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing" 
+                            IsPassword="True"
+                        Keyboard="Email"/>
+                    </Grid>
+                    
+                </yummy:PancakeView>
+
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="Transparent"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <Label
+                            Text="Пароль должен состоять из латинского алфавита, минимум одной цифры, одной заглавной буквы, и одного символа(не цифра и не буква)"
+                            FontSize="10"
+                            FontAttributes="Italic"
+                            TextColor="White" />
+                    </Grid>
+
+                </yummy:PancakeView>
+
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                            x:Name="AgainPassword"
+                        Text="{Binding PasswordAgain}" 
+                        TextColor="Black" 
+                        Placeholder="Повторите пароль" 
+                        TextChanged="BorderlessEntry_TextChangedPassword" 
+                        PlaceholderColor="#353535" 
+                        IsPassword="True"
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Email"/>
+                    </Grid>
+                </yummy:PancakeView>
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        Text="{Binding Surname}" 
+                        TextColor="Black" 
+                        Placeholder="Фамилия" 
+                        TextChanged="BorderlessEntry_TextChangedIsNull" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Default"/>
+                    </Grid>
+                </yummy:PancakeView>
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        Text="{Binding Name}" 
+                        TextColor="Black" 
+                        Placeholder="Имя" 
+                        TextChanged="BorderlessEntry_TextChangedIsNull" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Default"/>
+                    </Grid>
+                </yummy:PancakeView>
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        Text="{Binding Patronymic}" 
+                        TextColor="Black" 
+                        Placeholder="Отчество" 
+                        TextChanged="BorderlessEntry_TextChangedIsNull" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Default"/>
+                    </Grid>
+                </yummy:PancakeView>
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        Text="{Binding DateOfBirth}" 
+                        TextColor="Black" 
+                        Placeholder="Дата Рождения" 
+                        TextChanged="BorderlessEntry_TextChangedDate" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Numeric"/>
+                    </Grid>
+                    
+                </yummy:PancakeView>
+
+                <yummy:PancakeView
+                            Margin="25,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="LightGray"
+                            CornerRadius="15"
+                            MinimumHeightRequest="45"
+                            HeightRequest="45">
+                    <Grid>
+                        <views:BorderlessEntry 
+                        Text="{Binding Phone}"
+                        MaxLength="12"
+                        Focused="BorderlessEntry_FocusedPhone"
+                        TextColor="Black" 
+                        Placeholder="Номер телефона" 
+                        TextChanged="BorderlessEntry_TextChangedPhone" 
+                        PlaceholderColor="#353535" 
+                        ClearButtonVisibility="WhileEditing"  
+                        Keyboard="Telephone"/>
+                    </Grid>
+
+                </yummy:PancakeView>
+
+                <Button Text="Зарегистрироваться" IsEnabled="True" Margin="20" Clicked="Button_ClickedReg"/>
+            </StackLayout>
+        </yummy:PancakeView>
+        <AbsoluteLayout Grid.ColumnSpan="2"   Grid.RowSpan="3" IsVisible="{Binding IndicatorIsVisible}">
+            <BoxView  Opacity="0.7" BackgroundColor="Black" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+
+                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
+                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
+                    </Frame>
+                </yummy:PancakeView>
+
+                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
+                    <Label TextColor="Black" Text="Подождите пожалуйста" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>

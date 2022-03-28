@@ -15,6 +15,7 @@ namespace Diplom1.ViewModels.Quest
     {
         public async Task<string> getQuestQuestions(int level)
         {
+            await Task.Delay(1000);
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();

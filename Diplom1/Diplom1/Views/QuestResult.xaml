@@ -62,7 +62,7 @@
             >
             <Image 
                 VerticalOptions="End"
-                Source="{Binding ImageSource}"
+                Source="ClapBear.gif"
                 IsAnimationPlaying="True" 
                 Aspect="AspectFit" 
                 Margin="0,0,0,-9"

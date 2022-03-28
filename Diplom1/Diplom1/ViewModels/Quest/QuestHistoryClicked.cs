@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diplom1.Client;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -23,7 +24,8 @@ namespace Diplom1.ViewModels.Quest
         public async void Execute(object parameter)
         {
             vm.IndicatorVisibility = true;
-            Application.Current.MainPage = new Diplom1.Views.HomePage("history");
+            int userId = Convert.ToInt32(PreferencesApp.UserID);
+            Application.Current.MainPage = new Diplom1.Views.AbbRating(0, userId);
             vm.IndicatorVisibility = false;
         }
     }

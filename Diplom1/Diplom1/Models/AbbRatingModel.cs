@@ -17,6 +17,6 @@ namespace Diplom1.Models
         public string Fio { get; set; }
         public string Phone { get; set; }
         public string level { get; set; }
-        public DateTime date { get; set; }
+        public string date { get; set; }
     }
 }

@@ -19,17 +19,16 @@ namespace Diplom1.ViewModels.AbbRating
 
         public AbbRatingViewModel(int level, int applicantid=0)
         {
-            modellist.IndicatorIsVisible = true;
             if (level != 0)
             {
-                var js = Task.Run(async () => await GetRating.GetRatingList(level, applicantid)).Result;
+                var js = Task.Run(async () => await GetRating.GetRatingList( level, applicantid)).Result;
                 modellist.list.AddRange(JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js));
             }
             else
             {
                 for(int i = 1; i < 4; i++)
                 {
-                    var js = Task.Run(async () => await GetRating.GetRatingList(i, applicantid)).Result;
+                    var js = Task.Run(async () => await GetRating.GetRatingList( i, applicantid)).Result;
                     if (js != null)
                     {
                         var l = JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js);
@@ -37,7 +36,6 @@ namespace Diplom1.ViewModels.AbbRating
                     }
                 }
             }
-            modellist.IndicatorIsVisible = false;
         }
         
         public List<AbbRatingModel> ListR
@@ -118,7 +116,7 @@ namespace Diplom1.ViewModels.AbbRating
                 }
             }
         }
-        public DateTime date
+        public string date
         {
             get
             {

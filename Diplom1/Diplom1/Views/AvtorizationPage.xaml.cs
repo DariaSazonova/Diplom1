@@ -22,7 +22,27 @@ namespace Diplom1.Views
             InitializeComponent();
             BindingContext = vm;
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
 
+            await Task.Run(async () =>
+            {
+                await FadeAnimY(StackPageLogin);
+                await FadeAnimY(username);
+                await FadeAnimY(password);
+                await FadeAnimY(ButtonSign);
+                await FadeAnimY(ButtonReg);
+            });
+        }
+        private static async Task FadeAnimY(View view)
+        {
+            await Task.WhenAll
+               (
+                    view.FadeTo(1, 150),
+                    view.TranslateTo(0, 0, 150)
+               );
+        }
         private void BorderlessEntry_TextChangedPassword(object sender, TextChangedEventArgs e)
         {
             if (e.NewTextValue.Length > 7)
@@ -53,6 +73,11 @@ namespace Diplom1.Views
                 if (IsPassword == true)
                     vm.IsButtonEnabled = true;
             }
+        }
+
+        private async void Button_ClickedRegistatration(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new RegistarationView());
         }
     }
 }

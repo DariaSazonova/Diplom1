@@ -8,8 +8,8 @@ namespace Diplom1.Models
     {
         public int idQuest { get; set; }
         public IEnumerable<Questions> listQuestions { get; set; }
-        public bool Indicator { get; set; } = false;
-        public float progress { get; set; } = 0;
+        public bool? Indicator { get; set; } = false;
+        public float? progress { get; set; } = 0;
 
     }
     public class Questions
@@ -17,8 +17,8 @@ namespace Diplom1.Models
         public string question  { get; set; }
         public IEnumerable<string> answers { get; set; }
         public string answer   { get; set; }
-        public bool IsAnswered { get; set; }
-        public bool accepted { get; set; }
+        public bool? IsAnswered { get; set; }
+        public bool? accepted { get; set; }
     }
     public class buttonClickQuest
     {

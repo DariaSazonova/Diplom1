@@ -34,5 +34,10 @@ namespace Diplom1.Views
         {
 
         }
+
+        private void ImageButton_ClickedBack(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new HomePage();
+        }
     }
 }

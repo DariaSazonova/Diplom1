@@ -24,3 +24,5 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Diplo
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\ref\Diplom1.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Diplom1.pdb
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Diplom1.csproj.AssemblyReference.cache
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Views\RegistarationView.xaml.g.cs
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Views\TestUpdateView.xaml.g.cs

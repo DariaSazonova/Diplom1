@@ -3,75 +3,148 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Diplom1.Views.QuestFirstPageView" NavigationPage.HasBackButton="True" BackgroundColor="White" Title="Тест">
     <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="170"/>
-                <RowDefinition Height="250"/>
-                <RowDefinition Height="250"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Frame Grid.Row="0" BackgroundColor="#204060" CornerRadius="50" Margin="5" Grid.ColumnSpan="2">
-                <Label TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Предлагаем пройти тесты, которые помогут вам понять свой уровень знанний. У Вас все получится!" FontSize="18"/>
-            </Frame>
-            <yummy:PancakeView Margin="10" BackgroundColor="#9fbfdf" CornerRadius="25" Grid.Row="1" Grid.Column="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="160"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Image  Grid.Row="0"  BackgroundColor="Transparent" Margin="10,10" Source="online_test1.png" />
-                    <Label Margin="10,10" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" Text="УРОВЕНЬ 1"   BackgroundColor="Transparent" />
-                </Grid>
-                <yummy:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding QuestLevel1Clicked}"/>
-                </yummy:PancakeView.GestureRecognizers>
-            </yummy:PancakeView>
-            <yummy:PancakeView Margin="10" BackgroundColor="#8cb3d9" CornerRadius="25" Grid.Row="1" Grid.Column="1">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="160"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Image BackgroundColor="Transparent" Grid.Row="0"  Margin="10,10" Source="online_test2.png" />
-                    <Label Margin="10,10" VerticalOptions="Center" Grid.Row="1" HorizontalOptions="Center" TextColor="White" Text="УРОВЕНЬ 2"   BackgroundColor="Transparent" />
-                </Grid>
-                <yummy:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding QuestLevel2Clicked}"/>
-                </yummy:PancakeView.GestureRecognizers>
-            </yummy:PancakeView>
-            <yummy:PancakeView Margin="10" BackgroundColor="#79a6d2" CornerRadius="25" Grid.Row="2" Grid.Column="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="160"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Image BackgroundColor="Transparent" Grid.Row="0" Margin="10,10" Source="online_test3.png" />
-                    <Label Margin="10,10" VerticalOptions="Center" Grid.Row="1" HorizontalOptions="Center" TextColor="White" Text="УРОВЕНЬ 3"   BackgroundColor="Transparent" />
-                </Grid>
-                <yummy:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding QuestLevel3Clicked}"/>
-                </yummy:PancakeView.GestureRecognizers>
-            </yummy:PancakeView>
-            <yummy:PancakeView Margin="10" BackgroundColor="#6699cc" CornerRadius="25" Grid.Row="2" Grid.Column="1">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="160"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Image BackgroundColor="Transparent" Grid.Row="0"  Margin="10,10" Source="online_test.png"  />
-                    <Label Margin="10,10" VerticalOptions="Center" Grid.Row="1" HorizontalOptions="Center"  TextColor="White" Text="ИСТОРИЯ"   BackgroundColor="Transparent" />
-                </Grid>
-                <yummy:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding QuestHistoryClicked}"/>
-                </yummy:PancakeView.GestureRecognizers>
-            </yummy:PancakeView>
-            <!--<Image HeightRequest="100" Source="hello.gif" IsAnimationPlaying="True" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="End" VerticalOptions="End"/>-->
-        </Grid>
 
-        <AbsoluteLayout IsVisible="{Binding IndicatorVisibility}"   Grid.RowSpan="3">
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout>
+                <Grid Margin="0,0,0,0">
+                    <Frame  BackgroundColor="#204060" CornerRadius="50" Margin="10,5">
+                        <Label
+                            Margin="20,20,20,0"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Предлагаем пройти тесты, которые помогут вам понять свой уровень знанний. У Вас все получится!"
+                            TextColor="White"
+                            VerticalTextAlignment="Center"
+                            >
+                        </Label>
+                    </Frame>
+                </Grid>
+
+                <StackLayout Margin="10,0">
+                    <Label
+                        Margin="20"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="Выберите одно из действий:"
+                        TextColor="DarkBlue"
+                        VerticalOptions="Center" />
+                    <Grid Margin="5" ColumnSpacing="20" RowSpacing="30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="230" />
+                            <RowDefinition Height="230" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <yummy:PancakeView
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Padding="10"
+                            BackgroundColor="#9fbfdf"
+                            Shadow="{yummy:ShadowMarkup Color=Black, Offset='10,10'}"
+                            CornerRadius="15">
+                            <StackLayout>
+                                <Frame Margin="0" Padding="0" CornerRadius="10" BackgroundColor="Transparent" IsClippedToBounds="True" HasShadow="False">
+                                    <Image Source="online_test1.png" Margin="10" />
+                                </Frame>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Body"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="УРОВЕНЬ 1"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <yummy:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding QuestLevel1Clicked}"/>
+                            </yummy:PancakeView.GestureRecognizers>
+                        </yummy:PancakeView>
+
+                        <yummy:PancakeView
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Padding="10"
+                            BackgroundColor="#8cb3d9"
+                            Shadow="{yummy:ShadowMarkup Color=Black, Offset='10,10'}"
+                            CornerRadius="15">
+                            <StackLayout>
+                                <Frame Margin="0" Padding="0" CornerRadius="10" BackgroundColor="Transparent" IsClippedToBounds="True" HasShadow="False">
+                                    <Image Source="online_test2.png" Margin="10"/>
+                                </Frame>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Body"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="УРОВЕНЬ 2"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <yummy:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding QuestLevel2Clicked}"/>
+                            </yummy:PancakeView.GestureRecognizers>
+                        </yummy:PancakeView>
+
+                        <yummy:PancakeView
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Padding="10"
+                            BackgroundColor="#79a6d2"
+                            Shadow="{yummy:ShadowMarkup Color=Black, Offset='10,10'}"
+                            CornerRadius="15">
+                            <StackLayout>
+                                <Frame Margin="0" Padding="0" CornerRadius="10" BackgroundColor="Transparent" IsClippedToBounds="True" HasShadow="False">
+                                    <Image Source="online_test3.png" Margin="10"/>
+                                </Frame>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Body"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="УРОВЕНЬ 3"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <yummy:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding QuestLevel3Clicked}"/>
+                            </yummy:PancakeView.GestureRecognizers>
+                        </yummy:PancakeView>
+                        <yummy:PancakeView
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Padding="10"
+                            BackgroundColor="#6699cc"
+                            Shadow="{yummy:ShadowMarkup Color=Black, Offset='10,10'}"
+                            CornerRadius="15">
+                            <StackLayout>
+                                <Frame Margin="0" Padding="0" CornerRadius="10" BackgroundColor="Transparent" IsClippedToBounds="True" HasShadow="False">
+                                    <Image Source="online_test.png" Margin="10"/>
+                                </Frame>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Body"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="ИСТОРИЯ"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <yummy:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding QuestHistoryClicked}"/>
+                            </yummy:PancakeView.GestureRecognizers>
+                        </yummy:PancakeView>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <AbsoluteLayout IsVisible="{Binding IndicatorVisibility}">
             <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
                 <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
                     <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">

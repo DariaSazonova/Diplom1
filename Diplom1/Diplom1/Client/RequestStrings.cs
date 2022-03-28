@@ -40,6 +40,19 @@ namespace Diplom1.Client
         {
             return $"{client}/AddRating?level={level}&applicantid={id}";
         }
+        public static string postUser(string login, string password)
+        {
+            return $"{client}/User?Login={login}&Password={password}&Role=applicant";
+        }
+        public static string postApplicant(string IdApplicants, string Surname, string Name, string Patronymic, string Phone, string Email, string DateOfBirth)
+        {
+            return $"{client}/Applicant?IdApplicants={IdApplicants}&Surname={Surname}&Name={Name}&Patronymic={Patronymic}&Phone={Phone}&Email={Email}&DateOfBirth={DateOfBirth}";
+        }
+        public static string putQuestions()
+        {
+            return $"{client}/questquestions/";
+        }
+        public static string getMediaFiles = "http://specialtyadvertising.somee.com/api/mediafile";
 
     }
 }
