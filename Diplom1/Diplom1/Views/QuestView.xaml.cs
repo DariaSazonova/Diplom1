@@ -46,7 +46,7 @@ namespace Diplom1.Views
             var tapped = e.Item;
             List<QuestTestModel> viewModelList = new();
             (sender as ListView).ItemsSource = null;
-            foreach (var i in viewModel.listQuestions)
+            foreach (var i in viewModel.ListQuestions)
             {
                 if (i.answers.Contains(tapped))
                 {
@@ -56,10 +56,10 @@ namespace Diplom1.Views
                     else i.IsAnswered = false;
                     i.accepted = true;
                     (sender as ListView).ItemsSource = i.answers;
-                    viewModel.progress = 1f / viewModel.listQuestions.Count();
+                    viewModel.progress = 1f / viewModel.ListQuestions.Count();
                     viewModelList.Add(viewModel.model[0]);
                     BindableLayout.SetItemsSource(ParStackLayout, viewModelList);
-                    BindableLayout.SetItemsSource(QuestionList, viewModel.listQuestions);
+                    BindableLayout.SetItemsSource(QuestionList, viewModel.ListQuestions);
 
                 }
 

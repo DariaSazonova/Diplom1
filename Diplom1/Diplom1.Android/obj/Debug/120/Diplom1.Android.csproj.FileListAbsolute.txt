@@ -712,3 +712,7 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Text.Encodings.Web.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Text.Json.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\android\assets\System.Threading.Tasks.Extensions.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\plus.png
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\remove.png
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\autorizationbackground.jpg
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\autorizationbackground2.jpg

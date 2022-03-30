@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Diplom1.ViewModels.Quest
 
 
             model[0].idQuest = Convert.ToInt32(js["idQuest"]);
-            model[0].listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+            model[0].listQuestions = JsonConvert.DeserializeObject<IEnumerable<Questions>>(js["questions"].ToString());
             IndicatorIsVisible = false;
 
         }
@@ -49,7 +50,7 @@ namespace Diplom1.ViewModels.Quest
 
 
         }
-        public IEnumerable<Questions> listQuestions
+        public IEnumerable<Questions> ListQuestions
         {
             get
             {
@@ -60,7 +61,7 @@ namespace Diplom1.ViewModels.Quest
                 if (model[0].listQuestions != value)
                 {
                     model[0].listQuestions = value;
-                    OnPropertyChanged("listQuestions");
+                    OnPropertyChanged("ListQuestions");
                 }
             }
         }

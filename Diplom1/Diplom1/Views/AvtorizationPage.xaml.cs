@@ -28,19 +28,20 @@ namespace Diplom1.Views
 
             await Task.Run(async () =>
             {
-                await FadeAnimY(StackPageLogin);
-                await FadeAnimY(username);
-                await FadeAnimY(password);
-                await FadeAnimY(ButtonSign);
-                await FadeAnimY(ButtonReg);
+                await FadeAnimY(authorizationView);
+                //await FadeAnimY(username);
+                //await FadeAnimY(password);
+                //await FadeAnimY(ButtonSign);
+                //await FadeAnimY(ButtonReg);
             });
         }
+       
         private static async Task FadeAnimY(View view)
         {
             await Task.WhenAll
                (
-                    view.FadeTo(1, 150),
-                    view.TranslateTo(0, 0, 150)
+                    view.FadeTo(1, 200),
+                    view.TranslateTo(0, 0, 200)
                );
         }
         private void BorderlessEntry_TextChangedPassword(object sender, TextChangedEventArgs e)

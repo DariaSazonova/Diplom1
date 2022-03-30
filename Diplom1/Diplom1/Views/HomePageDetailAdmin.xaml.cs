@@ -42,5 +42,10 @@ namespace Diplom1.Views
         {
             await Navigation.PushAsync(new TestUpdateView(1));
         }
+
+        private async void Button_ClickedMedia(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MediaFilesAdminView());
+        }
     }
 }

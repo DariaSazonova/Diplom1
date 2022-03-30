@@ -11,6 +11,7 @@ namespace Diplom1.ViewModels
     {
         public List<MediaPageModel> model { get; set; } = new();
         public getMediaFiles getMediaFiles = new();
+        public MediaFileUpdate update { get; set; } = new();
 
         public MediaPageViewModel()
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Diplom1.Models
@@ -15,10 +16,10 @@ namespace Diplom1.Models
     public class Questions
     {
         public string question  { get; set; }
-        public IEnumerable<string> answers { get; set; }
+        public ObservableCollection<string> answers { get; set; }
         public string answer   { get; set; }
-        public bool? IsAnswered { get; set; }
-        public bool? accepted { get; set; }
+        public bool? IsAnswered { get; set; } = false;
+        public bool? accepted { get; set; } = false;
     }
     public class buttonClickQuest
     {

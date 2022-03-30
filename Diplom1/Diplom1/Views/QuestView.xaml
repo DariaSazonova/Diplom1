@@ -38,11 +38,11 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
+            
             <StackLayout 
-                Opacity="0" TranslationY="100"
                 x:Name="QuestionList" 
                 Margin="25,0" 
-                BindableLayout.ItemsSource="{Binding listQuestions}" 
+                BindableLayout.ItemsSource="{Binding ListQuestions}"
                 Grid.Row="2">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
@@ -51,7 +51,6 @@
                                 <RowDefinition Height="250"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-
                             <Label x:Name="LabelQuestion"
                             TextColor="Black"
                             FontSize="Medium" 
