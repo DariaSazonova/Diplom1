@@ -1,5 +1,6 @@
 ﻿using Diplom1.Client;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,13 +29,13 @@ namespace Diplom1.ViewModels.Quest
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Ошибка", $"Ошибка {result.StatusCode} ", "ОК");
+                    Application.Current.MainPage.Toast($"Ошибка {result.StatusCode} ", status.error);
                     return null;
                 }
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
+                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
                 return null;
             }
         }

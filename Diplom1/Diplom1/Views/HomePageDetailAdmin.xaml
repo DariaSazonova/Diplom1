@@ -5,28 +5,37 @@
              x:Class="Diplom1.Views.HomePageDetailAdmin" BackgroundColor="White" Title="Главная">
 
     <Grid>
-            <Grid>
-            <Button Grid.Row="0" Text="Рейтинг аббитуриентов. Уровень 1" Clicked="Button_ClickedLevel1"/>
-            <Button Grid.Row="1" Text="Рейтинг аббитуриентов. Уровень 2" Clicked="Button_ClickedLevel2"/>
-            <Button Grid.Row="2" Text="Рейтинг аббитуриентов. Уровень 3" Clicked="Button_ClickedLevel3"/>
-            <Button Grid.Row="3" Text="Редактировать тест. Уровень 1" Clicked="Button_Clicked"/>
-            <Button Grid.Row="4" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙСТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
+            <ScrollView Margin="5,0" Grid.Row="1" Orientation="Horizontal">
+                <StackLayout  Orientation="Horizontal">
+                    <Button WidthRequest="180" Text="Уровень 1" Clicked="Button_ClickedLevel1"/>
+                    <Button  WidthRequest="180" Text="Уровень 2" Clicked="Button_ClickedLevel2"/>
+                    <Button  WidthRequest="180"  Text="Уровень 3" Clicked="Button_ClickedLevel3"/>
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout  Margin="5,0" Grid.Row="2"  Orientation="Vertical">
+                <Label VerticalOptions="Center" HorizontalOptions="Center" Text="РЕДАКТИРОВАТЬ ТЕСТ" TextColor="Black"/>
+                <Button HeightRequest="60" Text="Уровень 1" Clicked="Button_Clicked"/>
+                <Button HeightRequest="60" Text="Уровень 2" Clicked="Button_Clicked"/>
+                <Button HeightRequest="60" Text="Уровень 3" Clicked="Button_Clicked"/>
+            </StackLayout>
+            <Button  Margin="5,0" HeightRequest="300" Grid.Row="3" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>
         </Grid>
 
 
-        <AbsoluteLayout x:Name="Indicator" IsVisible="false">
-            <BoxView  Opacity="0.7" BackgroundColor="Black" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
 
-            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-
+        <AbsoluteLayout  x:Name="Indicator" IsVisible="false">
+            <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
                 <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
-                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
-                    </Frame>
-                </yummy:PancakeView>
-
-                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
-                    <Label TextColor="Black" Text="Загрузка..." FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <ActivityIndicator  BackgroundColor="White" Color="Black" IsRunning="True" />
                 </yummy:PancakeView>
             </StackLayout>
         </AbsoluteLayout>

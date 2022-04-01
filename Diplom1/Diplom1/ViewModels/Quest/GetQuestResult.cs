@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json;
 using System.Linq;
+using Diplom1.Toast;
 
 namespace Diplom1.ViewModels.Quest
 {
@@ -61,14 +62,14 @@ namespace Diplom1.ViewModels.Quest
                 else
                 {
                     vm.IndicatorIsVisible = false;
-                    await Application.Current.MainPage.DisplayAlert("Ошибка", $"Ошибка {response.StatusCode} ", "ОК");
+                    Application.Current.MainPage.Toast($"Ошибка {response.StatusCode} ", status.error);
                     return null;
                 }
             }
             else
             {
                 vm.IndicatorIsVisible = false;
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
+                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
                 return null;
             }
         }

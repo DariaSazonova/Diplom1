@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels.AbbRating;
 using Newtonsoft.Json;
 using Xamarin.Forms;
@@ -39,7 +40,7 @@ namespace Diplom1.Client
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Предупреждение", "Отсутствует интернет соединение", "Ок");
+                Application.Current.MainPage.Toast("Отсутствует интернет соединение", status.error);
                 return null;
             }
             

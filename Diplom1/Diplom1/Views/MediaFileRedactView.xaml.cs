@@ -1,4 +1,5 @@
 ﻿using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -37,12 +38,12 @@ namespace Diplom1.Views
             var res = await vm.update.Update(vm);
             if (res)
             {
-                await DisplayAlert("Сообщение", "Данные успешно обновлены", "ОК");
+                Application.Current.MainPage.Toast("Данные успешно обновлены", status.message);
                 await Navigation.PopAsync();
             }
             else
             {
-                await DisplayAlert("Сообщение", "Ошибка. Не удалось изменить", "ОК");
+                Application.Current.MainPage.Toast("Ошибка. Не удалось изменить", status.error);
             }
         }
 
@@ -51,12 +52,12 @@ namespace Diplom1.Views
             var res = await vm.update.Add(vm);
             if (res)
             {
-                await DisplayAlert("Сообщение", "Данные успешно обновлены", "ОК");
+                Application.Current.MainPage.Toast("Данные успешно обновлены", status.message);
                 await Navigation.PopAsync();
             }
             else
             {
-                await DisplayAlert("Сообщение", "Ошибка. Не удалось изменить", "ОК");
+                Application.Current.MainPage.Toast("Ошибка. Не удалось изменить", status.error);
             }
         }
     }

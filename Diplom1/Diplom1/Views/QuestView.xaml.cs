@@ -1,5 +1,6 @@
 ﻿using Diplom1.Client;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels.Quest;
 using Newtonsoft.Json;
 using System;
@@ -85,7 +86,7 @@ namespace Diplom1.Views
                         }
                         else
                         {
-                            await Application.Current.MainPage.DisplayAlert("Ошибка", $"Не удалось отправить данные\n {response.Content}", "ок");
+                            Application.Current.MainPage.Toast($"Не удалось отправить данные\n {response.Content}", status.error);
                             Application.Current.MainPage = new Diplom1.Views.HomePage();
                             viewModel.IndicatorIsVisible = false;
                         }

@@ -14,65 +14,116 @@ namespace Diplom1.ViewModels
     public class TestUpdateViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public List<QuestTestModel> model { get; private set; } = new();
+        public QuestTestModel model { get; private set; } = new();
         private GetQuestQuestions getQuestions = new();
         public SaveTest savetest { get; private set; } = new();
+        public int idQuestionn { get; set; } = -1;
         public TestUpdateViewModel(int level)
-        {
-            model.Add(new QuestTestModel());
+        { 
+            //model.Add(new QuestTestModel());
             IndicatorIsVisible = true;
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
             var js = JObject.Parse(jsString);
 
 
 
-            model[0].idQuest = Convert.ToInt32(js["idQuest"]);
-            model[0].listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+            model.idQuest = Convert.ToInt32(js["idQuest"]);
+            model.listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+            int i = 0;
+            foreach(var it in listQuestions) 
+            {
+                it.id = i;
+                i++;
+            }
             IndicatorIsVisible = false;
-
         }
 
         public float? progress
         {
             set
             {
-                if (model[0].progress != value)
+                if (model.progress != value)
                 {
-                    float count = model[0].listQuestions.Count();
+                    float count = model.listQuestions.Count();
                     float step = 1f / count;
-                    model[0].progress = value == -1 ? 0 : model[0].progress += step;
+                    model.progress = value == -1 ? 0 : model.progress += step;
                     OnPropertyChanged("progress");
                 }
             }
             get
             {
-                return model[0].progress;
+                return model.progress;
             }
 
 
         }
-        public IEnumerable<Questions> listQuestions
+        public List<Questions> listQuestions
         {
             get
             {
-                return model[0].listQuestions;
+                return model.listQuestions;
             }
             set
             {
-                if (model[0].listQuestions != value)
+                if (model.listQuestions != value)
                 {
-                    model[0].listQuestions = value;
+                    model.listQuestions = value;
                     OnPropertyChanged("listQuestions");
+                }
+            }
+        }
+
+        public List<string> answers
+        {
+            get
+            {
+                return model.listQuestions.Where(i=>i.id== idQuestionn).Select(s=>s.answers).FirstOrDefault();
+            }
+            set
+            {
+                model.listQuestions[idQuestionn].answers = value;
+                OnPropertyChanged("answers");
+            }
+        }
+
+        public string answer
+        {
+            get
+            {
+                return model.listQuestions.Where(i => i.id == idQuestionn).Select(s => s.answer).FirstOrDefault();
+            }
+            set
+            {
+                if (model.listQuestions.Where(i => i.id == idQuestionn).Select(s => s.answer).FirstOrDefault() != value)
+                {
+                    model.listQuestions[idQuestionn].answer = value;
+                    OnPropertyChanged("answer");
+                }
+            }
+        }
+
+        public string question
+        {
+            get
+            {
+                return model.listQuestions.Where(i => i.id == idQuestionn).Select(s => s.question).FirstOrDefault();
+            }
+            set
+            {
+                if (model.listQuestions.Where(i => i.id == idQuestionn).Select(s => s.question).FirstOrDefault() != value)
+                {
+                    model.listQuestions[idQuestionn].question = value;
+                    OnPropertyChanged("question");
                 }
             }
         }
 
         public bool? IndicatorIsVisible
         {
-            get { return model[0].Indicator; }
+            get { return model.Indicator; }
             set
             {
-                model[0].Indicator = value;
+                model.Indicator = value;
                 OnPropertyChanged("IndicatorIsVisible");
 
             }
@@ -80,12 +131,12 @@ namespace Diplom1.ViewModels
 
         public int idQuest
         {
-            get { return model[0].idQuest; }
+            get { return model.idQuest; }
             set
             {
-                if (model[0].idQuest != value)
+                if (model.idQuest != value)
                 {
-                    model[0].idQuest = value;
+                    model.idQuest = value;
                     OnPropertyChanged("idQuest");
                 }
             }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using Diplom1.Toast;
 
 namespace Diplom1.ViewModels
 {
@@ -33,7 +34,7 @@ namespace Diplom1.ViewModels
             else
             {
                 vm.Indicator = false;
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
+                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
                 return false;
             }
         }
@@ -58,7 +59,7 @@ namespace Diplom1.ViewModels
             else
             {
                 vm.Indicator = false;
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
+                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
                 return false;
             }
         }
@@ -79,7 +80,7 @@ namespace Diplom1.ViewModels
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
+                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
                 return false;
             }
         }

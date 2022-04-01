@@ -1,4 +1,5 @@
-﻿using Diplom1.ViewModels.AvtorizationViewModel;
+﻿using Diplom1.Toast;
+using Diplom1.ViewModels.AvtorizationViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -149,14 +150,14 @@ namespace Diplom1.Views
                 var res = await vm.registrationClicked.reg(vm);
                 if (res)
                 {
-                    await DisplayAlert("Сообщение", "Вы успешно зарегистрировались", "ок");
+                    Application.Current.MainPage.Toast("Вы успешно зарегистрировались", status.message);
                     Application.Current.MainPage = new AvtorizationPage();
 
                 }
             }
             else
             {
-                await DisplayAlert("Ошибка", "Не все поля заполнены", "ок");
+                Application.Current.MainPage.Toast("Не все поля заполнены", status.error);
             }
         }
     }

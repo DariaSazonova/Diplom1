@@ -26,7 +26,7 @@ namespace Diplom1.ViewModels.Quest
 
 
             model[0].idQuest = Convert.ToInt32(js["idQuest"]);
-            model[0].listQuestions = JsonConvert.DeserializeObject<IEnumerable<Questions>>(js["questions"].ToString());
+            model[0].listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
             IndicatorIsVisible = false;
 
         }
@@ -60,7 +60,7 @@ namespace Diplom1.ViewModels.Quest
             {
                 if (model[0].listQuestions != value)
                 {
-                    model[0].listQuestions = value;
+                    model[0].listQuestions = (List<Questions>)value;
                     OnPropertyChanged("ListQuestions");
                 }
             }

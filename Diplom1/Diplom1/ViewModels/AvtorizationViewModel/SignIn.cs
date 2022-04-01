@@ -10,7 +10,7 @@ using Xamarin.Forms;
 using Newtonsoft.Json;
 using Diplom1.Models;
 using Newtonsoft.Json.Linq;
-
+using Diplom1.Toast;
 
 namespace Diplom1.ViewModels.AvtorizationViewModel
 {
@@ -71,14 +71,14 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
                 else
                 {
                     viewModel.IndicatorIsVisible = false;
-                    await Application.Current.MainPage.DisplayAlert("Ошибка", "Неправильный логин или пароль", "ОК");
+                    Application.Current.MainPage.Toast("Неправильный логин или пароль", status.error);
                 }
 
             }
             else
             {
                 viewModel.IndicatorIsVisible = false;
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Нет подключения к интернету", "ОК");
+                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
             }
         }
     }

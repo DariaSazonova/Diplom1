@@ -30,12 +30,7 @@
                         MinimumHeightRequest="45"
                         HeightRequest="45">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="40"/>
-                            </Grid.ColumnDefinitions>
-
-                            <views:BorderlessEntry Grid.Column="0"
+                            <views:BorderlessEntry Margin="5,0"
                             Text="{Binding Email}" TextColor="Black" Placeholder="Почта" TextChanged="BorderlessEntry_TextChangedEmail" PlaceholderColor="#353535" ClearButtonVisibility="WhileEditing"  Keyboard="Email"/>
                         </Grid>
                     </yummy:PancakeView>
@@ -50,12 +45,7 @@
                         MinimumHeightRequest="45"
                         HeightRequest="45">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="40"/>
-                            </Grid.ColumnDefinitions>
-
-                            <views:BorderlessEntry Grid.Column="0"
+                            <views:BorderlessEntry Margin="5,0"
                             Text="{Binding Password}" TextChanged="BorderlessEntry_TextChangedPassword" TextColor="Black" Placeholder="Пароль" PlaceholderColor="#353535" IsPassword="True" ClearButtonVisibility="WhileEditing"/>
                         </Grid>
                     </yummy:PancakeView>
@@ -74,18 +64,10 @@
             </Grid>
         </yummy:PancakeView>
         <Label Grid.Row="1" Text="Дипломный проект Сазоновой Дарьи ПКС-404" TextColor="White" Margin="10,0" VerticalOptions="Start" HorizontalOptions="Start"/>
-        <AbsoluteLayout IsVisible="{Binding IndicatorIsVisible}">
-
+        <AbsoluteLayout  IsVisible="{Binding IndicatorIsVisible}">
             <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-
                 <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                    <Frame BackgroundColor="Transparent" IsClippedToBounds="True" Padding="0" Margin="0" CornerRadius="15">
-                        <Image Source="Spinner.gif" IsAnimationPlaying="True" Aspect="AspectFit" BackgroundColor="White"/>
-                    </Frame>
-                </yummy:PancakeView>
-
-                <yummy:PancakeView CornerRadius="15,15,5,5" BackgroundColor="White" Padding="7" Shadow="{yummy:ShadowMarkup Color=White, Offset='5,10'}">
-                    <Label TextColor="Black" Text="Подождите пожалуйста ..." FontAttributes="Bold" VerticalOptions="Center"/>
+                    <ActivityIndicator  BackgroundColor="White" Color="Black" IsRunning="True" />
                 </yummy:PancakeView>
             </StackLayout>
         </AbsoluteLayout>

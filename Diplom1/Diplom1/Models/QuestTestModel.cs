@@ -8,15 +8,16 @@ namespace Diplom1.Models
     public class QuestTestModel
     {
         public int idQuest { get; set; }
-        public IEnumerable<Questions> listQuestions { get; set; }
+        public List<Questions> listQuestions { get; set; }
         public bool? Indicator { get; set; } = false;
         public float? progress { get; set; } = 0;
 
     }
     public class Questions
     {
-        public string question  { get; set; }
-        public ObservableCollection<string> answers { get; set; }
+        public int id { get; set; }
+        public string question { get; set; } = "";
+        public List<string> answers { get; set; } = new();
         public string answer   { get; set; }
         public bool? IsAnswered { get; set; } = false;
         public bool? accepted { get; set; } = false;
@@ -27,4 +28,5 @@ namespace Diplom1.Models
         public string answer { get; set; }
         public bool isAnswer { get; set; } = false;
     }
+    
 }
