@@ -23,9 +23,9 @@
 
             <StackLayout  Margin="5,0" Grid.Row="2"  Orientation="Vertical">
                 <Label VerticalOptions="Center" HorizontalOptions="Center" Text="РЕДАКТИРОВАТЬ ТЕСТ" TextColor="Black"/>
-                <Button HeightRequest="60" Text="Уровень 1" Clicked="Button_Clicked"/>
-                <Button HeightRequest="60" Text="Уровень 2" Clicked="Button_Clicked"/>
-                <Button HeightRequest="60" Text="Уровень 3" Clicked="Button_Clicked"/>
+                <Button HeightRequest="60" Text="Уровень 1" Clicked="Button_ClickedRedact1"/>
+                <Button HeightRequest="60" Text="Уровень 2" Clicked="Button_ClickedRedact2"/>
+                <Button HeightRequest="60" Text="Уровень 3" Clicked="Button_ClickedRedact3"/>
             </StackLayout>
             <Button  Margin="5,0" HeightRequest="300" Grid.Row="3" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>
         </Grid>

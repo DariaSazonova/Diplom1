@@ -59,7 +59,8 @@
                                             Focused="BorderlessEntry_Focused"
                                             Unfocused="BorderlessEntry_Unfocused"
                                             Text="{Binding }" 
-                                            HeightRequest="40"
+                                            HeightRequest="50"
+                                            Margin="0,-5"
                                             TextColor="Black" 
                                             PlaceholderColor="#353535" 
                                             ClearButtonVisibility="WhileEditing"  />

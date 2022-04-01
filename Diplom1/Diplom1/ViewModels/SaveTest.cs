@@ -54,6 +54,20 @@ namespace Diplom1.ViewModels
                 {
                     return true;
                 }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                   response = await client.PostAsync(RequestStrings.putQuestions(), new StringContent(
+                   JsonConvert.SerializeObject(model),
+                    Encoding.UTF8, "application/json"));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
                 else
                 {
                     return false;

@@ -38,9 +38,17 @@ namespace Diplom1.Views
             await Navigation.PushAsync(new AbbRating(3));
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void Button_ClickedRedact1(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TestUpdateView(1));
+        }
+        private async void Button_ClickedRedact2(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestUpdateView(2));
+        }
+        private async void Button_ClickedRedact3(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestUpdateView(3));
         }
 
         private async void Button_ClickedMedia(object sender, EventArgs e)

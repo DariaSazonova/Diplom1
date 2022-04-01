@@ -20,22 +20,22 @@ namespace Diplom1.ViewModels
         public int idQuestionn { get; set; } = -1;
         public TestUpdateViewModel(int level)
         { 
-            //model.Add(new QuestTestModel());
-            IndicatorIsVisible = true;
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
-            var js = JObject.Parse(jsString);
+            
 
 
-
-            model.idQuest = Convert.ToInt32(js["idQuest"]);
-            model.listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
-            int i = 0;
-            foreach(var it in listQuestions) 
+            if (jsString != "")
             {
-                it.id = i;
-                i++;
+                var js = JObject.Parse(jsString);
+                model.idQuest = Convert.ToInt32(js["idQuest"]);
+                model.listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+                int i = 0;
+                foreach (var it in listQuestions)
+                {
+                    it.id = i;
+                    i++;
+                }
             }
-            IndicatorIsVisible = false;
         }
 
         public float? progress
