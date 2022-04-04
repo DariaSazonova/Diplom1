@@ -6,8 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Xamarin.Forms;
 
 namespace Diplom1.ViewModels.Quest
 {
@@ -19,15 +21,18 @@ namespace Diplom1.ViewModels.Quest
         public QuestViewModel(int level)
         {
             model.Add(new QuestTestModel());
-            IndicatorIsVisible = true;
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
-            var js = JObject.Parse(jsString);
-
-
-
-            model[0].idQuest = Convert.ToInt32(js["idQuest"]);
-            model[0].listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
-            IndicatorIsVisible = false;
+            if (!string.IsNullOrWhiteSpace(jsString))
+            {
+                var js = JObject.Parse(jsString);
+                model[0].idQuest = Convert.ToInt32(js["idQuest"]);
+                model[0].listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+            }
+            else
+            {
+                Application.Current.MainPage.Toast("В этом тесте еще нет вопросов", status.warning);
+                
+            }
 
         }
 

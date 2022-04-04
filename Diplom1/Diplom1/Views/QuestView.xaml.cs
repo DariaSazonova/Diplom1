@@ -28,9 +28,14 @@ namespace Diplom1.Views
             Level = level;
             viewModel = vm; 
             BindingContext = viewModel;
+            
         }
         protected async override void OnAppearing()
         {
+            if (viewModel.idQuest == 0)
+            {
+                Application.Current.MainPage = new NavigationPage(new Views.HomePage());
+            }
             base.OnAppearing();
             await FadeAnimateY(QuestionList);
         }
@@ -66,30 +71,40 @@ namespace Diplom1.Views
 
                 if (count == viewModel.model[0].listQuestions.Count())
                 {
-                    viewModel.IndicatorIsVisible = true;
-                    double countTrueAnswers = viewModel.model[0].listQuestions.Where(l => l.IsAnswered == true).Count();
-                    double countAll = viewModel.model[0].listQuestions.Count();
-                    var Result = Math.Round(countTrueAnswers / countAll, 3).ToString().Replace(",",".");
-
-                    
-                    using(HttpClient client = new())
+                    try
                     {
-                        string date = DateTime.Now.ToString();
-                        var response = await client.PostAsync(RequestStrings.postQuestResult+$"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}&date={date}", null);
-                        if (response.IsSuccessStatusCode)
-                        {
-                            //await Application.Current.MainPage.DisplayAlert("Результа", $"{countTrueAnswers} из  {countAll}", "ок");
 
-                            //await Navigation.PopAsync();
-                            await Navigation.PushAsync(new QuestResult(Convert.ToInt32(countTrueAnswers), Convert.ToInt32(countAll), Level));
-                            viewModel.IndicatorIsVisible = false;
-                        }
-                        else
+                        viewModel.IndicatorIsVisible = true;
+                        double countTrueAnswers = viewModel.model[0].listQuestions.Where(l => l.IsAnswered == true).Count();
+                        double countAll = viewModel.model[0].listQuestions.Count();
+                        var Result = Math.Round(countTrueAnswers / countAll, 3).ToString().Replace(",", ".");
+
+
+                        using (HttpClient client = new())
                         {
-                            Application.Current.MainPage.Toast($"Не удалось отправить данные\n {response.Content}", status.error);
-                            Application.Current.MainPage = new Diplom1.Views.HomePage();
-                            viewModel.IndicatorIsVisible = false;
+                            string date = DateTime.Now.ToString();
+                            var response = await client.PostAsync(RequestStrings.postQuestResult + $"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}&date={date}", null);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                //await Application.Current.MainPage.DisplayAlert("Результа", $"{countTrueAnswers} из  {countAll}", "ок");
+
+                                //await Navigation.PopAsync();
+                                await Navigation.PushAsync(new QuestResult(Convert.ToInt32(countTrueAnswers), Convert.ToInt32(countAll), Level));
+                                viewModel.IndicatorIsVisible = false;
+                            }
+                            else
+                            {
+                                Application.Current.MainPage.Toast($"Не удалось отправить данные\n {response.Content}", status.error);
+                                Application.Current.MainPage = new Diplom1.Views.HomePage();
+                                viewModel.IndicatorIsVisible = false;
+                            }
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        Application.Current.MainPage.Toast(ex.Message, status.error);
+                        viewModel.IndicatorIsVisible = false;
+                        Application.Current.MainPage = new Diplom1.Views.HomePage();
                     }
                 }
             }

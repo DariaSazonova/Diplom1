@@ -21,13 +21,13 @@ namespace Diplom1.ViewModels
         public TestUpdateViewModel(int level)
         { 
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
-            
 
+            model.idQuest = level;
 
             if (jsString != "")
             {
                 var js = JObject.Parse(jsString);
-                model.idQuest = Convert.ToInt32(js["idQuest"]);
+                //model.idQuest = Convert.ToInt32(js["idQuest"]);
                 model.listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
                 int i = 0;
                 foreach (var it in listQuestions)

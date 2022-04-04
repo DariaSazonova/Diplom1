@@ -25,7 +25,6 @@ namespace Diplom1
             bool current = PreferencesApp.findLogin() && PreferencesApp.findPassword() && PreferencesApp.findUserID();
             if (current)
             {
-               
                 MainPage = new HomePage();
             }
             else MainPage = new AvtorizationPage();

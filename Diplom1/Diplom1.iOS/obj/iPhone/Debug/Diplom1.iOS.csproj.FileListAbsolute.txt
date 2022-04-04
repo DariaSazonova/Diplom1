@@ -5,7 +5,13 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\Lidgren.N
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\MonoGame.Framework.Net.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\MonoGame.Framework.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\box2d.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\System.Buffers.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\System.Memory.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\System.Text.Encodings.Web.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\System.Text.Json.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\Plugin.Connectivity.Abstractions.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\Plugin.Connectivity.Abstractions.pdb
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.iOS\bin\iPhone\Debug\Plugin.Connectivity.dll

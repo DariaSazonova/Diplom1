@@ -29,7 +29,11 @@ namespace Diplom1.ViewModels.Quest
                     if (listRes.Count > 1)
                     {
                         listRes = listRes.Where(s=>s.IdQuest==level).OrderByDescending(el => el.id).ToList();
-                        if (listRes[0].Result > listRes[1].Result)
+                        if (listRes.Count == 1)
+                        {
+                            toReturn = "Это Ваша первая попытка)";
+                        }
+                        else if (listRes[0].Result > listRes[1].Result)
                         {
                             toReturn = "Поздравляем вы улучшили свой результат!";
                         }

@@ -126,20 +126,12 @@ namespace Diplom1.Views
             {
                 if (vm.answers[i] == value) vm.answers.RemoveAt(i);
             }
-            var res = await vm.savetest.Save(vm);
-            if (res)
-            {
-                vm.answers = vm.answers;
-                ListAnswers.ItemsSource = null;
-                ListAnswers.BindingContext = null;
-                ListAnswers.ItemsSource = vm.answers;
-                ListAnswers.BindingContext = vm.answers;
-            }
-            else
-            {
-                vm.IndicatorIsVisible = false;
-            }
-            vm.IndicatorIsVisible = false;
+            //var res = await vm.savetest.Save(vm);
+            vm.answers = vm.answers;
+            ListAnswers.ItemsSource = null;
+            ListAnswers.BindingContext = null;
+            ListAnswers.ItemsSource = vm.answers;
+            ListAnswers.BindingContext = vm.answers;
         }
 
         private void ListAnswers_ItemSelected(object sender, SelectedItemChangedEventArgs e)
