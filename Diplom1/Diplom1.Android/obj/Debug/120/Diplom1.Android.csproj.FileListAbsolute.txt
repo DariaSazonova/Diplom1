@@ -1,12 +1,3 @@
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.Android.dll
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.Android.pdb
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1.apk
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1.aab
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1-Signed.aab
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1-Signed.apk
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1-Signed.apk.idsig
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.dll
-C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.pdb
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\MonoAndroid,Version=v12.0.AssemblyAttributes.cs
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\build.props
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\adb.props
@@ -42,6 +33,15 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\110\j
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\R.txt
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\R.cs.flag
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\Diplom1.Android.csproj.CoreCompileInputs.cache
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.Android.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.Android.pdb
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1.apk
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1.aab
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1-Signed.aab
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1-Signed.apk
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\com.companyname.diplom1-Signed.apk.idsig
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.dll
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\bin\Debug\Diplom1.pdb
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\Diplom1.Android.csproj.CopyComplete
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\Diplom1.Android.dll
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\Diplom1.Android.pdb
@@ -716,3 +716,4 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_C
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\res\drawable\telephone.png

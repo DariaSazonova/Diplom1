@@ -112,10 +112,10 @@ namespace Diplom1.Views
         }
         private void BorderlessEntry_TextChangedPhone(object sender, TextChangedEventArgs e)
         {
-            var validPhonePattern = new Regex(@"^[+7][0-9]{11}", RegexOptions.IgnoreCase);
+            var validPhonePattern = new Regex(@"^[8][0-9]{10}", RegexOptions.IgnoreCase);
             if (e.NewTextValue == null || e.NewTextValue == "")
             {
-                (sender as Entry).Text = "+7";
+                (sender as Entry).Text = "8";
             }
             else if (!validPhonePattern.IsMatch(e.NewTextValue))
             {
@@ -139,7 +139,7 @@ namespace Diplom1.Views
             var text = (sender as Entry).Text;
             if (text == null || text=="")
             {
-                (sender as Entry).Text = "+7";
+                (sender as Entry).Text = "8";
             }
         }
 

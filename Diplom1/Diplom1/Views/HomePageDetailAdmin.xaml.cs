@@ -25,35 +25,47 @@ namespace Diplom1.Views
         {
             Indicator.IsVisible = true;
             await Navigation.PushAsync(new AbbRating(1));
-            Indicator.IsVisible = true;
+            Indicator.IsVisible = false;
         }
 
         private async void Button_ClickedLevel2(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new AbbRating(2));
+            Indicator.IsVisible = false;
         }
 
         private async void Button_ClickedLevel3(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new AbbRating(3));
+            Indicator.IsVisible = false;
         }
 
         private async void Button_ClickedRedact1(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new TestUpdateView(1));
+            Indicator.IsVisible = false;
         }
         private async void Button_ClickedRedact2(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new TestUpdateView(2));
+            Indicator.IsVisible = false;
         }
         private async void Button_ClickedRedact3(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new TestUpdateView(3));
+            Indicator.IsVisible = false;
         }
 
         private async void Button_ClickedMedia(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new MediaFilesAdminView());
+            Indicator.IsVisible = false;
         }
     }
 }

@@ -9942,10 +9942,11 @@ public final class R {
     public static final int spinner=0x7f0700a8;
     public static final int student_icon=0x7f0700a9;
     public static final int studentforinfospec=0x7f0700aa;
-    public static final int test_custom_background=0x7f0700ab;
-    public static final int tooltip_frame_dark=0x7f0700ac;
-    public static final int tooltip_frame_light=0x7f0700ad;
-    public static final int x=0x7f0700ae;
+    public static final int telephone=0x7f0700ab;
+    public static final int test_custom_background=0x7f0700ac;
+    public static final int tooltip_frame_dark=0x7f0700ad;
+    public static final int tooltip_frame_light=0x7f0700ae;
+    public static final int x=0x7f0700af;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

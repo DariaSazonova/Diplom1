@@ -28,5 +28,12 @@ namespace Diplom1.Models
         public string answer { get; set; }
         public bool isAnswer { get; set; } = false;
     }
-    
+    public class Answers
+    {
+        public int id { get; set; }
+        public string yourAnswer { get; set; }
+        public string trueAnswer { get; set; }
+
+    }
+
 }

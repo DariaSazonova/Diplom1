@@ -25,7 +25,12 @@
                     />
         <Label Grid.Column="0" Text="Заполните поля:" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" Grid.Row="1"/>
         <Image Source="registration.png" Grid.Row="1" Grid.Column="1"/>
-        <yummy:PancakeView x:Name="PancakeView" Opacity="0" TranslationY="60" Margin="15" CornerRadius="20" BackgroundColor="#7EA76F" Grid.Row="2" Grid.ColumnSpan="2">
+        <yummy:PancakeView x:Name="PancakeView" 
+                           Opacity="0"
+                           TranslationY="60"
+                           Margin="15" 
+                           CornerRadius="20" 
+                           BackgroundColor="#7EA76F" Grid.Row="2" Grid.ColumnSpan="2">
             <StackLayout Margin="5, 20">
                 <yummy:PancakeView
                             Margin="25,0"
@@ -188,7 +193,7 @@
                     <Grid>
                         <views:BorderlessEntry 
                         Text="{Binding Phone}"
-                        MaxLength="12"
+                        MaxLength="11"
                         Focused="BorderlessEntry_FocusedPhone"
                         TextColor="Black" 
                         Placeholder="Номер телефона" 
@@ -204,9 +209,14 @@
             </StackLayout>
         </yummy:PancakeView>
         <AbsoluteLayout Grid.ColumnSpan="2"   Grid.RowSpan="3" IsVisible="{Binding IndicatorIsVisible}">
+            <BoxView
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Black"
+                Opacity="0.7" />
             <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                    <ActivityIndicator  BackgroundColor="White" Color="Black" IsRunning="True" />
+                <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                   <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
                 </yummy:PancakeView>
             </StackLayout>
         </AbsoluteLayout>

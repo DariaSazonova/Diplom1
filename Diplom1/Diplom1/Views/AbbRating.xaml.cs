@@ -1,10 +1,11 @@
-﻿using Diplom1.ViewModels.AbbRating;
+﻿using Diplom1.Interfaces;
+using Diplom1.ViewModels.AbbRating;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,17 +28,23 @@ namespace Diplom1.Views
 
         private void StudentsRating_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-
         }
 
         private void StudentsRating_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            StudentsRating.SelectedItem = null;
         }
 
         private void ImageButton_ClickedBack(object sender, EventArgs e)
         {
             Application.Current.MainPage = new HomePage();
         }
+
+        private async void PhoneButton_Clicked(object sender, EventArgs e)
+        {
+            var phone = (sender as ImageButton).AutomationId.ToString();
+            await DependencyService.Get<Calls>()?.Call(phone);
+        }
+
     }
 }

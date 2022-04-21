@@ -4,6 +4,9 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Android.Content;
+using Android;
+
 
 
 namespace Diplom1.Droid
@@ -11,6 +14,13 @@ namespace Diplom1.Droid
     [Activity(Label = "Поступи", Icon = "@drawable/MainIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        readonly string[] Permissions =
+         {
+            Manifest.Permission.CallPhone
+
+        };
+        const int RequestLocationId = 0;
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

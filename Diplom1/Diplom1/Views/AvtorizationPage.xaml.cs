@@ -25,7 +25,7 @@ namespace Diplom1.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
+            await Task.Delay(500);
             await Task.Run(async () =>
             {
                 await FadeAnimY(authorizationView);

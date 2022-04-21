@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:res="clr-namespace:Diplom1.Views.TestResultsView"
              x:Class="Diplom1.Views.QuestResult" BackgroundColor="White" NavigationPage.HasNavigationBar="False" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
             <RowDefinition Height="100" />
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
@@ -46,15 +48,24 @@
             Margin="20, 40"
             HorizontalTextAlignment="Center"
             Text="{Binding ResultTest}"/>
+        
         <Label 
-            Grid.Row="3" 
+            Grid.Row="4" 
             FontAttributes="Italic"
             Margin="30"
             Grid.Column="0" 
             TextColor="Black"
             Text="{Binding aboutTest}"/>
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"  HorizontalOptions="End" VerticalOptions="End"
+            Text="Посмотреть результат"
+            BackgroundColor="Brown"
+            TextColor="White"
+            Clicked="Button_ClickedViewRes"
+            />
         <Frame 
-            Grid.Row="3" 
+            Grid.Row="4" 
             Grid.Column="1" 
             Padding="0"
             Margin="0,0,0,0"
@@ -69,11 +80,34 @@
                 />
         </Frame>
         <!--BackgroundColor="#9AB2CC"-->
-
-        <AbsoluteLayout Grid.RowSpan="3" IsVisible="{Binding IndicatorIsVisible}">
+        <AbsoluteLayout Grid.RowSpan="5" Grid.ColumnSpan="2" x:Name="Testresults" IsVisible="false">
+            <yummy:PancakeView 
+                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                HeightRequest="500"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                Margin="10" CornerRadius="20" 
+                BackgroundColor="LightGray">
+                <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"  Margin="5">
+                    <ImageButton
+                        Clicked="Close"
+                        HeightRequest="20"
+                        Source="x.png"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="End"/>   
+                    <ContentView x:Name="contentView"/>
+                </StackLayout>
+            </yummy:PancakeView>
+        </AbsoluteLayout>
+        <AbsoluteLayout Grid.RowSpan="5" Grid.ColumnSpan="2" IsVisible="{Binding IndicatorIsVisible}">
+            <BoxView
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Black"
+                Opacity="0.7" />
             <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-                <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                    <ActivityIndicator  BackgroundColor="White" Color="Black" IsRunning="True" />
+                <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                   <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
                 </yummy:PancakeView>
             </StackLayout>
         </AbsoluteLayout>

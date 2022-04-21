@@ -32,7 +32,10 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
             {
                 viewModel.IndicatorIsVisible = true;
                 using HttpClient client = new();
+
                 var pass = MD5Hash.toString(viewModel.Password);
+                var login = viewModel.Email;
+
                 HttpResponseMessage result = await client.GetAsync(RequestStrings.user(viewModel.Email, pass));
                 var res = await result.Content.ReadAsStringAsync();
                 if (!String.IsNullOrWhiteSpace(res))

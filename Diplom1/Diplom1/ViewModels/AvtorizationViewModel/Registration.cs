@@ -18,6 +18,18 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
                 viewModel.IndicatorIsVisible = true;
                 using HttpClient client = new();
                 var pass = MD5Hash.toString(viewModel.Password);
+                var login = viewModel.Email;
+                //using MultipartFormDataContent formData = new();
+
+                //var stringContentPass = new StringContent(pass);
+                //stringContentPass.Headers.Add("Content-Disposition", "form-data; name=\"pass\"");
+                //formData.Add(stringContentPass, "pass");
+
+                //var stringContentLogin = new StringContent(login);
+                //stringContentPass.Headers.Add("Content-Disposition", "form-data; name=\"login\"");
+                //formData.Add(stringContentPass, "login");
+
+
                 HttpResponseMessage resultUser = await client.PostAsync(RequestStrings.postUser(viewModel.Email, pass), null);
                 var res1 = await resultUser.Content.ReadAsStringAsync();
                 if (!String.IsNullOrWhiteSpace(res1) && resultUser.IsSuccessStatusCode)

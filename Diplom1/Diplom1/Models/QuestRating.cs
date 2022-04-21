@@ -10,5 +10,7 @@ namespace Diplom1.Models
         public int IdApplicant { get; set; }
         public int IdQuest { get; set; }
         public double Result { get; set; }
+        public string date { get; set; } = "";
+        public string answers { get; set; } = "";
     }
 }

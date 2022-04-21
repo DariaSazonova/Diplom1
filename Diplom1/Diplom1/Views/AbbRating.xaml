@@ -36,6 +36,7 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition/>
+                                            <ColumnDefinition Width="40"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="70"/>
@@ -45,9 +46,10 @@
                                         <Frame Margin="10" Grid.Column="0" Grid.RowSpan="3" BackgroundColor="#a3a3c2" CornerRadius="25">
                                             <Label FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black"  Text="{Binding ResultText}"/>
                                         </Frame>
-                                        <Label FontSize="18"  Margin="7,10,7,0" TextColor="Black" Grid.Column="1" Grid.Row="0" Text="{Binding Fio}"/>
-                                        <Label FontSize="16" Margin="7,0" TextColor="Black" Grid.Column="1" Grid.Row="1" Text="{Binding Phone}"/>
+                                        <Label FontSize="18"  Margin="7,10,7,0" TextColor="Black" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" Text="{Binding Fio}"/>
+                                        <Label BackgroundColor="Transparent" FontSize="16" Margin="7,0" TextColor="Black" Grid.Column="1" Grid.Row="1" Text="{Binding Phone}"/>
                                         <Label FontSize="10" Margin="7,0" TextColor="Black" Grid.Column="1" Grid.Row="2" Text="{Binding date}"/>
+                                        <ImageButton Clicked="PhoneButton_Clicked" BackgroundColor="Transparent" Source="telephone.png" AutomationId="{Binding Phone}" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" CornerRadius="0"/>
                                     </Grid>
                                 </yummy:PancakeView>
                             </ViewCell>
@@ -57,9 +59,14 @@
             </Grid>
 
             <AbsoluteLayout  IsVisible="{Binding IndicatorIsVisible}">
+                <BoxView
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Black"
+                Opacity="0.7" />
                 <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-                    <yummy:PancakeView CornerRadius="15" Shadow="{yummy:ShadowMarkup Color=White, Offset='0,10'}" HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                        <ActivityIndicator  BackgroundColor="White" Color="Black" IsRunning="True" />
+                    <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                       <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
                     </yummy:PancakeView>
                 </StackLayout>
             </AbsoluteLayout>

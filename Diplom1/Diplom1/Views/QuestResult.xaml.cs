@@ -18,12 +18,22 @@ namespace Diplom1.Views
         {
             InitializeComponent();
             vm = new(countTrueAnswers, countAll, level);
+            contentView.Content = new TestResultView();
             BindingContext = vm;
         }
 
         private void BackButton_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new HomePage());
+        }
+
+        private void Button_ClickedViewRes(object sender, EventArgs e)
+        {
+            Testresults.IsVisible = true;
+        }
+        private async void Close(object sender, EventArgs e)
+        {
+            Testresults.IsVisible = false;
         }
     }
 }

@@ -16,11 +16,13 @@ using Xamarin.Forms.Xaml;
 namespace Diplom1.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class QuestView : ContentPage
     {
         public QuestViewModel viewModel;
         private int count;
         private int Level;
+        private List<Answers> answers = new();
         public QuestView(int level)
         {
             InitializeComponent();
@@ -32,8 +34,9 @@ namespace Diplom1.Views
         }
         protected async override void OnAppearing()
         {
-            if (viewModel.idQuest == 0)
+            if (viewModel.model.listQuestions.Count == 0)
             {
+                Application.Current.MainPage.Toast("В этом тесте еще нет вопросов", status.warning);
                 Application.Current.MainPage = new NavigationPage(new Views.HomePage());
             }
             base.OnAppearing();
@@ -56,34 +59,42 @@ namespace Diplom1.Views
             {
                 if (i.answers.Contains(tapped))
                 {
-                    count++;
+                    
                     if (i.answers.ElementAt(Convert.ToInt32(i.answer)) == tapped)
                         i.IsAnswered = true;
                     else i.IsAnswered = false;
                     i.accepted = true;
+                    Answers a = new();
+                    a.id = count;
+                    a.trueAnswer = i.answer;
+                    var yourAnswer = i.answers.Where(x => x == tapped).FirstOrDefault().ToString();
+                    a.yourAnswer = i.answers.IndexOf(yourAnswer).ToString(); 
+                    answers.Add(a);
                     (sender as ListView).ItemsSource = i.answers;
                     viewModel.progress = 1f / viewModel.ListQuestions.Count();
-                    viewModelList.Add(viewModel.model[0]);
+                    viewModelList.Add(viewModel.model);
                     BindableLayout.SetItemsSource(ParStackLayout, viewModelList);
                     BindableLayout.SetItemsSource(QuestionList, viewModel.ListQuestions);
+                    count++;
 
                 }
 
-                if (count == viewModel.model[0].listQuestions.Count())
+                if (count == viewModel.model.listQuestions.Count())
                 {
                     try
                     {
 
                         viewModel.IndicatorIsVisible = true;
-                        double countTrueAnswers = viewModel.model[0].listQuestions.Where(l => l.IsAnswered == true).Count();
-                        double countAll = viewModel.model[0].listQuestions.Count();
+                        double countTrueAnswers = viewModel.model.listQuestions.Where(l => l.IsAnswered == true).Count();
+                        double countAll = viewModel.model.listQuestions.Count();
                         var Result = Math.Round(countTrueAnswers / countAll, 3).ToString().Replace(",", ".");
 
 
                         using (HttpClient client = new())
                         {
                             string date = DateTime.Now.ToString();
-                            var response = await client.PostAsync(RequestStrings.postQuestResult + $"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}&date={date}", null);
+                            var content = new StringContent(JsonConvert.SerializeObject(answers), Encoding.UTF8, "application/json");
+                            var response = await client.PostAsync(RequestStrings.postQuestResult + $"?idquest={viewModel.idQuest}&idapplicatn={PreferencesApp.UserID}&res={Result}&date={date}", content);
                             if (response.IsSuccessStatusCode)
                             {
                                 //await Application.Current.MainPage.DisplayAlert("Результа", $"{countTrueAnswers} из  {countAll}", "ок");

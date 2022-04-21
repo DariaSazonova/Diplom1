@@ -18,9 +18,6 @@ namespace Diplom1.ViewModels.Quest
             ResultTest = $"Уровень {level}\n\nРезультат Вашего теста:\n {countTrueAnswers} из {countAll}";
             GetQuestResult getQuestResult = new();
             aboutTest = Task.Run(async()=>await getQuestResult.getRatingApplicant(this, level)).Result;
-            
-           
-
         }
 
         public bool IndicatorIsVisible
