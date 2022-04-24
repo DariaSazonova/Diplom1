@@ -13,6 +13,7 @@ namespace Diplom1
         public App()
         {
             InitializeComponent();
+            MainPage = new StartPageView();
         }
 
         protected override void OnStart()

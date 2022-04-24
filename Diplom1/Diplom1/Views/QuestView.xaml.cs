@@ -23,6 +23,7 @@ namespace Diplom1.Views
         private int count;
         private int Level;
         private List<Answers> answers = new();
+        double x = 1, y = 1;
         public QuestView(int level)
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace Diplom1.Views
             Level = level;
             viewModel = vm; 
             BindingContext = viewModel;
-            
+
         }
         protected async override void OnAppearing()
         {
@@ -121,6 +122,24 @@ namespace Diplom1.Views
             }
         }
 
-        
+        private void PanGestureRecognizer_PanUpdated(object sender, PanUpdatedEventArgs e)
+        {
+            switch (e.StatusType)
+            {
+                case GestureStatus.Running:
+                    // Translate and ensure we don't pan beyond the wrapped user interface element bounds.
+                    (sender as Label).TranslationX =
+                      Math.Max(Math.Min(0, x + e.TotalX), -Math.Abs(Content.Width - App.Current.MainPage.Width));
+                    (sender as Label).TranslationY =
+                      Math.Max(Math.Min(0, y + e.TotalY), -Math.Abs(Content.Height - App.Current.MainPage.Height));
+                    break;
+
+                case GestureStatus.Completed:
+                    // Store the translation applied during the pan
+                    x = Content.TranslationX;
+                    y = Content.TranslationY;
+                    break;
+            }
+        }
     }
 }

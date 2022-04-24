@@ -1,4 +1,5 @@
-﻿using Diplom1.ViewModels.Quest;
+﻿using Diplom1.Client;
+using Diplom1.ViewModels.Quest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Diplom1.Views
         {
             InitializeComponent();
             vm = new(countTrueAnswers, countAll, level);
-            contentView.Content = new TestResultView();
+            contentView.Content = new TestResultView(Convert.ToInt32(PreferencesApp.UserID));
             BindingContext = vm;
         }
 
@@ -31,7 +32,7 @@ namespace Diplom1.Views
         {
             Testresults.IsVisible = true;
         }
-        private async void Close(object sender, EventArgs e)
+        private void Close(object sender, EventArgs e)
         {
             Testresults.IsVisible = false;
         }

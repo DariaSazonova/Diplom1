@@ -11,7 +11,11 @@ using Android;
 
 namespace Diplom1.Droid
 {
-    [Activity(Label = "Поступи", Icon = "@drawable/MainIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "Поступи",
+        Icon = "@drawable/MainIcon", 
+        Theme = "@style/MainTheme", 
+        MainLauncher = true, 
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         readonly string[] Permissions =

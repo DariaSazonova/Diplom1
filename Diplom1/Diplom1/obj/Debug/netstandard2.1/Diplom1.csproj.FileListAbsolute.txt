@@ -30,3 +30,4 @@ C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\bin\Debug\netstandard2.1\Diplo
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Diplom1.csproj.AssemblyReference.cache
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\XamlC.stamp
 C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Views\TestResultView.xaml.g.cs
+C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1\obj\Debug\netstandard2.1\Views\StartPageView.xaml.g.cs

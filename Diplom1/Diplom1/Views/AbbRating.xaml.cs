@@ -1,4 +1,5 @@
 ﻿using Diplom1.Interfaces;
+using Diplom1.Models;
 using Diplom1.ViewModels.AbbRating;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,17 @@ namespace Diplom1.Views
 
         private void StudentsRating_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            var item = e.Item as AbbRatingModel;
+            if (item != null)
+            {
+                contentView.Content = new TestResultView(item.idApplicant, item.id);
+                Testresults.IsVisible = true;
+            }
+        }
+
+        private async void Close(object sender, EventArgs e)
+        {
+            Testresults.IsVisible = false;
         }
 
         private void StudentsRating_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -45,6 +57,5 @@ namespace Diplom1.Views
             var phone = (sender as ImageButton).AutomationId.ToString();
             await DependencyService.Get<Calls>()?.Call(phone);
         }
-
     }
 }

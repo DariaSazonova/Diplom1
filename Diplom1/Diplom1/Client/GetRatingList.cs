@@ -18,12 +18,12 @@ namespace Diplom1.Client
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                HttpResponseMessage result = await client.GetAsync(RequestStrings.getRating(Convert.ToInt32(PreferencesApp.UserID)));
+                HttpResponseMessage result = await client.GetAsync(RequestStrings.getAbbRating(level, applicantid));
                 if (result.IsSuccessStatusCode)
                 {
                     var res = await result.Content.ReadAsStringAsync();
                     List<QuestRatingModel> listRes = JsonConvert.DeserializeObject<List<QuestRatingModel>>(res);
-                 
+
                     if (!String.IsNullOrWhiteSpace(res))
                     {
                         return res;

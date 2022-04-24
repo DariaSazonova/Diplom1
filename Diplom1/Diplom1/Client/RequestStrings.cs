@@ -32,9 +32,9 @@ namespace Diplom1.Client
             return $"{client}/questquestions/{i}";
         }
         public static string postQuestResult = $"{client}/QuestRating";
-        public static string getRating(int idApplicant)
+        public static string getRating(int idApplicant, int idTest=0)
         {
-            return $"{client}/QuestRating/{idApplicant}";
+            return $"{client}/QuestRating/{idApplicant}?idTest={idTest}";
         }
         public static string getAbbRating(int level, int id)
         {

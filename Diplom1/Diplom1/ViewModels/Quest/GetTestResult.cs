@@ -18,12 +18,12 @@ namespace Diplom1.ViewModels.Quest
         {
 
         }
-        public async Task<List<TestResultModel>> Result()
+        public async Task<List<TestResultModel>> Result(int applicantId, int idTest)
         {
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                HttpResponseMessage result = await client.GetAsync(RequestStrings.getRating(Convert.ToInt32(PreferencesApp.UserID)));
+                HttpResponseMessage result = await client.GetAsync(RequestStrings.getRating(Convert.ToInt32(applicantId), idTest));
                 if (result.IsSuccessStatusCode)
                 {
                     var res = await result.Content.ReadAsStringAsync();

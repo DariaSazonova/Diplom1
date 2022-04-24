@@ -38,7 +38,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            
+
             <StackLayout 
                 x:Name="QuestionList" 
                 Margin="25,0" 
@@ -57,10 +57,13 @@
                             Text="{Binding question}" 
                             Grid.Row="0" 
                             HorizontalTextAlignment="Center" 
-                            VerticalTextAlignment="Center"/>
+                            VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
                             <ListView  
-                                
                                 VerticalScrollBarVisibility="Never" 
                                 HasUnevenRows="True" 
                                 SeparatorColor="White"  

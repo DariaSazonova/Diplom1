@@ -13,6 +13,7 @@ namespace Diplom1.Models
     public class AbbRatingModel
     {
         public int id { get; set; }
+        public int idApplicant { get; set; }
         public string ResultText { get; set; }
         public string Fio { get; set; }
         public string Phone { get; set; }

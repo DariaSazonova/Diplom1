@@ -58,6 +58,26 @@
                 </ListView>
             </Grid>
 
+            <AbsoluteLayout Grid.RowSpan="5" x:Name="Testresults" IsVisible="false">
+                <yummy:PancakeView 
+                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                HeightRequest="500"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                Margin="10" CornerRadius="20" 
+                BackgroundColor="LightGray">
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional"  Margin="5">
+                        <ImageButton
+                        Clicked="Close"
+                        HeightRequest="20"
+                        Source="x.png"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="End"/>
+                        <ContentView x:Name="contentView"/>
+                    </StackLayout>
+                </yummy:PancakeView>
+            </AbsoluteLayout>
+
             <AbsoluteLayout  IsVisible="{Binding IndicatorIsVisible}">
                 <BoxView
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"

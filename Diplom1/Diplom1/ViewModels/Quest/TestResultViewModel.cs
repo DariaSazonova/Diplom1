@@ -1,4 +1,5 @@
-﻿using Diplom1.Models;
+﻿using Diplom1.Client;
+using Diplom1.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,9 @@ namespace Diplom1.ViewModels.Quest
         private TestResultModel model { get; set; } = new();
         private List<TestResultModel> listModel { get; set; } = new();
         public GetTestResult testResult = new();
-        public TestResultViewModel()
+        public TestResultViewModel(int id, int idTest=0)
         {
-            listModel = Task.Run(async()=>await testResult.Result()).Result;
+            listModel = Task.Run(async()=>await testResult.Result(Convert.ToInt32(id), idTest)).Result;
         }
 
         public List<TestResultModel> list

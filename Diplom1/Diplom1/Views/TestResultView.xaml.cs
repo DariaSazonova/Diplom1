@@ -13,10 +13,11 @@ namespace Diplom1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestResultView : ContentView
     {
-        public TestResultViewModel viewModel = new();
-        public TestResultView()
+        public TestResultViewModel viewModel;
+        public TestResultView(int Id, int IdTest=0)
         {
             InitializeComponent();
+            viewModel = new(Id, IdTest);
             BindingContext = viewModel;
         }
 
