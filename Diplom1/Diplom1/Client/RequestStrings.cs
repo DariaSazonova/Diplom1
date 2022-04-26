@@ -52,6 +52,10 @@ namespace Diplom1.Client
         {
             return $"{client}/questquestions/";
         }
+        public static string getChart(int month)
+        {
+            return $"{client}/countab?month={month}";
+        }
         public static string getMediaFiles = "http://specialtyadvertising.somee.com/api/mediafile";
 
     }

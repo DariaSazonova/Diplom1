@@ -21,10 +21,23 @@ namespace Diplom1.Views
             InitializeComponent();
             BindingContext = vm;
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
-            
+            await FadeAnimateY(MainLabel);
+            await FadeAnimateY(SeconLabel);
+            await FadeAnimateY(LabelLevel1);
+            await FadeAnimateY(LabelLevel2);
+            await FadeAnimateY(LabelLevel3);
+            await FadeAnimateY(LabelHistory);
+        }
+        private static async Task FadeAnimateY(View view)
+        {
+            await Task.WhenAll
+               (
+                    view.FadeTo(1, 350),
+                    view.TranslateTo(0, 0, 350)
+               );
         }
     }
 }

@@ -11,8 +11,9 @@
                 <RowDefinition Height="180"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙСТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
+            <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
             <ScrollView Margin="5,0" Grid.Row="1" Orientation="Horizontal">
                 <StackLayout  Orientation="Horizontal">
                     <Button BackgroundColor="#d9b3ff" WidthRequest="180" TextColor="Black" Text="Уровень 1" Clicked="Button_ClickedLevel1"/>
@@ -27,7 +28,8 @@
                 <Button HeightRequest="60" Text="Уровень 2" Clicked="Button_ClickedRedact2"/>
                 <Button HeightRequest="60" Text="Уровень 3" Clicked="Button_ClickedRedact3"/>
             </StackLayout>
-            <Button BackgroundColor="#ff4d4d" TextColor="White" Margin="10,5" HeightRequest="300" Grid.Row="3" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>
+            <Button BackgroundColor="#ffcc99" TextColor="White" Margin="10,5" Grid.Row="3" Text="Статистика" Clicked="Button_ClickedStatic"/>
+            <Button BackgroundColor="#ff4d4d" TextColor="White" Margin="10,5" HeightRequest="250" Grid.Row="4" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>
         </Grid>
 
 

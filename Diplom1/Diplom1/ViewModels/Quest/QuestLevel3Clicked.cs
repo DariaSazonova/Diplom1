@@ -22,9 +22,9 @@ namespace Diplom1.ViewModels.Quest
 
         public async void Execute(object parameter)
         {
-            vm.IndicatorVisibility = true;
+            vm.IndicatorIsVisible = true;
             Application.Current.MainPage = new Diplom1.Views.HomePage("level3");
-            vm.IndicatorVisibility = false;
+            vm.IndicatorIsVisible = false;
         }
     }
 }

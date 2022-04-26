@@ -21,8 +21,7 @@ namespace Diplom1.Client
                 HttpResponseMessage result = await client.GetAsync(RequestStrings.getAbbRating(level, applicantid));
                 if (result.IsSuccessStatusCode)
                 {
-                    var res = await result.Content.ReadAsStringAsync();
-                    List<QuestRatingModel> listRes = JsonConvert.DeserializeObject<List<QuestRatingModel>>(res);
+                    var res = await result.Content.ReadAsStringAsync(); 
 
                     if (!String.IsNullOrWhiteSpace(res))
                     {

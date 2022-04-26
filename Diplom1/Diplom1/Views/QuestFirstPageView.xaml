@@ -7,7 +7,7 @@
         <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <StackLayout>
-                <Grid Margin="0,0,0,0">
+                <Grid x:Name="MainLabel" TranslationY="-100" Margin="0,0,0,0">
                     <Frame  BackgroundColor="#204060" CornerRadius="50" Margin="10,5">
                         <Label
                             Margin="20,20,20,0"
@@ -24,11 +24,13 @@
 
                 <StackLayout Margin="10,0">
                     <Label
+                        x:Name="SeconLabel"
                         Margin="20"
                         FontAttributes="Bold"
                         FontSize="20"
                         HorizontalOptions="CenterAndExpand"
                         HorizontalTextAlignment="Center"
+                        TranslationY="-200"
                         Text="Выберите одно из действий:"
                         TextColor="DarkBlue"
                         VerticalOptions="Center" />
@@ -42,6 +44,8 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <yummy:PancakeView
+                            x:Name="LabelLevel1"
+                            TranslationX="-200"
                             Grid.Row="0"
                             Grid.Column="0"
                             Padding="10"
@@ -68,6 +72,8 @@
 
                         <yummy:PancakeView
                             Grid.Row="0"
+                             x:Name="LabelLevel2"
+                            TranslationX="200"
                             Grid.Column="1"
                             Padding="10"
                             BackgroundColor="#8cb3d9"
@@ -94,6 +100,8 @@
                         <yummy:PancakeView
                             Grid.Row="1"
                             Grid.Column="0"
+                             x:Name="LabelLevel3"
+                            TranslationX="-200"
                             Padding="10"
                             BackgroundColor="#79a6d2"
                             Shadow="{yummy:ShadowMarkup Color=Black, Offset='10,10'}"
@@ -118,6 +126,8 @@
                         <yummy:PancakeView
                             Grid.Row="1"
                             Grid.Column="1"
+                             x:Name="LabelHistory"
+                            TranslationX="200"
                             Padding="10"
                             BackgroundColor="#6699cc"
                             Shadow="{yummy:ShadowMarkup Color=Black, Offset='10,10'}"
@@ -144,7 +154,7 @@
             </StackLayout>
         </ScrollView>
 
-        <AbsoluteLayout IsVisible="{Binding IndicatorVisibility}">
+        <AbsoluteLayout IsVisible="{Binding IndicatorIsVisible}">
             <BoxView
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="All"
@@ -152,10 +162,11 @@
                 Opacity="0.7" />
             <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
                 <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                   <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
+                    <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
                 </yummy:PancakeView>
             </StackLayout>
         </AbsoluteLayout>
+
 
     </Grid>
 </ContentPage>

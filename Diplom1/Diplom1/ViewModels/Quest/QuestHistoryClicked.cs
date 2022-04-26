@@ -23,10 +23,10 @@ namespace Diplom1.ViewModels.Quest
 
         public async void Execute(object parameter)
         {
-            vm.IndicatorVisibility = true;
+            vm.IndicatorIsVisible = true;
             int userId = Convert.ToInt32(PreferencesApp.UserID);
             Application.Current.MainPage = new Diplom1.Views.AbbRating(0, userId);
-            vm.IndicatorVisibility = false;
+            vm.IndicatorIsVisible = false;
         }
     }
 }

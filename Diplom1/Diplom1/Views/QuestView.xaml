@@ -58,20 +58,18 @@
                             Grid.Row="0" 
                             HorizontalTextAlignment="Center" 
                             VerticalTextAlignment="Center">
-                                <Label.GestureRecognizers>
-                                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
-                                </Label.GestureRecognizers>
+                                
                             </Label>
 
                             <ListView  
                                 VerticalScrollBarVisibility="Never" 
                                 HasUnevenRows="True" 
                                 SeparatorColor="White"  
-                                x:Name="ListButtons" 
+                                x:Name="ListButtons"  
                                 BackgroundColor="White"  
                                 ItemsSource="{Binding answers}" 
-                                Grid.Row="1" 
                                 ItemTapped="ListButtons_ItemTapped"
+                                Grid.Row="1" 
                                 >
                                 <ListView.ItemTemplate >
                                     <DataTemplate>
@@ -79,16 +77,24 @@
                                             <StackLayout VerticalOptions="Center">
                                                 <Frame
                                                     HasShadow="False"
-                                                    Padding="5" 
+                                                    Padding="2" 
                                                     BackgroundColor="Gray" 
-                                                    CornerRadius="20" 
+                                                    CornerRadius="15" 
                                                     Margin="5" 
                                                     >
                                                     <Label 
                                                         TextColor="White"
+                                                        Margin="10"
                                                         VerticalTextAlignment="Center" 
                                                         HorizontalTextAlignment="Center" 
-                                                        Text="{Binding }" FontSize="18"/>
+                                                        Text="{Binding }" FontSize="20">
+                                                    <!--<Label.GestureRecognizers>
+                                                        <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
+                                                    </Label.GestureRecognizers>-->
+                                                </Label>
+
+                                                   
+
                                                 </Frame>
                                             </StackLayout>
                                         </ViewCell>

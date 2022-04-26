@@ -67,5 +67,12 @@ namespace Diplom1.Views
             await Navigation.PushAsync(new MediaFilesAdminView());
             Indicator.IsVisible = false;
         }
+
+        private async void Button_ClickedStatic(object sender, EventArgs e)
+        {
+            Indicator.IsVisible = true;
+            await Navigation.PushAsync(new ChartView());
+            Indicator.IsVisible = false;
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Diplom1
 
         protected override void OnStart()
         {
-            //MainPage = new Views.TestResultView();
+            //MainPage = new Views.ChartView();
             NavigationAsync();
         }
         private  void NavigationAsync()

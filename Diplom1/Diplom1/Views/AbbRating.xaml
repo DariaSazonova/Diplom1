@@ -7,7 +7,7 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <ImageButton 
                     VerticalOptions="End" 
@@ -27,7 +27,6 @@
                         <DataTemplate>
                             <ViewCell>
                                 <yummy:PancakeView 
-                                
                                 CornerRadius="15"
                                 HeightRequest="120" Margin="5"
                                 BackgroundColor="#f0f0f5"
@@ -58,7 +57,7 @@
                 </ListView>
             </Grid>
 
-            <AbsoluteLayout Grid.RowSpan="5" x:Name="Testresults" IsVisible="false">
+            <AbsoluteLayout x:Name="Testresults" IsVisible="false">
                 <yummy:PancakeView 
                 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                 HeightRequest="500"
