@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Diplom1.Views.HomePageDetailAdmin" BackgroundColor="White" Title="Главная">
-
+    <ScrollView Orientation="Vertical">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,25 +16,165 @@
             <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
             <ScrollView Margin="5,0" Grid.Row="1" Orientation="Horizontal">
                 <StackLayout  Orientation="Horizontal">
-                    <Button BackgroundColor="#d9b3ff" WidthRequest="180" TextColor="Black" Text="Уровень 1" Clicked="Button_ClickedLevel1"/>
-                    <Button BackgroundColor="#ffd11a"  WidthRequest="180" TextColor="Black" Text="Уровень 2" Clicked="Button_ClickedLevel2"/>
-                    <Button BackgroundColor="#00cc66" WidthRequest="180" TextColor="Black"  Text="Уровень 3" Clicked="Button_ClickedLevel3"/>
+
+                    <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
+                        <Frame.Background>
+                            <LinearGradientBrush >
+                                <GradientStop Color="#ff7b89"
+                          Offset="0.2" />
+                                <GradientStop Color="#8a5082"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
+                                <Image Source="star.png"/>
+                            </StackLayout>
+                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Rating1}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
+                        <Frame.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="#ff7b89"
+                          Offset="0.3" />
+                                    <GradientStop Color="#8a5082"
+                          Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
+                                <Image Source="star.png"/>
+                                <Image Source="star.png"/>
+                            </StackLayout>
+                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Rating2}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
+                        <Frame.Background>
+                                <LinearGradientBrush >
+                                    <GradientStop Color="#8a5082"
+                          Offset="0.1" />
+                                    <GradientStop Color="#ff7b89"
+                          Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
+                                <Image Source="star.png"/>
+                                <Image Source="star.png"/>
+                                <Image Source="star.png"/>
+                            </StackLayout>
+                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Rating3}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    
                 </StackLayout>
             </ScrollView>
 
-            <StackLayout  Margin="5,0" Grid.Row="2"  Orientation="Vertical">
-                <Label VerticalOptions="Center" HorizontalOptions="Center" Text="РЕДАКТИРОВАТЬ ТЕСТ" TextColor="Black"/>
-                <Button HeightRequest="60" Text="Уровень 1" Clicked="Button_ClickedRedact1"/>
-                <Button HeightRequest="60" Text="Уровень 2" Clicked="Button_ClickedRedact2"/>
-                <Button HeightRequest="60" Text="Уровень 3" Clicked="Button_ClickedRedact3"/>
-            </StackLayout>
-            <Button BackgroundColor="#ffcc99" TextColor="White" Margin="10,5" Grid.Row="3" Text="Статистика" Clicked="Button_ClickedStatic"/>
-            <Button BackgroundColor="#ff4d4d" TextColor="White" Margin="10,5" HeightRequest="250" Grid.Row="4" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>
+                <StackLayout  Margin="5,0" Grid.Row="2"  Orientation="Vertical">
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="РЕДАКТИРОВАТЬ ТЕСТ" TextColor="Black"/>
+
+                    <Frame Margin="5"  HeightRequest="20" CornerRadius="20">
+                        <Frame.Background>
+                            <LinearGradientBrush  EndPoint="1,0">
+                                <GradientStop Color="#a5cad2"
+                          Offset="0.1" />
+                                <GradientStop Color="#6f5f90"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <StackLayout  HorizontalOptions="Center" VerticalOptions="Center"  Orientation="Horizontal">
+                                <Image Source="editText.png"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TestRedact1}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Margin="5"  HeightRequest="20" CornerRadius="20">
+                        <Frame.Background>
+                            <LinearGradientBrush  EndPoint="1,0">
+                                <GradientStop Color="#a5cad2"
+                          Offset="0.3" />
+                                <GradientStop Color="#6f5f90"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <StackLayout  HorizontalOptions="Center" VerticalOptions="Center"  Orientation="Horizontal">
+                                <Image Source="editText.png"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TestRedact2}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Margin="5"  HeightRequest="20" CornerRadius="20">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#a5cad2"
+                          Offset="0.6" />
+                                <GradientStop Color="#6f5f90"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center"  Orientation="Horizontal">
+                                <Image Source="editText.png"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TestRedact3}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+
+                <Button BackgroundColor="#a5cad2" FontAttributes="Bold" TextColor="Black" Margin="10,5" Grid.Row="3" Text="Статистика" Clicked="Button_ClickedStatic"/>
+
+                <Frame Grid.Row="4" Margin="5"  CornerRadius="20">
+                    <Frame.Background>
+                        <LinearGradientBrush >
+                            <GradientStop Color="#a5cad2"
+                          Offset="0.1" />
+                            <GradientStop Color="#ff4d4d"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label TextColor="Black" FontAttributes="Bold" Text="РЕДАКТИРОВАТЬ МЕДИА-ФАЙЛЫ" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"  Orientation="Horizontal">
+                            <Image HeightRequest="200" Source="filmEditing.png"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Media}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!--<Button BackgroundColor="#ff4d4d" TextColor="White" Margin="10,5" HeightRequest="250" Grid.Row="4" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>-->
         </Grid>
 
 
 
-        <AbsoluteLayout  x:Name="Indicator" IsVisible="false">
+        <AbsoluteLayout  IsVisible="{Binding Indicator}">
             <BoxView
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="All"
@@ -48,5 +188,6 @@
         </AbsoluteLayout>
 
     </Grid>
+    </ScrollView>
     
 </ContentPage>

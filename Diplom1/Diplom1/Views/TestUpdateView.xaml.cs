@@ -70,5 +70,9 @@ namespace Diplom1.Views
             ListTest.ItemsSource = vm.listQuestions;
             ListTest.BindingContext = vm.listQuestions;
         }
+        private void ToolbarItem_ClickedBack(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new HomePage());
+        }
     }
 }

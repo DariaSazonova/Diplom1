@@ -9,6 +9,12 @@
             Clicked="ToolbarItem_ClickedAddNew"
                  Priority="0" 
                 />
+        <ToolbarItem 
+                 IconImageSource="x.png"
+                 Order="Primary"
+            Clicked="ToolbarItem_ClickedBack"
+                 Priority="0" 
+                />
     </ContentPage.ToolbarItems>
     <Grid>
         <ListView
@@ -25,14 +31,14 @@
                 <DataTemplate>
                     <ViewCell >
                         <yummy:PancakeView Margin="10" CornerRadius="20" BackgroundColor="#b3cccc">
-                            <Grid Margin="10" HeightRequest="500">
+                            <Grid Margin="10">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
                                     <RowDefinition Height="40"/>
-                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="350"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="40"/>
                                 </Grid.ColumnDefinitions>
                                 <Label 

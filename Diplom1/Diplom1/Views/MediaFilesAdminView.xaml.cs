@@ -76,5 +76,10 @@ namespace Diplom1.Views
             }
             Indicator.IsVisible = false;
         }
+
+        private void ToolbarItem_ClickedBack(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new HomePage());
+        }
     }
 }

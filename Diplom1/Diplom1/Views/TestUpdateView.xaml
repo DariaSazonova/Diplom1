@@ -10,6 +10,12 @@
             Clicked="ToolbarItem_ClickedAdd"
                  Priority="0" 
                 />
+        <ToolbarItem 
+                 IconImageSource="x.png"
+                 Order="Primary"
+            Clicked="ToolbarItem_ClickedBack"
+                 Priority="0" 
+                />
     </ContentPage.ToolbarItems>
     <Grid>
     <Grid>
