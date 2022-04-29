@@ -7,22 +7,25 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="300"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="180"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
-            <ScrollView Margin="5,0" Grid.Row="1" Orientation="Horizontal">
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="СТАТИСТИКА ЗА МЕСЯЦ" TextColor="Black"/>
+                <ContentView Grid.Row="1" x:Name="ChartContentView"/>
+                <Label Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
+            <ScrollView Margin="5,0" Grid.Row="3" Orientation="Horizontal">
                 <StackLayout  Orientation="Horizontal">
 
                     <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
                         <Frame.Background>
                             <LinearGradientBrush >
-                                <GradientStop Color="#ff7b89"
+                                    <GradientStop Color="#fffff4"
                           Offset="0.2" />
-                                <GradientStop Color="#8a5082"
+                                    <GradientStop Color="#c7f9d4"
                           Offset="1.0" />
                             </LinearGradientBrush>
                         </Frame.Background>
@@ -40,9 +43,9 @@
                     <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
                         <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,1">
-                                    <GradientStop Color="#ff7b89"
+                                    <GradientStop Color="#e8fded"
                           Offset="0.3" />
-                                    <GradientStop Color="#8a5082"
+                                    <GradientStop Color="#c7f9d4"
                           Offset="1.0" />
                                 </LinearGradientBrush>
                             </Frame.Background>
@@ -61,9 +64,9 @@
                     <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
                         <Frame.Background>
                                 <LinearGradientBrush >
-                                    <GradientStop Color="#8a5082"
+                                    <GradientStop Color="#c7f9d4"
                           Offset="0.1" />
-                                    <GradientStop Color="#ff7b89"
+                                    <GradientStop Color="#ffffff"
                           Offset="1.0" />
                                 </LinearGradientBrush>
                             </Frame.Background>
@@ -83,15 +86,15 @@
                 </StackLayout>
             </ScrollView>
 
-                <StackLayout  Margin="5,0" Grid.Row="2"  Orientation="Vertical">
+                <StackLayout  Margin="5,0" Grid.Row="4"  Orientation="Vertical">
                     <Label VerticalOptions="Center" HorizontalOptions="Center" Text="РЕДАКТИРОВАТЬ ТЕСТ" TextColor="Black"/>
 
                     <Frame Margin="5"  HeightRequest="20" CornerRadius="20">
                         <Frame.Background>
                             <LinearGradientBrush  EndPoint="1,0">
-                                <GradientStop Color="#a5cad2"
-                          Offset="0.1" />
-                                <GradientStop Color="#6f5f90"
+                                <GradientStop Color="#fefee6"
+                          Offset="0.3" />
+                                <GradientStop Color="#FEFEC8"
                           Offset="1.0" />
                             </LinearGradientBrush>
                         </Frame.Background>
@@ -109,9 +112,9 @@
                     <Frame Margin="5"  HeightRequest="20" CornerRadius="20">
                         <Frame.Background>
                             <LinearGradientBrush  EndPoint="1,0">
-                                <GradientStop Color="#a5cad2"
-                          Offset="0.3" />
-                                <GradientStop Color="#6f5f90"
+                                <GradientStop Color="#ffe6f2"
+                          Offset="0.1" />
+                                <GradientStop Color="#FFD4E9"
                           Offset="1.0" />
                             </LinearGradientBrush>
                         </Frame.Background>
@@ -129,16 +132,16 @@
                     <Frame Margin="5"  HeightRequest="20" CornerRadius="20">
                         <Frame.Background>
                             <LinearGradientBrush EndPoint="1,0">
-                                <GradientStop Color="#a5cad2"
+                                <GradientStop Color="#494950"
                           Offset="0.6" />
-                                <GradientStop Color="#6f5f90"
+                                <GradientStop Color="#18181a"
                           Offset="1.0" />
                             </LinearGradientBrush>
                         </Frame.Background>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label TextColor="White" FontAttributes="Bold" Text="УРОВЕНЬ 3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                             <StackLayout HorizontalOptions="Center" VerticalOptions="Center"  Orientation="Horizontal">
-                                <Image Source="editText.png"/>
+                                <Image Source="editTextW.png"/>
                             </StackLayout>
                         </StackLayout>
                         <Frame.GestureRecognizers>
@@ -147,14 +150,14 @@
                     </Frame>
                 </StackLayout>
 
-                <Button BackgroundColor="#a5cad2" FontAttributes="Bold" TextColor="Black" Margin="10,5" Grid.Row="3" Text="Статистика" Clicked="Button_ClickedStatic"/>
+                <!--<Button BackgroundColor="#a5cad2" FontAttributes="Bold" TextColor="Black" Margin="10,5" Grid.Row="3" Text="Статистика" Clicked="Button_ClickedStatic"/>-->
 
-                <Frame Grid.Row="4" Margin="5"  CornerRadius="20">
+                <Frame Grid.Row="5" Margin="5"  CornerRadius="20">
                     <Frame.Background>
                         <LinearGradientBrush >
-                            <GradientStop Color="#a5cad2"
+                            <GradientStop Color="#C7F9D4"
                           Offset="0.1" />
-                            <GradientStop Color="#ff4d4d"
+                            <GradientStop Color="#FFD4E9"
                           Offset="1.0" />
                         </LinearGradientBrush>
                     </Frame.Background>

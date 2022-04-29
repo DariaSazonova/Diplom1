@@ -14,7 +14,7 @@ namespace Diplom1.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ChartView.xaml")]
-    public partial class ChartView : global::Xamarin.Forms.ContentPage {
+    public partial class ChartView : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Microcharts.Forms.ChartView Chart;

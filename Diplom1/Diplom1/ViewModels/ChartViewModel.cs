@@ -28,32 +28,41 @@ namespace Diplom1.ViewModels
             if (js != null)
             {
                 model.list = JsonConvert.DeserializeObject<List<chartData>>(js);
-                foreach(var item in model.list)
+                if (model.list.Count != 0)
                 {
-                    var entry = new ChartEntry(item.count)
+                    foreach (var item in model.list)
                     {
-                        Label = item.date,
-                        ValueLabel = item.count.ToString()
+                        var entry = new ChartEntry(item.count)
+                        {
+                            Label = item.date,
+                            ValueLabel = item.count.ToString(),
+                            Color = SKColor.Parse("#0a5c20")
+                        };
+                        model.entries.Add(entry);
+                    }
+                    model.chart = new LineChart
+                    {
+                        Entries = model.entries,
+                        LineMode = LineMode.Straight,
+                        LineSize = 8,
+                        PointMode = PointMode.Square,
+                        PointSize = 18,
+                        IsAnimated = true,
+                        AnimationProgress = 1,
+                        AnimationDuration = TimeSpan.FromSeconds(5),
+                        LabelColor = SKColor.Parse("#000000"),
+                        LabelOrientation = Orientation.Horizontal,
+                        LabelTextSize = 25,
+                        ValueLabelOrientation = Orientation.Horizontal
                     };
-                    model.entries.Add(entry);
                 }
-                model.chart = new LineChart
+                else
                 {
-                    Entries = model.entries,
-                    LineMode = LineMode.Straight,
-                    LineSize = 8,
-                    PointMode = PointMode.Square,
-                    PointSize = 18,
-                    IsAnimated = true,
-                    AnimationProgress = 1,
-                    AnimationDuration = TimeSpan.FromSeconds(5),
-                    LabelColor = SKColor.Parse("#000000"),
-                    LabelOrientation = Orientation.Horizontal,
-                    LabelTextSize = 25,
-                    ValueLabelOrientation = Orientation.Horizontal
-                };
+                    Application.Current.MainPage.Toast("Нет данных за этот месяц", status.warning);
+                }
 
             }
+           
 
         }
         public LineChart Chart

@@ -17,6 +17,7 @@ namespace Diplom1.Views
         public HomePageDetailAdmin()
         {
             InitializeComponent();
+            ChartContentView.Content = new ChartView();
             BindingContext = viewModel;
         }
         protected override void OnAppearing()
@@ -70,11 +71,11 @@ namespace Diplom1.Views
         //    viewModel.Indicator = false;
         //}
 
-        private async void Button_ClickedStatic(object sender, EventArgs e)
-        {
-            viewModel.Indicator = true;
-            await Navigation.PushAsync(new ChartView());
-            viewModel.Indicator = false;
-        }
+        //private async void Button_ClickedStatic(object sender, EventArgs e)
+        //{
+        //    viewModel.Indicator = true;
+        //    await Navigation.PushAsync(new ChartView());
+        //    viewModel.Indicator = false;
+        //}
     }
 }

@@ -13,7 +13,7 @@ using Xamarin.Forms.Xaml;
 namespace Diplom1.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChartView : ContentPage
+    public partial class ChartView : ContentView
     {
         public ChartViewModel viewModel;
         public ChartView()
@@ -27,7 +27,7 @@ namespace Diplom1.Views
         private async void Button_ClickedMonth(object sender, EventArgs e)
         {
             string[] months = { "Январь", "Февраль", "Март", "Апрель", "Март","Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
-            var clicked = await DisplayActionSheet("Выберите месяц", "Отмена", "Окей", months);
+            var clicked = await Application.Current.MainPage.DisplayActionSheet("Выберите месяц", "Отмена", "Окей", months);
             if (months.Contains(clicked))
             {
                 for(var i = 0; i < months.Count(); i++)
