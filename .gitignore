@@ -364,3 +364,5 @@ FodyWeavers.xsd
 *.pdb
 *.dll
 *.dll
+.vs/Diplom1/v17/.suo
+*.v2
