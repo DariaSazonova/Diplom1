@@ -9,24 +9,32 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" BackgroundColor="#8b9b74">
+
+        <Grid Grid.Row="0"  BackgroundColor="#494950">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="90"/>
                 <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" HorizontalTextAlignment="start" Margin="10,10" VerticalTextAlignment="Start"
+            <Label Grid.Row="0" HorizontalTextAlignment="Start" Margin="20,10" TextColor="White" VerticalTextAlignment="Center"
               Text="{Binding role}" FontSize="16"/>
+            <Image Margin="0,20,20,0" HorizontalOptions="EndAndExpand" Grid.Row="0" Source="student_icon.png" BackgroundColor="Transparent"/>
             <Frame Margin="10,10" BackgroundColor="Transparent" Grid.Row="1" >
                 <StackLayout>
-                    <Label  HorizontalTextAlignment="start"  VerticalTextAlignment="End"
+                    <Label  HorizontalTextAlignment="start" TextColor="White"  VerticalTextAlignment="End"
                     Text="{Binding Surname}" FontSize="22"/>
-                    <Label  HorizontalTextAlignment="start"  VerticalTextAlignment="End"
+                    <Label  HorizontalTextAlignment="start" TextColor="White" VerticalTextAlignment="End"
                     Text="{Binding Name}" FontSize="22"/>
-                    <Label   HorizontalTextAlignment="start"  VerticalTextAlignment="End"
+                    <Label   HorizontalTextAlignment="start" TextColor="White" VerticalTextAlignment="End"
                     Text="{Binding Patronymic}" FontSize="22"/>
                 </StackLayout>
             </Frame>
         </Grid>
-        <Button Text="Выход" Grid.Row="2" Command="{Binding exitButton}"/>
+        <StackLayout Grid.Row="1" Margin="20">
+            <Label TextColor="Black" FontSize="20" HorizontalTextAlignment="Start" Text="Выпускная квалификационная работа"/>
+            <Label TextColor="Black" FontSize="20" HorizontalTextAlignment="Start" Text="Сазоновой Дарьи Романовны"/>
+            <Label TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"  VerticalOptions="EndAndExpand" Text="2022 год"/>
+        </StackLayout>
+        
+        <Button BackgroundColor="#494950" TextColor="White" Text="Выход" Grid.Row="2" Command="{Binding exitButton}"/>
     </Grid>
 </ContentPage>

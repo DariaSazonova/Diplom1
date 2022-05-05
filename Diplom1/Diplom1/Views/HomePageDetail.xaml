@@ -7,17 +7,16 @@
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="160"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="190"/>
+                <RowDefinition Height="190"/>
+                <RowDefinition Height="190"/>
             </Grid.RowDefinitions>
 
             <yummy:PancakeView 
                             Grid.Row="0"
                             Margin="10,10,10,0"
-                            BackgroundColor="#ebebe0"
+                            BackgroundColor="#ABADD6"
                             CornerRadius="15">
                 <StackLayout Orientation="Horizontal">
                     <ImageButton BackgroundColor="Transparent" Clicked="Button_ClickedInfo" CornerRadius="0" Source="info" Margin="10"/>
@@ -28,7 +27,7 @@
                         
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand"
-                        TextColor="Black"
+                        TextColor="White"
                         Clicked="Button_ClickedInfo"/>
                 </StackLayout>
             </yummy:PancakeView>
@@ -37,7 +36,7 @@
             <yummy:PancakeView 
                             Grid.Row="1"
                             Margin="10,0"
-                            BackgroundColor="#ebebe0"
+                            BackgroundColor="#F59694"
                             CornerRadius="15">
                 <StackLayout Orientation="Horizontal">
                     <ImageButton BackgroundColor="Transparent" Clicked="Button_ClickedQuest" CornerRadius="0" Source="checklist" Margin="10"/>
@@ -47,7 +46,7 @@
                     Text="Тесты"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    TextColor="Black"
+                    TextColor="White"
                     Clicked="Button_ClickedQuest"/>
                 </StackLayout>
             </yummy:PancakeView>
@@ -56,7 +55,7 @@
             <yummy:PancakeView 
                             Grid.Row="2"
                             Margin="10,0"
-                            BackgroundColor="#ebebe0"
+                            BackgroundColor="#F3BAA7"
                             CornerRadius="15">
                 <StackLayout Orientation="Horizontal">
                     <ImageButton BackgroundColor="Transparent" Clicked="Button_ClickedMedia" CornerRadius="0" Source="folder" Margin="10"/>
@@ -67,12 +66,12 @@
                     Clicked="Button_ClickedMedia"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    TextColor="Black"/>
+                    TextColor="White"/>
                 </StackLayout>
             </yummy:PancakeView>
             <!--<Button Margin="5,0" Grid.Row="2"  Text="Медиа файлы"/>-->
 
-            <yummy:PancakeView 
+            <!--<yummy:PancakeView 
                             Grid.Row="3"
                             Margin="10,0"
                             BackgroundColor="#ebebe0"
@@ -87,23 +86,23 @@
                     VerticalOptions="CenterAndExpand"
                     TextColor="Black"/>
                 </StackLayout>
-            </yummy:PancakeView>
+            </yummy:PancakeView>-->
             <!--<Button Margin="5,0" Grid.Row="3"  Text="План обучения"/>-->
 
             <yummy:PancakeView 
-                            Grid.Row="4"
+                            Grid.Row="3"
                             Margin="10,0"
-                            BackgroundColor="#ebebe0"
+                            BackgroundColor="#5F689F"
                             CornerRadius="15">
                 <StackLayout Orientation="Horizontal">
                     <ImageButton BackgroundColor="Transparent" Clicked="Button_ClickedCollegeInfo" CornerRadius="0" Source="college" Margin="10"/>
                     <Button 
-                    Margin="0,0,40,0"
+                    Margin="20,0,40,0"
                     BackgroundColor="Transparent"
-                    Text="Информация о колледже"
-                    HorizontalOptions="CenterAndExpand"
+                    Text="Информация &#10; о колледже"
+                    HorizontalOptions="StartAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    TextColor="Black"
+                    TextColor="White"
                     Clicked="Button_ClickedCollegeInfo"/>
                 </StackLayout>
             </yummy:PancakeView>

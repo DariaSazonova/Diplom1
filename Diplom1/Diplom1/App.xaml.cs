@@ -13,12 +13,10 @@ namespace Diplom1
         public App()
         {
             InitializeComponent();
-            MainPage = new StartPageView();
         }
 
         protected override void OnStart()
         {
-            //MainPage = new Views.ChartView();
             NavigationAsync();
         }
         private  void NavigationAsync()
