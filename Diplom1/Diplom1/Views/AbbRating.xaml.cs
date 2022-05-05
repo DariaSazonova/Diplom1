@@ -21,6 +21,11 @@ namespace Diplom1.Views
             InitializeComponent();
             viewModel = new(level, appid);
             BindingContext = viewModel;
+            if (appid == 0)
+            {
+                TitleLabel.IsVisible = true;
+                TitleLabel.Text = "ОТОБРАЖАЮТСЯ ЛУЧШИЕ РЕЗУЛЬТАТЫ СТУДЕНТОВ";
+            }
         }
         private void StudentsRating_Refreshing(object sender, EventArgs e)
         {

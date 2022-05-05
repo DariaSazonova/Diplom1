@@ -29,6 +29,7 @@ foreground;obj\Debug\120\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\61\jl\res\layout\camerafragment.xml
 FrameLayout;C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\64\jl\res\layout\bottomtablayout.xml
 item;C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\64\jl\res\values\styles.xml
+item;obj\Debug\120\res\values\styles.xml
 LinearLayout;C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\64\jl\res\layout\bottomtablayout.xml
 paths;C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\62\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;C:\Users\123\source\repos\Diplom1\Diplom1\Diplom1.Android\obj\Debug\120\lp\3\jl\res\values\strings.xml

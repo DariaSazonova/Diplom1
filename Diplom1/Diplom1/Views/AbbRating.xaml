@@ -9,6 +9,16 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <Label 
+                    Margin="10,10"
+                    FontSize="12"
+                    x:Name="TitleLabel"
+                    IsVisible="false"
+                    TextColor="Black"
+                    VerticalTextAlignment="Start"
+                    HorizontalTextAlignment="Start"
+                    Grid.Row="0"
+                    />
                 <ImageButton 
                     VerticalOptions="End" 
                     HorizontalOptions="End" 
