@@ -33,15 +33,15 @@ namespace Diplom1.ViewModels.Quest
                         {
                             toReturn = "Это Ваша первая попытка)";
                         }
-                        else if (listRes[0].Result > listRes[1].Result)
+                        else if (Convert.ToDouble(listRes[0].Result) > Convert.ToDouble(listRes[1].Result))
                         {
                             toReturn = "Поздравляем вы улучшили свой результат!";
                         }
-                        else if (listRes[0].Result == 1)
+                        else if (Convert.ToDouble(listRes[0].Result) == 1)
                         {
                             toReturn = "Отличный результат!";
                         }
-                        else if(listRes[0].Result == 0)
+                        else if(Convert.ToDouble(listRes[0].Result) == 0)
                         {
                             toReturn = "К сожалению в прошлый раз Ваш результат был лучше.\n Но Вы всегда можете попробовать еще раз!";
                             

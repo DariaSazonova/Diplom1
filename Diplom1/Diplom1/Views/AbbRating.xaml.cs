@@ -1,5 +1,6 @@
 ﻿using Diplom1.Interfaces;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels.AbbRating;
 using System;
 using System.Collections.Generic;
@@ -32,13 +33,23 @@ namespace Diplom1.Views
 
         }
 
-        private void StudentsRating_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void StudentsRating_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var item = e.Item as AbbRatingModel;
             if (item != null)
             {
-                contentView.Content = new TestResultView(item.idApplicant, item.id);
-                Testresults.IsVisible = true;
+                Diplom1.ViewModels.Quest.GetTestResult GetTestResult = new();
+                var res = await GetTestResult.Result(item.idApplicant, item.id);
+                if (res != null)
+                {
+                    contentView.Content = new TestResultView(res);
+                    Testresults.IsVisible = true;
+                }
+                else
+                {
+                    Testresults.IsVisible = false;
+                    Application.Current.MainPage.Toast($"Тест был изменен\nИнформация о результатах недоступна", status.error);
+                }
             }
         }
 

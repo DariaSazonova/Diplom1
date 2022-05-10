@@ -31,28 +31,35 @@ namespace Diplom1.ViewModels.Quest
                     {
                         List<QuestRatingModel> listRes = JsonConvert.DeserializeObject<List<QuestRatingModel>>(res);
                         var item = listRes[listRes.Count - 1];
-                        List<Answers> listAnswers = JsonConvert.DeserializeObject<List<Answers>>(item.answers);
-                        result = await client.GetAsync(RequestStrings.getQuestions(Convert.ToInt32(item.IdQuest)));
-                        if (result.IsSuccessStatusCode)
+                        if (item.answers != null)
                         {
-                            res = await result.Content.ReadAsStringAsync();
-                            if (!String.IsNullOrWhiteSpace(res))
+                            List<Answers> listAnswers = JsonConvert.DeserializeObject<List<Answers>>(item.answers);
+                            result = await client.GetAsync(RequestStrings.getQuestions(Convert.ToInt32(item.IdQuest)));
+                            if (result.IsSuccessStatusCode)
                             {
-                                var js = JObject.Parse(res);
-                                List<Questions> listQuest = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
-                                List<TestResultModel> TestResultModel = new();
-                                var count = 0;
-                                foreach(var i in listAnswers)
+                                res = await result.Content.ReadAsStringAsync();
+                                if (!String.IsNullOrWhiteSpace(res))
                                 {
-                                    TestResultModel answer = new();
-                                    answer.question = listQuest[count].question;
-                                    answer.trueAnswer = listQuest[count].answers[Convert.ToInt32(listQuest[count].answer)];
-                                    answer.yourAnswer = listQuest[count].answers[Convert.ToInt32(listAnswers[count].yourAnswer)];
-                                    answer.color = answer.trueAnswer== answer.yourAnswer?Color.Green:Color.Red;
-                                    TestResultModel.Add(answer);
-                                    count++;
+                                    var js = JObject.Parse(res);
+                                    List<Questions> listQuest = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+                                    List<TestResultModel> TestResultModel = new();
+                                    var count = 0;
+                                    foreach (var i in listAnswers)
+                                    {
+                                        TestResultModel answer = new();
+                                        answer.question = listQuest[count].question;
+                                        answer.trueAnswer = listQuest[count].answers[Convert.ToInt32(listQuest[count].answer)];
+                                        answer.yourAnswer = listQuest[count].answers[Convert.ToInt32(listAnswers[count].yourAnswer)];
+                                        answer.color = answer.trueAnswer == answer.yourAnswer ? Color.Green : Color.Red;
+                                        TestResultModel.Add(answer);
+                                        count++;
+                                    }
+                                    return TestResultModel;
                                 }
-                                return TestResultModel;
+                                else
+                                {
+                                    return null;
+                                }
                             }
                             else
                             {
@@ -61,6 +68,8 @@ namespace Diplom1.ViewModels.Quest
                         }
                         else
                         {
+                            //await Application.Current.MainPage.DisplayAlert("Предупреждение", $"Тест был изменен\nИнформация о результатах недоступна", "Ок");
+                            Application.Current.MainPage.Toast($"Тест был изменен\nИнформация о результатах недоступна", status.error);
                             return null;
                         }
                     }
@@ -72,7 +81,7 @@ namespace Diplom1.ViewModels.Quest
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Предупреждение", $"Ошибка сервера {result.StatusCode}", "Ок");
+                    //await Application.Current.MainPage.DisplayAlert("Предупреждение", $"Ошибка сервера {result.StatusCode}", "Ок");
                     return null;
                 }
             }

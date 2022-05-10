@@ -19,10 +19,14 @@ namespace Diplom1.ViewModels.AbbRating
 
         public AbbRatingViewModel(int level, int applicantid=0)
         {
+            GetRating = new();
             if (level != 0)
             {
                 var js = Task.Run(async () => await GetRating.GetRatingList( level, applicantid)).Result;
-                modellist.list.AddRange(JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js));
+                if (js != null)
+                {
+                    modellist.list.AddRange(JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js));
+                }
             }
             else
             {

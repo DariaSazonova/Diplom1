@@ -17,7 +17,7 @@
                     <ViewCell >
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="300"/>
                             </Grid.RowDefinitions>
                             <Label TextColor="Black"

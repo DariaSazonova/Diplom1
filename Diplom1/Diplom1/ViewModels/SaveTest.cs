@@ -46,10 +46,14 @@ namespace Diplom1.ViewModels
                     idQuest = vm.idQuest,
                     questions = jslistquest
                 };
+                var t = new StringContent(
+                   JsonConvert.SerializeObject(model),
+                    Encoding.UTF8, "application/json").ReadAsStringAsync().Result;
                 using HttpClient client = new();
                 HttpResponseMessage response = await client.PutAsync(RequestStrings.putQuestions(), new StringContent(
                    JsonConvert.SerializeObject(model),
                     Encoding.UTF8, "application/json"));
+
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

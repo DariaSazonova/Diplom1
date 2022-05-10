@@ -1,4 +1,5 @@
 ﻿using Diplom1.Client;
+using Diplom1.Toast;
 using Diplom1.ViewModels.Quest;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,14 @@ namespace Diplom1.Views
         {
             InitializeComponent();
             vm = new(countTrueAnswers, countAll, level);
-            contentView.Content = new TestResultView(Convert.ToInt32(PreferencesApp.UserID));
+            Diplom1.ViewModels.Quest.GetTestResult GetTestResult = new();
+            var res = Task.Run(async () => await GetTestResult.Result(Convert.ToInt32(PreferencesApp.UserID), 0)).Result;
+            if (res != null)
+                contentView.Content = new TestResultView(res);
+            else
+            {
+                Application.Current.MainPage.Toast($"Тест был изменен\nИнформация о результатах недоступна", status.error);
+            }
             BindingContext = vm;
         }
 

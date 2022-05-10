@@ -42,19 +42,17 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
                 {
                     var user = JsonConvert.DeserializeObject<UserModel>(res);
                     PreferencesApp.UserID = user.id;
-                    PreferencesApp.role = user.role;
+                    PreferencesApp.role = user.role == "admin" ? "Администратор" : "Абитуриент";
                     PreferencesApp.Login = user.Login;
                     PreferencesApp.Password = user.Password;
 
-                    if (PreferencesApp.role == "admin")
+                    if (PreferencesApp.role == "Администратор")
                     {
                         result = await client.GetAsync(RequestStrings.admin(viewModel.Email));
-                        PreferencesApp.role = "Администратор";
                     }
-                    else if (PreferencesApp.role == "applicant")
+                    else if (PreferencesApp.role == "Абитуриент")
                     {
                         result = await client.GetAsync(RequestStrings.applicant(viewModel.Email));
-                        PreferencesApp.role = "Абитуриент";
                     }
                     res = await result.Content.ReadAsStringAsync();
                     var userData = JsonConvert.DeserializeObject<UserModel>(res);
@@ -63,8 +61,6 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
                     PreferencesApp.Patronymic = userData.Patronymic;
                     PreferencesApp.Phone = userData.Phone;
                     PreferencesApp.DateOfBirth = userData.DateOfBirth.ToString();
-
-                    //AvtorizationViewModel.model.role = PreferencesApp.role;
                     
                     viewModel.IndicatorIsVisible = false;
 

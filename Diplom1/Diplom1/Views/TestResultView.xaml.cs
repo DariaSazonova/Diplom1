@@ -1,4 +1,5 @@
-﻿using Diplom1.ViewModels.Quest;
+﻿using Diplom1.Models;
+using Diplom1.ViewModels.Quest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,10 @@ namespace Diplom1.Views
     public partial class TestResultView : ContentView
     {
         public TestResultViewModel viewModel;
-        public TestResultView(int Id, int IdTest=0)
+        public TestResultView(List<TestResultModel> list)
         {
             InitializeComponent();
-            viewModel = new(Id, IdTest);
+            viewModel = new(list);
             BindingContext = viewModel;
         }
 

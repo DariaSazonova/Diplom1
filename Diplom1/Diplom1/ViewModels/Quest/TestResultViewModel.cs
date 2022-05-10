@@ -1,10 +1,12 @@
 ﻿using Diplom1.Client;
 using Diplom1.Models;
+using Diplom1.Toast;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Diplom1.ViewModels.Quest
 {
@@ -14,9 +16,17 @@ namespace Diplom1.ViewModels.Quest
         private TestResultModel model { get; set; } = new();
         private List<TestResultModel> listModel { get; set; } = new();
         public GetTestResult testResult = new();
-        public TestResultViewModel(int id, int idTest=0)
+        public TestResultViewModel(List<TestResultModel> list)
         {
-            listModel = Task.Run(async()=>await testResult.Result(Convert.ToInt32(id), idTest)).Result;
+            //var res = Task.Run(async () => await testResult.Result(Convert.ToInt32(id), idTest)).Result;
+            if(list == null || list.Count == 0)
+            {
+                Application.Current.MainPage.Toast($"Тест был изменен\nИнформация о результатах недоступна", status.error);
+            }
+            else
+            {
+                listModel = list;
+            }
         }
 
         public List<TestResultModel> list

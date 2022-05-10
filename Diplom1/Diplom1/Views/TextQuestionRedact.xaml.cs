@@ -55,34 +55,47 @@ namespace Diplom1.Views
         private async void Button_ClickedSave(object sender, EventArgs e)
         {
             vm.IndicatorIsVisible = true;
-
-            var i = 0;
-            foreach(var item in vm.answers)
+            if (!string.IsNullOrWhiteSpace(trueAnswer.Text))
             {
-                i++;
-                if (item.Trim() == trueAnswer.Text.Trim())
+                if (vm.answers.Count > 0)
                 {
-                    vm.answer = (i - 1).ToString();
-                    break;
-                }
-            }
-            if (int.TryParse(vm.answer, out int num))
-            {
-                var res = await vm.savetest.Save(vm);
-                if (res)
-                {
-                    vm.IndicatorIsVisible = false;
-                    Application.Current.MainPage.Toast("Тест изменен", status.message);
+                    var i = 0;
+                    foreach (var item in vm.answers)
+                    {
+                        i++;
+                        if (item.Trim() == trueAnswer.Text.Trim())
+                        {
+                            vm.answer = (i - 1).ToString();
+                            break;
+                        }
+                    }
+                    if (int.TryParse(vm.answer, out int num))
+                    {
+                        var res = await vm.savetest.Save(vm);
+                        if (res)
+                        {
+                            vm.IndicatorIsVisible = false;
+                            Application.Current.MainPage.Toast("Тест изменен", status.message);
+                        }
+                        else
+                        {
+                            vm.IndicatorIsVisible = false;
+                            Application.Current.MainPage.Toast("Не удалось обновить тест", status.warning);
+                        }
+                    }
+                    else
+                    {
+                        Application.Current.MainPage.Toast("Не найден правильный вариант ответа", status.error);
+                    }
                 }
                 else
                 {
-                    vm.IndicatorIsVisible = false;
-                    Application.Current.MainPage.Toast("Не удалось обновить тест", status.warning);
+                    Application.Current.MainPage.Toast("Не заполнены варианты ответов", status.error);
                 }
             }
             else
             {
-                Application.Current.MainPage.Toast("Не найден правильный вариант ответа", status.error);
+                Application.Current.MainPage.Toast("Поле правильный ответ не заполнено", status.error);
             }
         }
 
