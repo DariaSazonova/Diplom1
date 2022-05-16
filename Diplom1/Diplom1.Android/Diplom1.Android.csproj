@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="PhoneCall.cs" />
+    <Compile Include="Renderers\BorderlessEditorRenderer.cs" />
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

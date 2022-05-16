@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diplom1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace Diplom1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SpecialityInformation : ContentPage
     {
+        private SpecialityInformationViewModel viewModel = new();
         public SpecialityInformation()
         {
             InitializeComponent();
+            BindingContext = viewModel;
         }
         protected async override void OnAppearing()
         {

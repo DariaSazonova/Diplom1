@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:diplom1="clr-namespace:Diplom1"
              x:Class="Diplom1.Views.SpecialityInformation"
              NavigationPage.HasNavigationBar="True" BackgroundColor="White" NavigationPage.HasBackButton="True">
 
@@ -12,85 +12,34 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="120"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="400"/>
-                <RowDefinition Height="480"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <yummy:PancakeView Opacity="0" TranslationX="-60" x:Name="UniversityName"  BackgroundColor="#cacecd" Grid.Column="0" Grid.Row="0" CornerRadius="0,0,0,25">
-                <Label VerticalTextAlignment="Center" Margin="10" TextColor="Black" Text="МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ТЕХНОЛОГИЙ И УПРАВЛЕНИЯ ИМЕНИ К. Г. РАЗУМОВСКОГО (ПКУ)"/>
+                <diplom1:BorderlessEditor IsReadOnly="{Binding IsNotEdior}"  FontSize="12"  Margin="10" TextColor="Black" Text="{Binding Editor1}"/>
             </yummy:PancakeView>
-            <Label x:Name="SpecialityName" Opacity="0" TranslationX="-60" Margin="10" Grid.Row="1" Grid.ColumnSpan="2" Text="ИНФОРМАЦИОННЫЕ СИСТЕМЫ И ПРОГРАММИРОВАНИЕ" FontSize="24" TextColor="DarkBlue" BackgroundColor="White"/>
+            <diplom1:BorderlessEditor IsReadOnly="{Binding IsNotEdior}" x:Name="SpecialityName" Opacity="0" TranslationX="-60" Margin="10" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Editor2}" FontSize="23" TextColor="DarkBlue" BackgroundColor="White"/>
             <yummy:PancakeView x:Name="StudentInmage" Opacity="0" TranslationX="60" BackgroundColor="Transparent" Grid.Column="1" Grid.Row="0"  CornerRadius="25,0,0,0">
-                <Image Source="studentForInfoSpec.jpg"/>
+                <Image HeightRequest="140" Source="studentForInfoSpec.jpg"/>
             </yummy:PancakeView>
             <yummy:PancakeView x:Name="YearsLabel" Opacity="0" TranslationX="60" BackgroundColor="CadetBlue"  Grid.Column="0" Margin="50,0,10,0" Grid.ColumnSpan="2" Grid.Row="2" CornerRadius="25,0,25,0">
-                <Label FontSize="20" Margin="15,5,5,5"  Text="Срок обучения: 3 года 10 месяцев"/>
+                <diplom1:BorderlessEditor IsReadOnly="{Binding IsNotEdior}" FontSize="18" Margin="15,5,5,5"  Text="{Binding Editor3}"/>
             </yummy:PancakeView>
             <yummy:PancakeView x:Name="KvalInfo" Opacity="0" TranslationX="-60" BackgroundColor="LightSteelBlue" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,10,60,0"  CornerRadius="0,25,0,25">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="45"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Margin="5,0" FontSize="20" TextColor="White" FontAttributes="Bold" Text="Квалификация выпускника: "/>
-                    <Label Margin="10,0" Grid.Row="1" FontSize="18" TextColor="White" Text="- администратор баз данных;"/>
-                    <Label Margin="10,0" Grid.Row="2" FontSize="18" TextColor="White" Text="- специалист по тестированию в области информационных технологий;"/>
-                    <Label Margin="10,0" Grid.Row="3" FontSize="18" TextColor="White" Text="- программист;"/>
-                    <Label Margin="10,0" Grid.Row="4" FontSize="18" TextColor="White" Text="- технический писатель;"/>
-                    <Label Margin="10,0" Grid.Row="5" FontSize="18" TextColor="White" Text="- специалист по информационным системам;"/>
-                    <Label Margin="10,0" Grid.Row="6" FontSize="18" TextColor="White" Text="- специалист по информационным ресурсам;"/>
-                    <Label Margin="10,0,10,0" Grid.Row="7" FontSize="18" TextColor="White" Text="- разработчик веб и мультимедийных приложений."/>
-                </Grid>
+                <diplom1:BorderlessEditor IsReadOnly="{Binding IsNotEdior}"  Margin="5,0" FontSize="18" TextColor="White" FontAttributes="Bold"
+                                               Text="{Binding Editor4}"/>
             </yummy:PancakeView>
             <yummy:PancakeView x:Name="ProfInfo" Opacity="0" TranslationX="60" BackgroundColor="#e0ebeb"  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,20,0,0"  CornerRadius="25,0,0,25">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="45"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Margin="10,0" FontSize="20" TextColor="#999999" FontAttributes="Bold" Text="Основные виды профессиональной деятельности:"/>
-                    <Label Margin="10,0" Grid.Row="1" FontSize="18" TextColor="#999999" Text="- Разработка модулей программного обеспечения для компьютерных систем"/>
-                    <Label Margin="10,0" Grid.Row="2" FontSize="18" TextColor="#999999" Text="- Осуществление интеграции программных модуле"/>
-                    <Label Margin="10,0" Grid.Row="3" FontSize="18" TextColor="#999999" Text="- Сопровождение и обслуживание программного обеспечения компьютерных систем"/>
-                    <Label Margin="10,0" Grid.Row="4" FontSize="18" TextColor="#999999" Text="- Администрирование баз данных и серверов"/>
-                    <Label Margin="10,0" Grid.Row="5" FontSize="18" TextColor="#999999" Text="- Разработка, администрирование и защита баз данных"/>
-                    <Label Margin="10,0" Grid.Row="6" FontSize="18" TextColor="#999999" Text="- Проектирование и разработка информационных систем"/>
-                    <Label Margin="10,0,10,0" Grid.Row="7" FontSize="18" TextColor="#999999" Text="- Разработка дизайна веб-приложений"/>
-                    <Label Margin="10,0,10,0" Grid.Row="8" FontSize="18" TextColor="#999999" Text="- Проектирование, разработка и оптимизация веб-приложений"/>
-                    
-                </Grid>
+                <diplom1:BorderlessEditor IsReadOnly="{Binding IsNotEdior}" Margin="10,0" FontSize="18" TextColor="#999999" FontAttributes="Bold" 
+                                      Text="{Binding Editor5}"/>
             </yummy:PancakeView>
             <yummy:PancakeView x:Name="CostInfo" Opacity="0" TranslationY="60" Margin="0,10,0,0" BackgroundColor="#ccccb3" CornerRadius="50,50,0,0" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="55"/>
-                        <RowDefinition Height="55"/>
-                        <RowDefinition Height="75"/>
-                        <RowDefinition Height="55"/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" FontAttributes="Bold" TextColor="White" Margin="50,10,0,0" Text="Стоимость обучения 119 000 руб за год."/>
-                    <Label Grid.Row="1" TextColor="White" Margin="10,0,5,0" Text="Скидки на оплату обучения за 1 курс абитуриентам, поступающим на места по договорам об оказании платных образовательных услуг в 2021 году:"/>
-                    <Label Grid.Row="2" TextColor="White" Margin="10,0,5,0" Text="1) в размере 15% оплатившим 100% цены обучения за 2021/22 учебный год. Срок оплаты за обучение - до 10.08.2021 года включительно"/>
-                    <Label Grid.Row="3" TextColor="White" Margin="10,0,5,0" Text="2)выпускникам курсов довузовской подготовки: - в размере 10% (срок обучения от 24 до 40 академических часов) - в размере 15% (срок обучения от 80 до 120 академических часов)"/>
-                    <Label Grid.Row="4" TextColor="White" Margin="10,0,5,0" Text="3)в размере 20% выпускникам школ кластера непрерывного казачьего образования г. Москвы"/>
-                </Grid>
+                <diplom1:BorderlessEditor IsReadOnly="{Binding IsNotEdior}" FontSize="16" FontAttributes="Bold" TextColor="White" Margin="20,10,10,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                                          Text="{Binding Editor6}"/>
             </yummy:PancakeView>
         </Grid>
     </ScrollView>
