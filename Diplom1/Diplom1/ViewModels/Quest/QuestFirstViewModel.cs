@@ -9,7 +9,7 @@ namespace Diplom1.ViewModels.Quest
     public class QuestFirstViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public bool? Indicator { get; set; } = false;
+        public bool Indicator { get; set; } = false;
         public ICommand QuestLevel1Clicked { protected set; get; }
         public ICommand QuestLevel2Clicked { protected set; get; }
         public ICommand QuestLevel3Clicked { protected set; get; }
@@ -22,14 +22,13 @@ namespace Diplom1.ViewModels.Quest
             QuestLevel3Clicked = new QuestLevel3Clicked(this);
             QuestHistoryClicked = new QuestHistoryClicked(this);
         }
-        public bool? IndicatorIsVisible
+        public bool IndicatorIsVisible
         {
             get { return Indicator; }
             set
             {
                 Indicator = value;
                 OnPropertyChanged("IndicatorIsVisible");
-
             }
         }
         protected void OnPropertyChanged(string propName)

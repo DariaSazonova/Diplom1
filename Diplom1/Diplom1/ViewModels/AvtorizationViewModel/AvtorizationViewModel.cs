@@ -20,12 +20,12 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
         }
         public bool IndicatorIsVisible
         {
-            get { return model.indicator; }
+            get { return model.Indicator; }
             set
             {
-                if (model.indicator != value)
+                if (model.Indicator != value)
                 {
-                    model.indicator = value;
+                    model.Indicator = value;
                     OnPropertyChanged("IndicatorIsVisible");
                 }
             }

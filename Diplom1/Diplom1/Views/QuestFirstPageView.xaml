@@ -154,7 +154,7 @@
             </StackLayout>
         </ScrollView>
 
-        <AbsoluteLayout IsVisible="{Binding IndicatorIsVisible}">
+        <AbsoluteLayout  IsVisible="{Binding IndicatorIsVisible}">
             <BoxView
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="All"

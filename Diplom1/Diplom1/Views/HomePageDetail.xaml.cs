@@ -1,6 +1,11 @@
-﻿using System;
+﻿using Diplom1.Client;
+using Diplom1.Models;
+using Diplom1.Toast;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +24,11 @@ namespace Diplom1.Views
 
         private async void Button_ClickedInfo(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SpecialityInformation());
+            Indicator.IsVisible = true;
+            GetSpicialityInformation GetSpicialityInformation = new();
+            var list = await GetSpicialityInformation.get();
+            await Navigation.PushAsync(new SpecialityInformation(list));
+            Indicator.IsVisible = false;
         }
 
         private async void Button_ClickedQuest(object sender, EventArgs e)
@@ -36,6 +45,7 @@ namespace Diplom1.Views
         {
             await Navigation.PushAsync(new MediaPageView());
         }
+        
     }
     
 }

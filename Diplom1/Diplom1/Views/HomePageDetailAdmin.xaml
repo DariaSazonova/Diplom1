@@ -3,45 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Diplom1.Views.HomePageDetailAdmin" BackgroundColor="White"  Title="Главная">
-    <ScrollView Orientation="Vertical">
     <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
+        <ScrollView Orientation="Vertical">
+
+            <Grid>
+                <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="300"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="180"/>
-                <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="СТАТИСТИКА ЗА МЕСЯЦ" TextColor="Black"/>
                 <ContentView Grid.Row="1" x:Name="ChartContentView"/>
                 <Label Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
-            <ScrollView Margin="5,0" Grid.Row="3" Orientation="Horizontal">
-                <StackLayout  Orientation="Horizontal">
+                <ScrollView Margin="5,0" Grid.Row="3" Orientation="Horizontal">
+                    <StackLayout  Orientation="Horizontal">
 
-                    <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
-                        <Frame.Background>
-                            <LinearGradientBrush >
+                        <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
+                            <Frame.Background>
+                                <LinearGradientBrush >
                                     <GradientStop Color="#fffff4"
                           Offset="0.2" />
                                     <GradientStop Color="#c7f9d4"
                           Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Frame.Background>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
-                                <Image Source="star.png"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
+                                    <Image Source="star.png"/>
+                                </StackLayout>
+                                <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                             </StackLayout>
-                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                        </StackLayout>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Rating1}"/>
-                        </Frame.GestureRecognizers>
-                    </Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Rating1}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
 
-                    <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
-                        <Frame.Background>
+                        <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
+                            <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,1">
                                     <GradientStop Color="#e8fded"
                           Offset="0.3" />
@@ -49,20 +50,20 @@
                           Offset="1.0" />
                                 </LinearGradientBrush>
                             </Frame.Background>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
-                                <Image Source="star.png"/>
-                                <Image Source="star.png"/>
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
+                                    <Image Source="star.png"/>
+                                    <Image Source="star.png"/>
+                                </StackLayout>
+                                <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                             </StackLayout>
-                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                        </StackLayout>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Rating2}"/>
-                        </Frame.GestureRecognizers>
-                    </Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Rating2}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
 
-                    <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
-                        <Frame.Background>
+                        <Frame Margin="5"  WidthRequest="140" CornerRadius="20">
+                            <Frame.Background>
                                 <LinearGradientBrush >
                                     <GradientStop Color="#c7f9d4"
                           Offset="0.1" />
@@ -70,21 +71,21 @@
                           Offset="1.0" />
                                 </LinearGradientBrush>
                             </Frame.Background>
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
-                                <Image Source="star.png"/>
-                                <Image Source="star.png"/>
-                                <Image Source="star.png"/>
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" Orientation="Horizontal">
+                                    <Image Source="star.png"/>
+                                    <Image Source="star.png"/>
+                                    <Image Source="star.png"/>
+                                </StackLayout>
+                                <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                             </StackLayout>
-                            <Label TextColor="Black" FontAttributes="Bold" Text="УРОВЕНЬ 3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                        </StackLayout>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Rating3}"/>
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    
-                </StackLayout>
-            </ScrollView>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Rating3}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                    </StackLayout>
+                </ScrollView>
 
                 <StackLayout  Margin="5,0" Grid.Row="4"  Orientation="Vertical">
                     <Label VerticalOptions="Center" HorizontalOptions="Center" Text="РЕДАКТИРОВАТЬ ТЕСТ" TextColor="Black"/>
@@ -173,24 +174,26 @@
                 </Frame>
 
                 <!--<Button BackgroundColor="#ff4d4d" TextColor="White" Margin="10,5" HeightRequest="250" Grid.Row="4" Text="Редактировать медиа-файлы" Clicked="Button_ClickedMedia"/>-->
-        </Grid>
+                <Button Grid.Row="6" 
+                        Text="Редактировать информацию о специальности"
+                        BackgroundColor="#494950" TextColor="White"
+                        Clicked="Button_Clicked"/>
+            </Grid>
 
 
-
-        <AbsoluteLayout  IsVisible="{Binding Indicator}">
-            <BoxView
+    </ScrollView>
+    <AbsoluteLayout  IsVisible="{Binding Indicator}">
+        <BoxView
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="All"
                 BackgroundColor="Black"
                 Opacity="0.7" />
-            <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-                <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                   <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
-                </yummy:PancakeView>
-            </StackLayout>
-        </AbsoluteLayout>
-
+        <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+            <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
+            </yummy:PancakeView>
+        </StackLayout>
+    </AbsoluteLayout>
     </Grid>
-    </ScrollView>
-    
+
 </ContentPage>

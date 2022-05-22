@@ -56,7 +56,8 @@ namespace Diplom1.Client
         {
             return $"{client}/countab?month={month}";
         }
-        public static string getMediaFiles = "http://specialtyadvertising.somee.com/api/mediafile";
+        public static string getMediaFiles = $"{client}/mediafile";
+        public static string getMediaFilesSpecialityInformation = $"{client}/MediaFile/SpecialityInformation";
 
     }
 }

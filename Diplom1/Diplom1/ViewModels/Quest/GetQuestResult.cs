@@ -29,27 +29,27 @@ namespace Diplom1.ViewModels.Quest
                     if (listRes.Count > 1)
                     {
                         listRes = listRes.Where(s=>s.IdQuest==level).OrderByDescending(el => el.id).ToList();
-                        var ok = double.TryParse(listRes[1].Result, out double d1);
+                        var ok = double.TryParse(listRes[1].Result.Replace('.', ','), out double d1);
                         if (ok)
                         {
                             if (listRes.Count == 1)
                             {
                                 toReturn = "Это Ваша первая попытка)";
                             }
-                            else if (Convert.ToDouble(listRes[0].Result) > Convert.ToDouble(listRes[1].Result))
+                            else if (Convert.ToDouble(listRes[0].Result.Replace('.', ',')) > Convert.ToDouble(listRes[1].Result.Replace('.', ',')))
                             {
                                 toReturn = "Поздравляем вы улучшили свой результат!";
                             }
-                            else if (Convert.ToDouble(listRes[0].Result) == 1)
+                            else if (Convert.ToDouble(listRes[0].Result.Replace('.', ',')) == 1)
                             {
                                 toReturn = "Отличный результат!";
                             }
-                            else if (Convert.ToDouble(listRes[0].Result) == 0)
+                            else if (Convert.ToDouble(listRes[0].Result.Replace('.', ',')) == 0)
                             {
                                 toReturn = "К сожалению в прошлый раз Ваш результат был лучше.\n Но Вы всегда можете попробовать еще раз!";
 
                             }
-                            else if (listRes[0].Result == listRes[1].Result)
+                            else if (listRes[0].Result.Replace('.', ',') == listRes[1].Result.Replace('.', ','))
                             {
                                 toReturn = "Стабильность признак мастерства!";
                             }

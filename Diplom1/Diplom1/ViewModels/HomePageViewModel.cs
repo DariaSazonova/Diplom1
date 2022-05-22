@@ -1,10 +1,13 @@
 ﻿using Diplom1.Client;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels.HomePage;
 using Diplom1.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -108,5 +111,6 @@ namespace Diplom1.ViewModels
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
+       
     }
 }

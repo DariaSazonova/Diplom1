@@ -18,8 +18,9 @@ namespace Diplom1.ViewModels.HomePage
 
         public async void Execute(object parameter)
         {
-            HomePageDetail homePageDetail = new();
-            await homePageDetail.Navigation.PushAsync(new SpecialityInformation());
+
+            //HomePageDetail homePageDetail = new();
+            //await homePageDetail.Navigation.PushAsync(new SpecialityInformation());
         }
     }
 }

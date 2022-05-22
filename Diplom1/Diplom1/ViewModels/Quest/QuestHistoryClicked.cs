@@ -24,8 +24,10 @@ namespace Diplom1.ViewModels.Quest
         public async void Execute(object parameter)
         {
             vm.IndicatorIsVisible = true;
+            await System.Threading.Tasks.Task.Delay(500);
             int userId = Convert.ToInt32(PreferencesApp.UserID);
             Application.Current.MainPage = new Diplom1.Views.AbbRating(0, userId);
+            //await Application.Current.MainPage.Navigation.PushAsync(new Diplom1.Views.AbbRating(0, userId));
             vm.IndicatorIsVisible = false;
         }
     }

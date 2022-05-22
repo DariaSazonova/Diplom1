@@ -1,8 +1,16 @@
-﻿using Diplom1.Models;
+﻿using Diplom1.Client;
+using Diplom1.Models;
+using Diplom1.Toast;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Diplom1.ViewModels
 {
@@ -10,9 +18,10 @@ namespace Diplom1.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public SpecialityInformationModel model { get; set; } = new();
-        public SpecialityInformationViewModel()
+        private List<MediaPageModel> list { get; set; } = new ();
+        public SpecialityInformationViewModel(List<MediaPageModel> res)
         {
-
+            list = res;
         }
         public bool IsNotEdior
         {
@@ -26,82 +35,79 @@ namespace Diplom1.ViewModels
                 }
             }
         }
+        public bool Indicator
+        {
+            get { return model.Indicator; }
+            set
+            {
+                if (model.Indicator != value)
+                {
+                    model.Indicator = value;
+                    OnPropertyChanged("Indicator");
+                }
+            }
+        }
 
         public string Editor1
         {
-            get { return model.Editor1; }
+            get { return list.Where(s => s.title == "Editor1").Select(s => s.path).FirstOrDefault().ToString();  }
             set
             {
-                if (model.Editor1 != value)
-                {
-                    model.Editor1 = value;
-                    OnPropertyChanged("Editor1");
-                }
+                list[list.IndexOf(list.Where(s => s.title == "Editor1").FirstOrDefault())].path = value;
+                OnPropertyChanged("Editor1");
+                
             }
         }
 
         public string Editor2
         {
-            get { return model.Editor2; }
+            get { return list.Where(s => s.title == "Editor2").Select(s => s.path).FirstOrDefault().ToString(); }
             set
             {
-                if (model.Editor2 != value)
-                {
-                    model.Editor2 = value;
-                    OnPropertyChanged("Editor2");
-                }
+
+                list[list.IndexOf(list.Where(s => s.title == "Editor2").FirstOrDefault())].path = value;
+                OnPropertyChanged("Editor2");
+                
             }
         }
 
         public string Editor3
         {
-            get { return model.Editor3; }
+            get { return list.Where(s => s.title == "Editor3").Select(s => s.path).FirstOrDefault().ToString();  }
             set
             {
-                if (model.Editor3 != value)
-                {
-                    model.Editor3 = value;
-                    OnPropertyChanged("Editor3");
-                }
+                list[list.IndexOf(list.Where(s => s.title == "Editor3").FirstOrDefault())].path = value;
+                OnPropertyChanged("Editor3");
             }
         }
 
         public string Editor4
         {
-            get { return model.Editor4; }
+            get { return list.Where(s => s.title == "Editor4").Select(s => s.path).FirstOrDefault().ToString(); }
             set
             {
-                if (model.Editor4 != value)
-                {
-                    model.Editor4 = value;
-                    OnPropertyChanged("Editor4");
-                }
+                list[list.IndexOf(list.Where(s => s.title == "Editor4").FirstOrDefault())].path = value;
+                OnPropertyChanged("Editor4");
             }
         }
 
         public string Editor5
         {
-            get { return model.Editor5; }
+            get { return list.Where(s => s.title == "Editor5").Select(s => s.path).FirstOrDefault().ToString(); }
             set
             {
-                if (model.Editor5 != value)
-                {
-                    model.Editor5 = value;
-                    OnPropertyChanged("Editor5");
-                }
+                list[list.IndexOf(list.Where(s => s.title == "Editor5").FirstOrDefault())].path = value;
+                OnPropertyChanged("Editor5");
             }
         }
 
         public string Editor6
         {
-            get { return model.Editor6; }
+            get { return list.Where(s => s.title == "Editor6").Select(s => s.path).FirstOrDefault().ToString(); }
             set
             {
-                if (model.Editor6 != value)
-                {
-                    model.Editor6 = value;
-                    OnPropertyChanged("Editor6");
-                }
+                list[list.IndexOf(list.Where(s => s.title == "Editor6").FirstOrDefault())].path = value;
+                OnPropertyChanged("Editor6");
             }
         }
 
@@ -109,5 +115,33 @@ namespace Diplom1.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
+
+        public async Task<bool> Update()
+        {
+            if (GetClientConnection.CheckConnection())
+            {
+                int count = 0;
+                using HttpClient client = new();
+                foreach (var item in list)
+                {
+                    HttpResponseMessage result = await client.PutAsync(RequestStrings.getMediaFiles, new StringContent(
+                       JsonConvert.SerializeObject(item),
+                        Encoding.UTF8, "application/json"));
+
+                    if (result.IsSuccessStatusCode)
+                    {
+                        count++;
+                    }
+                }
+                return count == list.Count;
+            }
+            else
+            {
+                Application.Current.MainPage.Toast("Отсутствует интернет соединение", status.error);
+                return false;
+            }
+           
+        }
+        
     }
 }

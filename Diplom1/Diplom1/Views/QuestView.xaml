@@ -23,87 +23,76 @@
                     </Label>
                 </StackLayout>
             </Grid>
-            <StackLayout 
-                x:Name="ParStackLayout" 
-                 Margin="25,80,25,0" 
-                 BindableLayout.ItemsSource="{Binding model}" 
-                Grid.Row="1">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Frame HasShadow="False" Padding="5"  BackgroundColor="LightGray"  CornerRadius="15"  Margin="5" HeightRequest="40">
-                            <ProgressBar 
-                            Progress="{Binding progress}" 
-                            ProgressColor="Green"/>
-                        </Frame>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
 
+            <StackLayout Margin="10" Grid.Row="1" VerticalOptions="Center">
+            <Frame  HasShadow="False" Padding="5"  BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  CornerRadius="15"  Margin="5" HeightRequest="20">
+                    <ProgressBar x:Name="progressBar"
+                        Progress="{Binding progress}" 
+                        ProgressColor="Green"/>
+                </Frame>
+            </StackLayout>
             <StackLayout 
                 x:Name="QuestionList" 
                 Margin="25,0" 
-                BindableLayout.ItemsSource="{Binding ListQuestions}"
                 Grid.Row="2">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="250"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Label x:Name="LabelQuestion"
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="LabelQuestion"
                             TextColor="Black"
                             FontSize="Medium" 
-                            Text="{Binding question}" 
+                           FontAttributes="Bold"
+                            Text="{Binding Question}" 
                             Grid.Row="0" 
                             HorizontalTextAlignment="Center" 
                             VerticalTextAlignment="Center">
-                                
-                            </Label>
 
-                            <ListView  
+                    </Label>
+
+                    <ListView  
+                        ItemSelected="ListButtons_ItemSelected"
                                 VerticalScrollBarVisibility="Never" 
                                 HasUnevenRows="True" 
                                 SeparatorColor="White"  
                                 x:Name="ListButtons"  
                                 BackgroundColor="White"  
-                                ItemsSource="{Binding answers}" 
-                                ItemTapped="ListButtons_ItemTapped"
+                                ItemsSource="{Binding Answers}" 
                                 Grid.Row="1" 
                                 >
-                                <ListView.ItemTemplate >
-                                    <DataTemplate>
-                                        <ViewCell >
-                                            <StackLayout VerticalOptions="Center">
-                                                <Frame
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell >
+                                    <Grid VerticalOptions="Center">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Grid.GestureRecognizers>
+                                        <Frame
                                                     HasShadow="False"
                                                     Padding="2" 
                                                     BackgroundColor="Gray" 
                                                     CornerRadius="15" 
                                                     Margin="5" 
-                                                    >
-                                                    <Label 
+                                                    />
+                                        <Label 
+                                                    x:Name="Question"
                                                         TextColor="White"
                                                         Margin="10"
                                                         VerticalTextAlignment="Center" 
                                                         HorizontalTextAlignment="Center" 
                                                         Text="{Binding }" FontSize="20">
-                                                    <!--<Label.GestureRecognizers>
-                                                        <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
-                                                    </Label.GestureRecognizers>-->
-                                                </Label>
 
-                                                   
+                                        </Label>
 
-                                                </Frame>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
+
+                                    </Grid>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
             </StackLayout>
 
             <AbsoluteLayout Grid.RowSpan="3" IsVisible="{Binding IndicatorIsVisible}">

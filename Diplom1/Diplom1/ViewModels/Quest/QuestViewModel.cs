@@ -66,6 +66,32 @@ namespace Diplom1.ViewModels.Quest
             }
         }
 
+        public string Question
+        {
+            get
+            {
+                return model.listQuestions.FirstOrDefault(s => s.accepted == false).question;
+            }
+            set
+            {
+                model.listQuestions[model.listQuestions.IndexOf(model.listQuestions.FirstOrDefault(s => s.accepted == false))].question = value;
+                    OnPropertyChanged("ListQuestions");
+            }
+        }
+
+        public List<string> Answers
+        {
+            get
+            {
+                return model.listQuestions.FirstOrDefault(s => s.accepted == false).answers;
+            }
+            set
+            {
+                model.listQuestions[model.listQuestions.IndexOf(model.listQuestions.FirstOrDefault(s => s.accepted == false))].answers = value;
+                OnPropertyChanged("ListQuestions");
+            }
+        }
+
 
         public bool? IndicatorIsVisible
         {

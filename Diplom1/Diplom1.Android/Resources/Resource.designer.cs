@@ -27458,7 +27458,10 @@ namespace Diplom1.Droid
 			public const int tooltip_frame_light = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int x = 2131165363;
+			public const int update = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int x = 2131165364;
 			
 			static Drawable()
 			{

@@ -15,6 +15,6 @@ namespace Diplom1.Models
         public  string DateOfBirth { get; set; }
         public string role { get; set; }
         public string Password { get; set; }
-        public bool indicator { get; set; }
+        public bool Indicator { get; set; }
     }
 }

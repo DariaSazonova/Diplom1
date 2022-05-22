@@ -36,22 +36,6 @@ namespace Diplom1.ViewModels.Quest
             }
         }
 
-        public string ImageSource
-        {
-            get
-            {
-                return model.ImageSource;
-            }
-            set
-            {
-                if (model.ImageSource != value)
-                {
-                    model.ImageSource = value;
-                    OnPropertyChanged("ImageSource");
-                }
-            }
-        }
-
         public string aboutTest
         {
             get

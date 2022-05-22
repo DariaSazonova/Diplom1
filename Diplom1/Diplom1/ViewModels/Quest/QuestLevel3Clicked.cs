@@ -23,7 +23,9 @@ namespace Diplom1.ViewModels.Quest
         public async void Execute(object parameter)
         {
             vm.IndicatorIsVisible = true;
+            await System.Threading.Tasks.Task.Delay(500);
             Application.Current.MainPage = new Diplom1.Views.HomePage("level3");
+            //await Application.Current.MainPage.Navigation.PushAsync(new Diplom1.Views.HomePage("level3"));
             vm.IndicatorIsVisible = false;
         }
     }

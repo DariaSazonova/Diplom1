@@ -1,4 +1,5 @@
-﻿using Diplom1.ViewModels;
+﻿using Diplom1.Client;
+using Diplom1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,15 @@ namespace Diplom1.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            viewModel.Indicator = true;
+            GetSpicialityInformation getSpicialityInformation = new();
+            var list = await getSpicialityInformation.get();
+            await Navigation.PushAsync(new SpecialityInformation(list));
+            viewModel.Indicator = false;
         }
         //private async void Button_ClickedLevel1(object sender, EventArgs e)
         //{
