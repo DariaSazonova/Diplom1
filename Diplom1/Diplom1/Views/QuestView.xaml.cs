@@ -23,7 +23,6 @@ namespace Diplom1.Views
         private int count;
         private int Level;
         private List<Answers> answers = new();
-        double x;
         public QuestView(int level)
         {
             InitializeComponent();
@@ -146,7 +145,6 @@ namespace Diplom1.Views
                 (sender as Grid).FadeTo(1, 350),
                 (sender as Grid).TranslateTo(500, 0, 350)
             );
-            x = (sender as Grid).TranslationX;
             (sender as Grid).TranslationX = 0;
             Label d = (Label)(sender as Grid).Children.Where(x => x is Label).FirstOrDefault();
             var d1 = d.Text;

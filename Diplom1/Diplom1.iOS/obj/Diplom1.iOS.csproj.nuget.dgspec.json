@@ -42,10 +42,6 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
-            "CocosSharp": {
-              "target": "Package",
-              "version": "[1.7.1, )"
-            },
             "Microcharts.Forms": {
               "target": "Package",
               "version": "[0.9.5.9, )"
@@ -56,7 +52,7 @@
             },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.0.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -126,10 +122,6 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
-            "CocosSharp": {
-              "target": "Package",
-              "version": "[1.7.1, )"
-            },
             "Microcharts.Forms": {
               "target": "Package",
               "version": "[0.9.5.9, )"
@@ -138,17 +130,13 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
             "Xam.Plugin.Connectivity": {
               "target": "Package",
               "version": "[3.2.0, )"
             },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.0.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

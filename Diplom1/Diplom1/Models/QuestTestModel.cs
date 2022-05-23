@@ -22,12 +22,6 @@ namespace Diplom1.Models
         public bool? IsAnswered { get; set; } = false;
         public bool? accepted { get; set; } = false;
     }
-    public class buttonClickQuest
-    {
-        public int id { get; set; }
-        public string answer { get; set; }
-        public bool isAnswer { get; set; } = false;
-    }
     public class Answers
     {
         public int id { get; set; }

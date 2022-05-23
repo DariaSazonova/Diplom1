@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Diplom1.Models.QuestResultModel" Collapsed="true">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAIAAAAAEAAA=</HashCode>
+      <FileName>Models\QuestResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Views.QuestResult" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAASAAAA=</HashCode>
+      <FileName>Views\QuestResult.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Views.QuestView">
+    <Position X="0.5" Y="5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIgAAAAQBAIQAAAAAABAAAABAAAAAgAAAAA=</HashCode>
+      <FileName>Views\QuestView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Views.TestResultView">
+    <Position X="8.75" Y="3" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TestResultView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Models.QuestTestModel">
+    <Position X="0.5" Y="2.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAJAAAIAAAAA=</HashCode>
+      <FileName>Models\QuestTestModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Models.Questions">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAABAAAAAAkI=</HashCode>
+      <FileName>Models\QuestTestModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Models.Answers">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAgA=</HashCode>
+      <FileName>Models\QuestTestModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.Models.TestResultModel" Collapsed="true">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAQAAACAAAAAACAAAAA=</HashCode>
+      <FileName>Models\TestResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.ViewModels.Quest.GetQuestQuestions">
+    <Position X="5.75" Y="2.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\Quest\GetQuestQuestions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.ViewModels.Quest.GetQuestResult" Collapsed="true">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ViewModels\Quest\GetQuestResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.ViewModels.Quest.GetTestResult">
+    <Position X="10.25" Y="2.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Quest\GetTestResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom1.ViewModels.Quest.QuestResultViewModel" BaseTypeListCollapsed="true">
+    <Position X="11" Y="2" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAIAAQAAAAgAAAAAAAAIAAAAAMAAA=</HashCode>
+      <FileName>ViewModels\Quest\QuestResultViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diplom1.ViewModels.Quest.QuestViewModel" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAACAAAAIAAAAAAAgAAAAAAEQIAAAAAMAAA=</HashCode>
+      <FileName>ViewModels\Quest\QuestViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diplom1.ViewModels.Quest.TestResultViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAgAAAAAAAAIAAAAAAAgAAAAAAIAAAAAAAIAAA=</HashCode>
+      <FileName>ViewModels\Quest\TestResultViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
