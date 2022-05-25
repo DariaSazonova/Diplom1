@@ -53,7 +53,7 @@ namespace Diplom1.Views
             }
         }
 
-        private async void Close(object sender, EventArgs e)
+        private void Close(object sender, EventArgs e)
         {
             Testresults.IsVisible = false;
         }

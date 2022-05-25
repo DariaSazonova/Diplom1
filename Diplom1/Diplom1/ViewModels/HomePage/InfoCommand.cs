@@ -16,7 +16,7 @@ namespace Diplom1.ViewModels.HomePage
             return true;
         }
 
-        public async void Execute(object parameter)
+        public void Execute(object parameter)
         {
 
             //HomePageDetail homePageDetail = new();

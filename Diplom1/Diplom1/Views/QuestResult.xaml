@@ -50,10 +50,10 @@
             Text="{Binding ResultTest}"/>
         
         <Label 
-            Grid.Row="4" 
+            Grid.Row="3" 
             FontAttributes="Italic"
             Margin="30"
-            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
             TextColor="Black"
             Text="{Binding aboutTest}"/>
         <Button

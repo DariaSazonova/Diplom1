@@ -45,7 +45,7 @@ namespace Diplom1.Views
 
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             ListAnswers.ItemsSource = vm.answers;
@@ -131,7 +131,7 @@ namespace Diplom1.Views
             ListAnswers.BindingContext = vm.answers;
         }
 
-        private async void ImageButton_ClickedDelete(object sender, EventArgs e)
+        private void ImageButton_ClickedDelete(object sender, EventArgs e)
         {
             vm.IndicatorIsVisible = true;
             var value = (sender as ImageButton).AutomationId;

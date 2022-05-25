@@ -12,7 +12,7 @@ namespace Diplom1.Models
         public int IdApplicants { get; set; }
         public string Surname { get; set; } = null!;
         public string Name { get; set; } = null!;
-        public string? Patronymic { get; set; }
+        public string Patronymic { get; set; }
         public string Phone { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string DateOfBirth { get; set; }

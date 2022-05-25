@@ -48,7 +48,7 @@ namespace Diplom1.Droid
 
                 return Task.FromResult(true);
             }
-            catch(Exception ex)
+            catch
             {
                 Activity Activity = Platform.CurrentActivity;
                 Xamarin.Forms.Application.Current.MainPage.Toast("Отсутствует разрешение", status.error);

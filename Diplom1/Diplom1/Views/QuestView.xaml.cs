@@ -40,7 +40,7 @@ namespace Diplom1.Views
                 Application.Current.MainPage = new NavigationPage(new Views.HomePage());
             }
             base.OnAppearing();
-            await FadeAnimateY(QuestionList);
+            //await FadeAnimateY(QuestionList);
         }
         private static async Task FadeAnimateY(View view)
         {

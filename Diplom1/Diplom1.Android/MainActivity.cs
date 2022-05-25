@@ -12,7 +12,7 @@ using Android;
 namespace Diplom1.Droid
 {
     [Activity(Label = "Поступи",
-        Icon = "@drawable/MainIcon", 
+        Icon = "@mipmap/icon", 
         Theme = "@style/MainTheme", 
         MainLauncher = true, 
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]

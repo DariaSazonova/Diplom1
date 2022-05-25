@@ -18,7 +18,7 @@
                 <Label Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Text="СТАТИСТИКА ЗА МЕСЯЦ" TextColor="Black"/>
                 <ContentView Grid.Row="1" x:Name="ChartContentView"/>
                 <Label Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Text="РЕЙТИНГ АБИТУРИЕНТОВ" TextColor="Black"/>
-                <ScrollView Margin="5,0" Grid.Row="3" Orientation="Horizontal">
+                <ScrollView Margin="5,0" Grid.Row="3" HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
                     <StackLayout  Orientation="Horizontal">
 
                         <Frame Margin="5"  WidthRequest="140" CornerRadius="20">

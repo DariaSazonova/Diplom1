@@ -51,6 +51,44 @@
 
                     </Label>
 
+                    <!--<CollectionView
+                                VerticalScrollBarVisibility="Never" 
+                                x:Name="ListButtons"  
+                                BackgroundColor="White"  
+                                ItemsSource="{Binding Answers}" 
+                                Grid.Row="1" 
+                        ItemsLayout="VerticalGrid, 2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid VerticalOptions="Center">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Grid.GestureRecognizers>
+                                        <Frame
+                                                    HasShadow="False"
+                                                    Padding="2" 
+                                                    BackgroundColor="Gray" 
+                                                    CornerRadius="15" 
+                                                    Margin="5" 
+                                                    />
+                                        <Label 
+                                                    x:Name="Question"
+                                                        TextColor="White"
+                                                        Margin="10"
+                                                        VerticalTextAlignment="Center" 
+                                                        HorizontalTextAlignment="Center" 
+                                                        Text="{Binding }" FontSize="20">
+
+                                        </Label>
+
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+                    
                     <ListView  
                         ItemSelected="ListButtons_ItemSelected"
                                 VerticalScrollBarVisibility="Never" 

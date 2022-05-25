@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -62,6 +63,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.AbbRating(1));
             viewModel.Indicator = false;
         }
@@ -82,6 +84,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.AbbRating(2));
             viewModel.Indicator = false;
         }
@@ -102,6 +105,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.AbbRating(3));
             viewModel.Indicator = false;
         }
@@ -122,6 +126,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.MediaFilesAdminView());
             viewModel.Indicator = false;
         }
@@ -142,6 +147,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.TestUpdateView(3));
             viewModel.Indicator = false;
         }
@@ -162,6 +168,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.TestUpdateView(2));
             viewModel.Indicator = false;
         }
@@ -182,6 +189,7 @@ namespace Diplom1.ViewModels
         public async void Execute(object parameter)
         {
             viewModel.Indicator = true;
+            await Task.Delay(500);
             Application.Current.MainPage = new NavigationPage(new Views.TestUpdateView(1));
             viewModel.Indicator = false;
         }

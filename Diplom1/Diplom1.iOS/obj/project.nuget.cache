@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cCJa7CuF9ca05CCf/ftse4WNjdPNTV3vP3PKBlRDJmLXh6aRGQkwOGJtrT0HaiuciJm+H4G2cqUslPLZmH/naQ==",
+  "dgSpecHash": "jp3tr1E06A+FR7Izq24eg1/0cexhEHWCpddCi1oPi9uD2fijRUSX3z7ItMiHqgcrFEbf1rxultbeFVqvXGGFoQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\123\\source\\repos\\Diplom1\\Diplom1\\Diplom1.iOS\\Diplom1.iOS.csproj",
   "expectedPackageFiles": [
@@ -15,8 +15,8 @@
     "C:\\Users\\123\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xam.plugin.connectivity\\3.2.0\\xam.plugin.connectivity.3.2.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.2\\xamarin.communitytoolkit.2.0.2.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
-    "C:\\Users\\123\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
+    "C:\\Users\\123\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512",
+    "C:\\Users\\123\\.nuget\\packages\\xamarin.forms\\5.0.0.2401\\xamarin.forms.5.0.0.2401.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
   ],
   "logs": []
