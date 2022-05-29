@@ -1,5 +1,6 @@
 ﻿using Diplom1.Client;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Diplom1.ViewModels.AbbRating
 {
@@ -27,6 +29,10 @@ namespace Diplom1.ViewModels.AbbRating
                 {
                     modellist.list.AddRange(JsonConvert.DeserializeObject<ObservableCollection<AbbRatingModel>>(js));
                 }
+                else
+                {
+                    Application.Current.MainPage.Toast(GetRating.error, status.error);
+                }
             }
             else
             {
@@ -39,6 +45,7 @@ namespace Diplom1.ViewModels.AbbRating
                         modellist.list.AddRange(l);
                     }
                 }
+                if(!string.IsNullOrWhiteSpace(GetRating.error)) Application.Current.MainPage.Toast(GetRating.error, status.error);
             }
         }
         

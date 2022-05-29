@@ -29,14 +29,23 @@ namespace Diplom1.Views
             QuestViewModel vm = new(level);
             Level = level;
             viewModel = vm; 
-            BindingContext = viewModel;
+            if(viewModel.idQuest!=0)
+                BindingContext = viewModel;
 
         }
         protected async override void OnAppearing()
         {
-            if (viewModel.model.listQuestions.Count == 0)
+            if (viewModel.idQuest != 0)
             {
-                Application.Current.MainPage.Toast("В этом тесте еще нет вопросов", status.warning);
+                if (viewModel.model.listQuestions.Count == 0)
+                {
+                    Application.Current.MainPage.Toast("В этом тесте еще нет вопросов", status.warning);
+                    Application.Current.MainPage = new NavigationPage(new Views.HomePage());
+                }
+            }
+            else
+            {
+                Application.Current.MainPage.Toast(viewModel.getQuestions.error, status.error);
                 Application.Current.MainPage = new NavigationPage(new Views.HomePage());
             }
             base.OnAppearing();

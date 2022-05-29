@@ -80,7 +80,7 @@ namespace Diplom1.Views
                         else
                         {
                             vm.IndicatorIsVisible = false;
-                            Application.Current.MainPage.Toast("Не удалось обновить тест", status.warning);
+                            Application.Current.MainPage.Toast(vm.savetest.error, status.warning);
                         }
                     }
                     else

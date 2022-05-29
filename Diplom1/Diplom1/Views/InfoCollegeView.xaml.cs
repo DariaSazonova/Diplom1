@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diplom1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,20 @@ namespace Diplom1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoCollegeView : ContentPage
     {
+        public InfoColledgeViewModel viewModel = new();
         public InfoCollegeView()
         {
             InitializeComponent();
+            BindingContext = viewModel;
+        }
+        private void VideoPriem_Navigated(object sender, WebNavigatedEventArgs e)
+        {
+            viewModel.Indicator = false;
+        }
+
+        private void VideoPriem_Navigating(object sender, WebNavigatingEventArgs e)
+        {
+            viewModel.Indicator = true;
         }
 
         private async void Button_ClickedTelegram(object sender, EventArgs e)

@@ -12,12 +12,13 @@ namespace Diplom1.Client
 {
     public class GetSpicialityInformation
     {
-        public async Task<List<MediaPageModel>> get()
+        public string error = "";
+        public async Task<List<MediaPageModel>> get(string type)
         {
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                HttpResponseMessage result = await client.GetAsync(RequestStrings.getMediaFilesSpecialityInformation);
+                HttpResponseMessage result = await client.GetAsync(RequestStrings.getMediaFiles(type));
                 if (result.IsSuccessStatusCode)
                 {
                     var content = result.Content.ReadAsStringAsync().Result;
@@ -28,19 +29,19 @@ namespace Diplom1.Client
                     }
                     else
                     {
-                        Application.Current.MainPage.Toast("Не удалось получить данные", status.error);
+                        error = "Не удалось получить данные";
                         return null;
                     }
                 }
                 else
                 {
-                    //await Application.Current.MainPage.DisplayAlert("Предупреждение", $"Ошибка сервера {result.StatusCode}", "Ок");
+                    error = $"Ошибка сервера {result.StatusCode}";
                     return null;
                 }
             }
             else
             {
-                Application.Current.MainPage.Toast("Отсутствует интернет соединение", status.error);
+                error = "Отсутствует интернет соединение";
                 return null;
             }
         }

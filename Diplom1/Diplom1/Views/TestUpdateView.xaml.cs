@@ -62,7 +62,7 @@ namespace Diplom1.Views
             vm.listQuestions.RemoveAt(id);
             var res = await vm.savetest.Save(vm);
             if (!res)
-                Application.Current.MainPage.Toast("Не получилось удалить вопрос", status.error);
+                Application.Current.MainPage.Toast(vm.savetest.error, status.error);
             else
                 Application.Current.MainPage.Toast("Вопрос удален", status.message);
             ListTest.ItemsSource = null;

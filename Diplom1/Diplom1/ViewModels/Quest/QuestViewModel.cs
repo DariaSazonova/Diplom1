@@ -17,17 +17,18 @@ namespace Diplom1.ViewModels.Quest
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public QuestTestModel model { get; private set; } = new();
-        private GetQuestQuestions getQuestions = new();
+        public GetQuestQuestions getQuestions = new();
         public QuestViewModel(int level)
         {
             model =new QuestTestModel();
             var jsString = Task.Run(async () => await getQuestions.getQuestQuestions(level)).Result;
-            if (!string.IsNullOrWhiteSpace(jsString))
+            if (!string.IsNullOrWhiteSpace(jsString) && jsString!=null)
             {
                 var js = JObject.Parse(jsString);
                 model.idQuest = Convert.ToInt32(js["idQuest"]);
                 model.listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
             }
+            
 
         }
 

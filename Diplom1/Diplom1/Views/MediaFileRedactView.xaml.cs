@@ -43,7 +43,7 @@ namespace Diplom1.Views
             }
             else
             {
-                Application.Current.MainPage.Toast("Ошибка. Не удалось изменить", status.error);
+                Application.Current.MainPage.Toast(vm.update.error, status.error);
             }
         }
 
@@ -57,7 +57,7 @@ namespace Diplom1.Views
             }
             else
             {
-                Application.Current.MainPage.Toast("Ошибка. Не удалось изменить", status.error);
+                Application.Current.MainPage.Toast(vm.update.error, status.error);
             }
         }
     }

@@ -18,6 +18,7 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
         public readonly AvtorizationViewModel viewModel;
+        public string error = "";
         public SignIn(AvtorizationViewModel vm)
         {
             viewModel = vm;
@@ -37,40 +38,48 @@ namespace Diplom1.ViewModels.AvtorizationViewModel
                 var login = viewModel.Email;
 
                 HttpResponseMessage result = await client.GetAsync(RequestStrings.user(viewModel.Email, pass));
-                var res = await result.Content.ReadAsStringAsync();
-                if (!String.IsNullOrWhiteSpace(res))
+                if (result.IsSuccessStatusCode)
                 {
-                    var user = JsonConvert.DeserializeObject<UserModel>(res);
-                    PreferencesApp.UserID = user.id;
-                    PreferencesApp.role = user.role == "admin" ? "Администратор" : "Абитуриент";
-                    PreferencesApp.Login = user.Login;
-                    PreferencesApp.Password = user.Password;
-
-                    if (PreferencesApp.role == "Администратор")
+                    var res = await result.Content.ReadAsStringAsync();
+                    if (!String.IsNullOrWhiteSpace(res))
                     {
-                        result = await client.GetAsync(RequestStrings.admin(viewModel.Email));
+                        var user = JsonConvert.DeserializeObject<UserModel>(res);
+                        PreferencesApp.UserID = user.id;
+                        PreferencesApp.role = user.role == "admin" ? "Администратор" : "Абитуриент";
+                        PreferencesApp.Login = user.Login;
+                        PreferencesApp.Password = user.Password;
+
+                        if (PreferencesApp.role == "Администратор")
+                        {
+                            result = await client.GetAsync(RequestStrings.admin(viewModel.Email));
+                        }
+                        else if (PreferencesApp.role == "Абитуриент")
+                        {
+                            result = await client.GetAsync(RequestStrings.applicant(viewModel.Email));
+                        }
+                        res = await result.Content.ReadAsStringAsync();
+                        var userData = JsonConvert.DeserializeObject<UserModel>(res);
+                        PreferencesApp.Surname = userData.Surname;
+                        PreferencesApp.Name = userData.Name;
+                        PreferencesApp.Patronymic = userData.Patronymic;
+                        PreferencesApp.Phone = userData.Phone;
+                        PreferencesApp.DateOfBirth = userData.DateOfBirth.ToString();
+
+                        viewModel.IndicatorIsVisible = false;
+
+                        Application.Current.MainPage = new NavigationPage(new Views.HomePage());
+
                     }
-                    else if (PreferencesApp.role == "Абитуриент")
+                    else
                     {
-                        result = await client.GetAsync(RequestStrings.applicant(viewModel.Email));
+                        viewModel.IndicatorIsVisible = false;
+                        Application.Current.MainPage.Toast("Неправильный логин или пароль", status.error);
                     }
-                    res = await result.Content.ReadAsStringAsync();
-                    var userData = JsonConvert.DeserializeObject<UserModel>(res);
-                    PreferencesApp.Surname = userData.Surname;
-                    PreferencesApp.Name = userData.Name;
-                    PreferencesApp.Patronymic = userData.Patronymic;
-                    PreferencesApp.Phone = userData.Phone;
-                    PreferencesApp.DateOfBirth = userData.DateOfBirth.ToString();
-                    
-                    viewModel.IndicatorIsVisible = false;
-
-                    Application.Current.MainPage = new NavigationPage(new Views.HomePage());
-
                 }
                 else
                 {
                     viewModel.IndicatorIsVisible = false;
-                    Application.Current.MainPage.Toast("Неправильный логин или пароль", status.error);
+                    Application.Current.MainPage.Toast($"Ошибка сервера", status.error);
                 }
 
             }

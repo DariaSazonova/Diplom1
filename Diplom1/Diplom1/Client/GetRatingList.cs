@@ -13,6 +13,7 @@ namespace Diplom1.Client
 {
     public class GetRating
     {
+        public string error = "";
         public async Task<string> GetRatingList( int level, int applicantid)
         {
             if (GetClientConnection.CheckConnection())
@@ -35,13 +36,13 @@ namespace Diplom1.Client
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Предупреждение", $"Ошибка сервера {result.StatusCode}", "Ок");
+                    error = $"Ошибка сервера {result.StatusCode}";
                     return null;
                 }
             }
             else
             {
-                Application.Current.MainPage.Toast("Отсутствует интернет соединение", status.error);
+                error = "Отсутствует интернет соединение";
                 return null;
             }
             

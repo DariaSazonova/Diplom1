@@ -24,6 +24,7 @@ namespace Diplom1.ViewModels
     }
     public class SaveTest
     {
+        public string error = "";
         public async Task<bool> Save(TestUpdateViewModel vm)
         {
             vm.IndicatorIsVisible = true;
@@ -69,18 +70,20 @@ namespace Diplom1.ViewModels
                     }
                     else
                     {
+                        error = "Ошибка сервера";
                         return false;
                     }
                 }
                 else
                 {
+                    error = "Ошибка сервера";
                     return false;
                 }
             }
             else
             {
                 vm.IndicatorIsVisible = false;
-                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
+                error = "Нет подключения к интернету";
                 return false;
             }
         }

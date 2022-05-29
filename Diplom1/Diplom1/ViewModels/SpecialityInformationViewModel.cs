@@ -124,7 +124,7 @@ namespace Diplom1.ViewModels
                 using HttpClient client = new();
                 foreach (var item in list)
                 {
-                    HttpResponseMessage result = await client.PutAsync(RequestStrings.getMediaFiles, new StringContent(
+                    HttpResponseMessage result = await client.PutAsync(RequestStrings.getMediaFiles(), new StringContent(
                        JsonConvert.SerializeObject(item),
                         Encoding.UTF8, "application/json"));
 

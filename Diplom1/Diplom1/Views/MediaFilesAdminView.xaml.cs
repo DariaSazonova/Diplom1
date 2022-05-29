@@ -1,4 +1,5 @@
 ﻿using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -72,7 +73,7 @@ namespace Diplom1.Views
             else
             {
                 Indicator.IsVisible = false;
-                await DisplayAlert("Сообщение", "Ошибка сервера", "ОК");
+                Application.Current.MainPage.Toast(vm.update.error, status.error);
             }
             Indicator.IsVisible = false;
         }

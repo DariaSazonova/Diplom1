@@ -1,7 +1,5 @@
 ﻿using Diplom1.Client;
-using Diplom1.Models;
 using Diplom1.Toast;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -11,30 +9,30 @@ using Xamarin.Forms;
 
 namespace Diplom1.ViewModels
 {
-    public class getMediaFiles
+    public class getPhoto
     {
         public string error = "";
-        public async Task<List<MediaPageModel>> get()
+        public async Task<string> get(string name)
         {
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                var response = await client.GetAsync(RequestStrings.getMediaFiles());
+                HttpResponseMessage response = await client.GetAsync(RequestStrings.getPhotos+name);
                 if (response.IsSuccessStatusCode)
                 {
-                    var js = response.Content.ReadAsStringAsync().Result;
-                    List<MediaPageModel> list = JsonConvert.DeserializeObject<List<MediaPageModel>>(js);
-                    return list;
+                    var res = await response.Content.ReadAsStringAsync();
+                    return res;
                 }
                 else
                 {
-                    error = "Не удалось получить данные с сервера";
+                    error = "Ошибка сервера";
                     return null;
                 }
+
             }
             else
             {
-                error = "Нет подключения к интернету";
+                error = "Отутствует интернет соединение";
                 return null;
             }
         }

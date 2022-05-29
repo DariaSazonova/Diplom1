@@ -1,9 +1,11 @@
 ﻿using Diplom1.Models;
+using Diplom1.Toast;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Diplom1.ViewModels
 {
@@ -15,7 +17,15 @@ namespace Diplom1.ViewModels
 
         public MediaPageViewModel()
         {
-            model = Task.Run(async()=>await getMediaFiles.get()).Result;
+            var list = Task.Run(async()=>await getMediaFiles.get()).Result;
+            if (list == null)
+            {
+                Application.Current.MainPage.Toast(getMediaFiles.error, status.error);
+            }
+            else
+            {
+                model = list;
+            }
         }
         public List<MediaPageModel> mediaList
         {

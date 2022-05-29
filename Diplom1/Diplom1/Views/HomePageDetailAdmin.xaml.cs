@@ -1,4 +1,5 @@
 ﻿using Diplom1.Client;
+using Diplom1.Toast;
 using Diplom1.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,62 +31,16 @@ namespace Diplom1.Views
         {
             viewModel.Indicator = true;
             GetSpicialityInformation getSpicialityInformation = new();
-            var list = await getSpicialityInformation.get();
-            await Navigation.PushAsync(new SpecialityInformation(list));
+            var list = await getSpicialityInformation.get("SpecialityInformation");
+            if (list != null)
+            {
+                await Navigation.PushAsync(new SpecialityInformation(list));
+            }
+            else
+            {
+                Application.Current.MainPage.Toast(getSpicialityInformation.error, status.error);
+            }
             viewModel.Indicator = false;
         }
-        //private async void Button_ClickedLevel1(object sender, EventArgs e)
-        //{
-        //    Indicator.IsVisible = true;
-        //    await Navigation.PushAsync(new AbbRating(1));
-        //    Indicator.IsVisible = false;
-        //}
-
-        //private async void Button_ClickedLevel2(object sender, EventArgs e)
-        //{
-        //    Indicator.IsVisible = true;
-        //    await Navigation.PushAsync(new AbbRating(2));
-        //    Indicator.IsVisible = false;
-        //}
-
-        //private async void Button_ClickedLevel3(object sender, EventArgs e)
-        //{
-        //    Indicator.IsVisible = true;
-        //    await Navigation.PushAsync(new AbbRating(3));
-        //    Indicator.IsVisible = false;
-        //}
-
-        //private async void Button_ClickedRedact1(object sender, EventArgs e)
-        //{
-        //    viewModel.Indicator = true;
-        //    await Navigation.PushAsync(new TestUpdateView(1));
-        //    viewModel.Indicator = false;
-        //}
-        //private async void Button_ClickedRedact2(object sender, EventArgs e)
-        //{
-        //    viewModel.Indicator = true;
-        //    await Navigation.PushAsync(new TestUpdateView(2));
-        //    viewModel.Indicator = false;
-        //}
-        //private async void Button_ClickedRedact3(object sender, EventArgs e)
-        //{
-        //    viewModel.Indicator = true;
-        //    await Navigation.PushAsync(new TestUpdateView(3));
-        //    viewModel.Indicator = false;
-        //}
-
-        //private async void Button_ClickedMedia(object sender, EventArgs e)
-        //{
-        //    viewModel.Indicator = true;
-        //    await Navigation.PushAsync(new MediaFilesAdminView());
-        //    viewModel.Indicator = false;
-        //}
-
-        //private async void Button_ClickedStatic(object sender, EventArgs e)
-        //{
-        //    viewModel.Indicator = true;
-        //    await Navigation.PushAsync(new ChartView());
-        //    viewModel.Indicator = false;
-        //}
     }
 }

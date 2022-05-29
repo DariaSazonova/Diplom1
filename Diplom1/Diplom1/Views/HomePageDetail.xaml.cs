@@ -26,8 +26,15 @@ namespace Diplom1.Views
         {
             Indicator.IsVisible = true;
             GetSpicialityInformation GetSpicialityInformation = new();
-            var list = await GetSpicialityInformation.get();
-            await Navigation.PushAsync(new SpecialityInformation(list));
+            var list = await GetSpicialityInformation.get("SpecialityInformation");
+            if (list != null)
+            {
+                await Navigation.PushAsync(new SpecialityInformation(list));
+            }
+            else
+            {
+                Application.Current.MainPage.Toast(GetSpicialityInformation.error, status.error);
+            }
             Indicator.IsVisible = false;
         }
 
@@ -38,7 +45,9 @@ namespace Diplom1.Views
 
         private async void Button_ClickedCollegeInfo(object sender, EventArgs e)
         {
+            Indicator.IsVisible = true;
             await Navigation.PushAsync(new InfoCollegeView());
+            Indicator.IsVisible = false;
         }
 
         private async void Button_ClickedMedia(object sender, EventArgs e)

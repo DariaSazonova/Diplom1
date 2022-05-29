@@ -5,9 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Diplom1.Models;
+using Diplom1.Toast;
 using Diplom1.ViewModels.Quest;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Xamarin.Forms;
 
 namespace Diplom1.ViewModels
 {
@@ -24,7 +26,7 @@ namespace Diplom1.ViewModels
 
             model.idQuest = level;
 
-            if (jsString != "")
+            if (jsString != "" && jsString!=null)
             {
                 var js = JObject.Parse(jsString);
                 //model.idQuest = Convert.ToInt32(js["idQuest"]);
@@ -35,6 +37,10 @@ namespace Diplom1.ViewModels
                     it.id = i;
                     i++;
                 }
+            }
+            else
+            {
+                Application.Current.MainPage.Toast(getQuestions.error, status.error);
             }
         }
 

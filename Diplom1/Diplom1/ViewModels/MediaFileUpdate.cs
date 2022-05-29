@@ -13,13 +13,14 @@ namespace Diplom1.ViewModels
 {
     public  class MediaFileUpdate
     {
+        public string error = "";
         public async Task<bool> Update(MediaFileRedactViewModel vm)
         {
             vm.Indicator = true;
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                HttpResponseMessage response = await client.PutAsync(RequestStrings.getMediaFiles, new StringContent(
+                HttpResponseMessage response = await client.PutAsync(RequestStrings.putmediafile, new StringContent(
                    JsonConvert.SerializeObject(vm.model),
                     Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
@@ -28,6 +29,7 @@ namespace Diplom1.ViewModels
                 }
                 else
                 {
+                    error = "Ошибка сервера";
                     return false;
                 }
             }
@@ -44,7 +46,7 @@ namespace Diplom1.ViewModels
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                HttpResponseMessage response = await client.PostAsync(RequestStrings.getMediaFiles, new StringContent(
+                HttpResponseMessage response = await client.PostAsync(RequestStrings.putmediafile, new StringContent(
                    JsonConvert.SerializeObject(vm.model),
                     Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
@@ -53,6 +55,7 @@ namespace Diplom1.ViewModels
                 }
                 else
                 {
+                    error = "Ошибка сервера";
                     return false;
                 }
             }
@@ -68,13 +71,14 @@ namespace Diplom1.ViewModels
             if (GetClientConnection.CheckConnection())
             {
                 using HttpClient client = new();
-                HttpResponseMessage response = await client.DeleteAsync(RequestStrings.getMediaFiles+"/"+id);
+                HttpResponseMessage response = await client.DeleteAsync(RequestStrings.putmediafile + "/"+id);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;
                 }
                 else
                 {
+                    error = "Ошибка сервера";
                     return false;
                 }
             }

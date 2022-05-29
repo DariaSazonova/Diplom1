@@ -14,6 +14,7 @@ namespace Diplom1.ViewModels.Quest
 {
     public class GetQuestQuestions 
     {
+        public string error = "";
         public async Task<string> getQuestQuestions(int level)
         {
             await Task.Delay(1000);
@@ -29,13 +30,13 @@ namespace Diplom1.ViewModels.Quest
                 }
                 else
                 {
-                    Application.Current.MainPage.Toast($"Ошибка {result.StatusCode} ", status.error);
+                    error = $"Ошибка {result.StatusCode} ";
                     return null;
                 }
             }
             else
             {
-                Application.Current.MainPage.Toast("Нет подключения к интернету", status.error);
+                error = "Нет подключения к интернету";
                 return null;
             }
         }
