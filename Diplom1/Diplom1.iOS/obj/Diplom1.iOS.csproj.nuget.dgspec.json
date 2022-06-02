@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, 4.5.0.6]"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[2.0.2, )"
@@ -134,6 +138,10 @@
               "target": "Package",
               "version": "[3.2.0, )"
             },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[2.0.2, )"
@@ -143,6 +151,10 @@
               "version": "[1.7.3, )"
             },
             "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2401, )"
+            },
+            "Xamarin.Forms.Maps": {
               "target": "Package",
               "version": "[5.0.0.2401, )"
             },
@@ -166,7 +178,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

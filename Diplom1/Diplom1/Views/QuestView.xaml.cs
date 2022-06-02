@@ -152,7 +152,7 @@ namespace Diplom1.Views
             await Task.WhenAll
             (
                 (sender as Grid).FadeTo(1, 350),
-                (sender as Grid).TranslateTo(500, 0, 350)
+                (sender as Grid).TranslateTo(1000, 0, 350)
             );
             (sender as Grid).TranslationX = 0;
             Label d = (Label)(sender as Grid).Children.Where(x => x is Label).FirstOrDefault();

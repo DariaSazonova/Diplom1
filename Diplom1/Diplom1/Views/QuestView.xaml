@@ -1,31 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             x:Class="Diplom1.Views.QuestView" NavigationPage.HasNavigationBar="False" BackgroundColor="#cacecd">
+             x:Class="Diplom1.Views.QuestView" NavigationPage.HasNavigationBar="False" BackgroundImageSource="testBack">
     <Grid>
-        <Grid Margin="0,20,0,0" BackgroundColor="White" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid Margin="0,20,0,0" BackgroundColor="Transparent" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" BackgroundColor="#cacecd" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <StackLayout  HorizontalOptions="Center" VerticalOptions="Center">
-                    <Label   VerticalTextAlignment="Center" TextColor="White" FontSize="40" HorizontalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="Пройдите "  FontSize="40" />
-                                    <Span Text="тест" FontSize="40"/>
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                </StackLayout>
-            </Grid>
 
-            <StackLayout Margin="10" Grid.Row="1" VerticalOptions="Center">
-            <Frame  HasShadow="False" Padding="5"  BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  CornerRadius="15"  Margin="5" HeightRequest="20">
+            <StackLayout Margin="10" Grid.Row="0" VerticalOptions="Center">
+            <Frame  HasShadow="False" Padding="5"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  CornerRadius="15"  Margin="5" HeightRequest="20">
                     <ProgressBar x:Name="progressBar"
                         Progress="{Binding progress}" 
                         ProgressColor="Green"/>
@@ -34,7 +19,7 @@
             <StackLayout 
                 x:Name="QuestionList" 
                 Margin="25,0" 
-                Grid.Row="2">
+                Grid.Row="1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="250"/>
@@ -42,8 +27,8 @@
                     </Grid.RowDefinitions>
                     <Label x:Name="LabelQuestion"
                             TextColor="Black"
-                            FontSize="Medium" 
-                           FontAttributes="Bold"
+                            FontSize="22" 
+                            FontAttributes="Bold"
                             Text="{Binding Question}" 
                             Grid.Row="0" 
                             HorizontalTextAlignment="Center" 
@@ -54,48 +39,48 @@
                     <!--<CollectionView
                                 VerticalScrollBarVisibility="Never" 
                                 x:Name="ListButtons"  
-                                BackgroundColor="White"  
+                                BackgroundColor="Transparent"  
                                 ItemsSource="{Binding Answers}" 
                                 Grid.Row="1" 
                         ItemsLayout="VerticalGrid, 2">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <Grid VerticalOptions="Center">
-                                        <Grid.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                        </Grid.GestureRecognizers>
-                                        <Frame
+                                <Grid VerticalOptions="Center" MinimumHeightRequest="150">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Grid.GestureRecognizers>
+                                    <Frame
+                                        MinimumHeightRequest="150"
                                                     HasShadow="False"
                                                     Padding="2" 
-                                                    BackgroundColor="Gray" 
-                                                    CornerRadius="15" 
+                                        BackgroundColor="White"
+                                                    CornerRadius="10" 
                                                     Margin="5" 
-                                                    />
-                                        <Label 
+                                                    >
+                                    </Frame>
+                                    <Label 
                                                     x:Name="Question"
-                                                        TextColor="White"
+                                                        TextColor="Black"
                                                         Margin="10"
                                                         VerticalTextAlignment="Center" 
                                                         HorizontalTextAlignment="Center" 
                                                         Text="{Binding }" FontSize="20">
 
-                                        </Label>
+                                    </Label>
 
 
-                                    </Grid>
-                                </ViewCell>
+                                </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>-->
-                    
+
                     <ListView  
                         ItemSelected="ListButtons_ItemSelected"
                                 VerticalScrollBarVisibility="Never" 
                                 HasUnevenRows="True" 
-                                SeparatorColor="White"  
+                                SeparatorColor="Transparent"  
                                 x:Name="ListButtons"  
-                                BackgroundColor="White"  
+                                BackgroundColor="Transparent"  
                                 ItemsSource="{Binding Answers}" 
                                 Grid.Row="1" 
                                 >
@@ -109,13 +94,13 @@
                                         <Frame
                                                     HasShadow="False"
                                                     Padding="2" 
-                                                    BackgroundColor="Gray" 
+                                                    BackgroundColor="White" 
                                                     CornerRadius="15" 
                                                     Margin="5" 
                                                     />
                                         <Label 
                                                     x:Name="Question"
-                                                        TextColor="White"
+                                                        TextColor="Black"
                                                         Margin="10"
                                                         VerticalTextAlignment="Center" 
                                                         HorizontalTextAlignment="Center" 
@@ -132,19 +117,18 @@
                     </ListView>
                 </Grid>
             </StackLayout>
-
-            <AbsoluteLayout Grid.RowSpan="3" IsVisible="{Binding IndicatorIsVisible}">
-                <BoxView
+        </Grid>
+        <AbsoluteLayout IsVisible="{Binding IndicatorIsVisible}">
+            <BoxView
                     AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                     AbsoluteLayout.LayoutFlags="All"
                     BackgroundColor="Black"
                     Opacity="0.7" />
-                <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
-                    <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
-                       <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
-                    </yummy:PancakeView>
-                </StackLayout>
-            </AbsoluteLayout>
-        </Grid>
+            <StackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="Transparent">
+                <yummy:PancakeView  HorizontalOptions="Center" HeightRequest="70" WidthRequest="70" BackgroundColor="Transparent">
+                    <ActivityIndicator  BackgroundColor="Transparent" Color="White" IsRunning="True" />
+                </yummy:PancakeView>
+            </StackLayout>
+        </AbsoluteLayout>
     </Grid>
 </ContentPage>

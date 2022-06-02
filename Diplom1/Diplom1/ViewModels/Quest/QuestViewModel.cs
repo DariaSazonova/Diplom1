@@ -27,6 +27,7 @@ namespace Diplom1.ViewModels.Quest
                 var js = JObject.Parse(jsString);
                 model.idQuest = Convert.ToInt32(js["idQuest"]);
                 model.listQuestions = JsonConvert.DeserializeObject<List<Questions>>(js["questions"].ToString());
+                
             }
             
 
@@ -84,12 +85,12 @@ namespace Diplom1.ViewModels.Quest
         {
             get
             {
-                return model.listQuestions.FirstOrDefault(s => s.accepted == false).answers;
+                return model.listQuestions.Where(s => s.accepted == false).FirstOrDefault().answers;
             }
             set
             {
                 model.listQuestions[model.listQuestions.IndexOf(model.listQuestions.FirstOrDefault(s => s.accepted == false))].answers = value;
-                OnPropertyChanged("ListQuestions");
+                OnPropertyChanged("Answers");
             }
         }
 

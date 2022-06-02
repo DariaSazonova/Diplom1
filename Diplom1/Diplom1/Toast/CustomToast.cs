@@ -11,7 +11,7 @@ namespace Diplom1.Toast
         public static void Toast(this Page page, string message, status status)
         {
             double procent = 4.5;
-            int TextSize = (int)Math.Floor((page.Width / 100) * procent);
+            int TextSize = 20;//(int)Math.Floor((page.Width / 100) * procent);
             ToastOptions toast = new ToastOptions();
             if (status == status.warning)
             {

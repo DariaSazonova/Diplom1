@@ -18,6 +18,7 @@ namespace Diplom1
         protected override void OnStart()
         {
             NavigationAsync();
+            //MainPage = new NavigationPage(new MapView());
         }
         private  void NavigationAsync()
         {

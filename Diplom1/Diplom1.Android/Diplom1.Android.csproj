@@ -66,11 +66,17 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Geolocator">
+      <Version>[4.5.0.6]</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.CommunityToolkit">
       <Version>2.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>[5.0.0.2401]</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms.PancakeView">
       <Version>2.3.0.759</Version>
     </PackageReference>
@@ -240,6 +246,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\vk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\testBack.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

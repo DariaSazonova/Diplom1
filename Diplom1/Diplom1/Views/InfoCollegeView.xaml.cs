@@ -1,4 +1,6 @@
-﻿using Diplom1.ViewModels;
+﻿using Diplom1.Toast;
+using Diplom1.ViewModels;
+using Plugin.Geolocator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,32 @@ namespace Diplom1.Views
 
         private async void Button_ClickedInstagram(object sender, EventArgs e)
         {
-            await Launcher.OpenAsync("https://www.instagram.com/ukit_college/");
+            await Launcher.OpenAsync("https://vk.com/mgutu");
+        }
+        private async void Button_ClickedAdress(object sender, EventArgs e)
+        {
+            if(await CheckAndAskPermission<Permissions.LocationWhenInUse>())
+            {
+                var geo = CrossGeolocator.Current;
+                if(geo.IsGeolocationEnabled)
+                    await Navigation.PushAsync(new MapView());
+                else
+                {
+                    Application.Current.MainPage.Toast("Включите геоданные", status.warning);
+                }
+            }
+            else
+            {
+                await CheckAndAskPermission<Permissions.LocationWhenInUse>();
+            }
+        }
+        private async Task<bool> CheckAndAskPermission<T>() where T : Permissions.BasePermission, new()
+        {
+            var status = await Permissions.CheckStatusAsync<T>();
+            if (status == PermissionStatus.Granted) return true;
+            status = await Permissions.RequestAsync<T>();
+            var hasPermission = status == PermissionStatus.Granted;
+            return hasPermission;
         }
     }
 }
