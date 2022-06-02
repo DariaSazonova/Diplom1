@@ -14,10 +14,13 @@ namespace Diplom1.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         public InfoColledgeModel model { get; set; } = new();
         private getPhoto getPhoto = new();
+        public GetInfoColledge GetInfoColledge = new();
         public InfoColledgeViewModel()
         {
             model.pathPhoto = Task.Run(async () => await getPhoto.get("getColledgePhoto")).Result;
             if (model.pathPhoto == null) Application.Current.MainPage.Toast(getPhoto.error, status.error);
+            model.text = Task.Run(async () => await GetInfoColledge.get()).Result;
+            if(model.text==null) Application.Current.MainPage.Toast(GetInfoColledge.error, status.error);
         }
         public string PhotoPath
         {
@@ -28,6 +31,18 @@ namespace Diplom1.ViewModels
                 {
                     model.pathPhoto = value;
                     OnPropertyChanged("PhotoPath");
+                }
+            }
+        }
+        public List<string> Text
+        {
+            get { return model.text; }
+            set
+            {
+                if (model.text != value)
+                {
+                    model.text = value;
+                    OnPropertyChanged("Text");
                 }
             }
         }

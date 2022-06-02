@@ -8,5 +8,6 @@ namespace Diplom1.Models
     {
         public string pathPhoto { get; set; }
         public bool Indicator { get; set; }
+        public List<string> text { get; set; }
     }
 }

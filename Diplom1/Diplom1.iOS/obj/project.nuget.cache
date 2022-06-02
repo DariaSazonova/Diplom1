@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "F8KCFwT+ADRw1ScrLeBZl1tM3B/W0rB3QsXU6/+/KVOuEjIdKoGB+heti05wQI8O0nOfPG7El/vEunHpDDsjJg==",
+  "dgSpecHash": "a7JXr6l4P3bp5jNxoTQDqMNBcmy0PZc+uGSvGsafXGkCRskEzTperVRRESBtCZJJy0UeRZlWOk00KcrQ7ykAvA==",
   "success": true,
   "projectFilePath": "C:\\Users\\123\\source\\repos\\Diplom1\\Diplom1\\Diplom1.iOS\\Diplom1.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\123\\.nuget\\packages\\anglesharp\\0.17.0\\anglesharp.0.17.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
@@ -11,8 +12,10 @@
     "C:\\Users\\123\\.nuget\\packages\\skiasharp\\2.80.2\\skiasharp.2.80.2.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\skiasharp.views\\2.80.2\\skiasharp.views.2.80.2.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\skiasharp.views.forms\\2.80.2\\skiasharp.views.forms.2.80.2.nupkg.sha512",
+    "C:\\Users\\123\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\123\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xam.plugin.connectivity\\3.2.0\\xam.plugin.connectivity.3.2.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
