@@ -35,45 +35,6 @@
                             VerticalTextAlignment="Center">
 
                     </Label>
-
-                    <!--<CollectionView
-                                VerticalScrollBarVisibility="Never" 
-                                x:Name="ListButtons"  
-                                BackgroundColor="Transparent"  
-                                ItemsSource="{Binding Answers}" 
-                                Grid.Row="1" 
-                        ItemsLayout="VerticalGrid, 2">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid VerticalOptions="Center" MinimumHeightRequest="150">
-                                    <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                    </Grid.GestureRecognizers>
-                                    <Frame
-                                        MinimumHeightRequest="150"
-                                                    HasShadow="False"
-                                                    Padding="2" 
-                                        BackgroundColor="White"
-                                                    CornerRadius="10" 
-                                                    Margin="5" 
-                                                    >
-                                    </Frame>
-                                    <Label 
-                                                    x:Name="Question"
-                                                        TextColor="Black"
-                                                        Margin="10"
-                                                        VerticalTextAlignment="Center" 
-                                                        HorizontalTextAlignment="Center" 
-                                                        Text="{Binding }" FontSize="20">
-
-                                    </Label>
-
-
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>-->
-
                     <ListView  
                         ItemSelected="ListButtons_ItemSelected"
                                 VerticalScrollBarVisibility="Never" 

@@ -18,6 +18,7 @@ namespace Diplom1.ViewModels.Quest
         public event PropertyChangedEventHandler PropertyChanged;
         public QuestTestModel model { get; private set; } = new();
         public GetQuestQuestions getQuestions = new();
+        public AnswerTapped AnswerTapped = new();
         public QuestViewModel(int level)
         {
             model =new QuestTestModel();
