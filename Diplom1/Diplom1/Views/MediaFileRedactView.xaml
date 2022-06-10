@@ -26,31 +26,14 @@
                 BackgroundColor="LightGray"
                 CornerRadius="15"
                 MinimumHeightRequest="45"
-                HeightRequest="45">     
+                HeightRequest="45">
                 <Grid>
                     <views:BorderlessEntry 
                         Text="{Binding path}" 
                         TextColor="Black" 
                         Placeholder="Ссылка"  
                         PlaceholderColor="#353535" 
-                        ClearButtonVisibility="WhileEditing"  />    
-                </Grid>
-            </yummy:PancakeView>
-            <yummy:PancakeView
-                Margin="25"
-                Padding="10,0,0,0"
-                BackgroundColor="LightGray"
-                CornerRadius="15"
-                MinimumHeightRequest="45"
-                HeightRequest="45"> 
-                <Grid>
-                    <views:BorderlessEntry 
-                        Text="{Binding midiatype}" 
-                        TextColor="Black" 
-                        Placeholder="video"
-                        IsReadOnly="True"
-                        PlaceholderColor="#353535" 
-                        ClearButtonVisibility="WhileEditing"  />    
+                        ClearButtonVisibility="WhileEditing"  />
                 </Grid>
             </yummy:PancakeView>
             <Button Text="Сохранить изменения" x:Name="UpdateButton" Clicked="Button_ClickedUpdate" HorizontalOptions="Center" VerticalOptions="Center"/>

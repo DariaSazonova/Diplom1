@@ -9,7 +9,7 @@ namespace Diplom1.Models
         public int id { get; set; }
         public string path { get; set; }   
         public string title { get; set; }
-        public string midiatype { get; set; } = "video";
+        public string midiatype { get; set; } = "file";
         public bool Indicator { get; set; } = false;
     }
 }
